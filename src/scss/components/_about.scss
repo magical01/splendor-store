@@ -1,0 +1,55 @@
+.about {
+  padding-bottom: 150px;
+
+  &__container {
+    padding: 0 275px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__descr {
+    margin: 0;
+    max-width: 774px;
+    font-size: 24px;
+    line-height: 36px;
+    color: #000;
+    opacity: 0.8;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include hover {
+      .about__image {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    transition: all .3s;
+  }
+
+  &__text {
+    display: block;
+    margin-top: 40px;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 45px;
+    opacity: 0.7;
+  }
+}

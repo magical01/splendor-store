@@ -1,0 +1,28 @@
+.banner {
+  background-color: #F8F2EC;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 275px;
+    height: 350px;
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 72px;
+    color: 	#8f5c45;
+  }
+
+  &__link {
+    padding: 18px 68px;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 40px;
+    color: #fff;
+    opacity: 0.9;
+    background-color: #8F5C44;
+  }
+}

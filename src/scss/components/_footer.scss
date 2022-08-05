@@ -1,0 +1,97 @@
+.footer {
+  background-color: #474747;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 135px;
+    height: 610px;
+  }
+
+  &__title {
+    font-family: "KronaOne";
+    font-weight: 400;
+    font-size: 27.6888px;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  &__bottom {
+    padding-left: 475px;
+  }
+
+}
+
+.form {
+  &__text {
+    display: block;
+    margin-bottom: 24px;
+    font-size: 20px;
+    line-height: 23px;
+    color: #fff;
+  }
+
+  &__group {
+    position: relative;
+    display: inline-block;
+    margin-right: 40px;
+  }
+
+  &__label {
+    position: absolute;
+    top: 0px;
+    left: 2px;
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+    transition: all .3s;
+
+  }
+
+  &__input {
+    position: relative;
+    outline: none;
+    z-index: 10;
+    width: 417px;
+    font-size: 20px;
+    line-height: 30px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    transition: all .3s;
+    cursor: pointer;
+
+
+    &:focus {
+      border-bottom: 1px solid rgba(255, 255, 255, 1);
+      transition: all .3s;
+
+      & ~ .form__label, .form__input:not(:placeholder-shown) ~ .form__label {
+        top: -23px;
+        font-size: 14px;
+        transition: all .3s;
+      }
+    }
+
+    &:active {
+      border-bottom: 1px solid rgba(255, 255, 255, 1);
+      transition: all .3s;
+
+      & ~ .form__label, .form__input:not(:placeholder-shown) ~ .form__label {
+        top: -23px;
+        font-size: 14px;
+        transition: all .3s;
+      }
+    }
+  }
+
+  &__btn {
+    padding: 11px 41px;
+    line-height: 24px;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #fff;
+    transform: translateY(-8px);
+  }
+}

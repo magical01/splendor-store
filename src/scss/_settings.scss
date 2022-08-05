@@ -61,15 +61,25 @@ a {
 }
 
 .title {
+  margin: 0;
   font-family: "KronaOne";
   font-size: 54px;
   line-height: 68px;
   letter-spacing: -0.03em;
+  opacity: 0.9;
 }
 
 .main-link {
+  border: 0.766391px solid var(--black-color);
   font-weight: 500;
   line-height: 24px;
+  opacity: 0.9;
+  transition: all .3s;
+
+  @include hover {
+    background-color: var(--black-color);
+    color: #fff;
+  }
 }
 
 .input-reset {
@@ -124,4 +134,18 @@ a {
 
 .page--ios .dis-scroll {
   position: relative;
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--accent-color);
 }
