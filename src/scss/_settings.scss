@@ -30,12 +30,17 @@ img {
 }
 
 a {
+  color: inherit;
   text-decoration: none;
   cursor: pointer;
 }
 
 .site-container {
   overflow: hidden;
+}
+
+.site-bg {
+  background-color: var(--white-color);
 }
 
 .is-hidden {

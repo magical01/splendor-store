@@ -1,0 +1,124 @@
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 40px;
+  width: 100%;
+  z-index: 5;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    cursor: pointer;
+  }
+
+  &__item + &__item {
+    margin-left: 64px;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: "KronaOne";
+    font-weight: 400;
+    font-size: 27.6888px;
+    line-height: 35px;
+    text-transform: uppercase;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+  }
+
+  &__link {
+    position: relative;
+    font-size: 16px;
+    line-height: 19px;
+    opacity: 0.8;
+
+    &--active {
+      opacity: 1;
+
+      &:hover.nav__link:hover::before {
+        width: 0%;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0%;
+      height: 1px;
+      background-color: var(--black-color);
+      transition: all .3s;
+    }
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+
+  &__item + &__item {
+    margin-left: 69px;
+  }
+}
+
+.search {
+  svg path {
+    transition: all .3s;
+  }
+
+  &:hover {
+    svg path {
+      stroke: var(--accent-color);
+    }
+  }
+}
+
+
+.favorites {
+
+  svg path {
+    transition: all .3s;
+  }
+
+  &:hover {
+    svg path {
+      fill: var(--accent-color);
+    }
+  }
+}
+
+.basket {
+  svg rect {
+    transition: all .3s;
+  }
+
+  svg path {
+    transition: all .3s;
+  }
+
+  &:hover {
+    svg rect {
+      stroke: var(--accent-color);
+    }
+
+    svg path {
+      fill: var(--accent-color);
+    }
+  }
+}
