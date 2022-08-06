@@ -1,5 +1,3 @@
-/* stylelint-disable */
-
 @mixin bg-cover {
   background-position: center;
   background-size: cover;
@@ -39,10 +37,8 @@ $browser-context: 16; // Default
 }
 
 @mixin image-set($pathToImage) {
-  background-image: url("#{$pathToImage}.jpg");
-  /* stylelint-disable-next-line declaration-block-no-duplicate-properties */
+  background-image: url("#{$pathToImage}.png");
   background-image: image-set(
-    /* stylelint-disable-next-line function-comma-newline-after */
     "#{$pathToImage}.avif"type("image/avif"),
     "#{$pathToImage}.webp"type("image/webp"),
     "#{$pathToImage}.jpg"type("image/jpg")
