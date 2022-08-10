@@ -1,20 +1,67 @@
 .hero-catalog {
   padding-top: 130px;
+  padding-bottom: 80px;
 
   &__container {
     height: 490px;
-
-  }
-
-  &__inner {
-
   }
 
   &__bg {
     position: relative;
+    display: flex;
+    justify-content: flex-start;
+
+    picture {
+      position: absolute;
+    }
+  }
+
+  &__content {
+    max-width: 725px;
+    position: relative;
+    z-index: 5;
+    padding-left: 148px;
+    padding-top: 139px;
   }
 
   &__img {
     display: block;
   }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 51px;
+    max-width: 486px;
+    font-family: "KronaOne";
+    font-size: 54px;
+    line-height: 68px;
+    text-align: center;
+    letter-spacing: -0.03em;
+    color: #fff;
+  }
+}
+
+.catalog-breadcrumbs {
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    position: relative;
+    font-size: 20px;
+    color: #fff;
+    opacity: 0.8;
+
+    &:not(:last-child) {
+      margin-right: 22px;
+      padding-right: 22px;
+      &::before {
+        content: "|";
+        position: absolute;
+        right: 0px;
+      }
+    }
+  }
+
 }
