@@ -1,0 +1,37 @@
+.card {
+  padding-bottom: 150px;
+
+  &__container {
+    display: flex;
+  }
+
+  &-slider {
+    display: flex;
+
+    &__thumb {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 250px;
+      height: 250px;
+      background-color: #F8F2EC;
+      cursor: pointer;
+    }
+
+    &__thumb + &__thumb {
+      margin-top: 30px;
+    }
+
+    &__main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 30px;
+      width: 670px;
+      height: 530px;
+      background-color: #F8F2EC;;
+    }
+  }
+
+
+}

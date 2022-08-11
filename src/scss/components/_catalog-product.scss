@@ -11,6 +11,19 @@
     svg {
       rect {
         fill: rgba(#272727, 0.6);
+        transition: all .3s;
+      }
+    }
+
+    @include hover {
+      svg rect {
+        fill: rgba(#272727, 1);
+      }
+    }
+
+    &:focus {
+      svg rect {
+        fill: rgba(#272727, 1);
       }
     }
   }
@@ -19,6 +32,19 @@
     svg {
       line {
         stroke: rgba(#272727, 0.6);
+        transition: all .3s;
+      }
+    }
+
+    @include hover {
+      svg line {
+        stroke: rgba(#272727, 1);
+      }
+    }
+
+    &:focus {
+      svg line {
+        stroke: rgba(#272727, 1);
       }
     }
   }
@@ -29,6 +55,10 @@
     justify-content: space-between;
     margin-top: 65px;
     row-gap: 35px;
+  }
+
+  &__item {
+    transition: all .3s;
   }
 
 
@@ -53,6 +83,7 @@
     border: 1px solid var(--black-color);
     width: 335px;
     height: 390px;
+    // transition: width .1s;
   }
 
   &__group {
@@ -104,4 +135,56 @@
     height: 91px;
     background-color: #fff;
   }
+}
+
+.product-row {
+  .catalog-product__item {
+    width: 100%;
+    transition: all .3s;
+  }
+  .catalog-product__image {
+    width: 100%;
+    transition: all .3s;
+  }
+
+  .catalog-product__content {
+    position: relative;
+  }
+
+  .catalog-product__size {
+    position: absolute;
+    top: 10px;
+    left: 47%;
+  }
+
+  .catalog-product--white {
+    top: 73px;
+    left: 39%;
+  }
+}
+
+.product-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 40px;
+  margin-top: 80px;
+
+  &__btn {
+    font-weight: 400;
+    font-size: 28px;
+    color: rgba(#272727, 0.5);
+
+    &--active {
+      color: rgba(#272727, 1);
+    }
+  }
+}
+
+.prev-btn {
+  font-weight: 500;
+}
+
+.next-btn {
+  font-weight: 500;
 }

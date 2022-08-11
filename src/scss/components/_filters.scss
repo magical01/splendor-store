@@ -1,4 +1,6 @@
 .filters {
+  padding-bottom: 150px;
+
   &__container {
     display: flex;
     column-gap: 140px;
@@ -315,8 +317,7 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    column-gap: 40px;
+    column-gap: 39px;
     row-gap: 40px;
   }
 
