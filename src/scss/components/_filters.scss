@@ -1,4 +1,9 @@
 .filters {
+  &__container {
+    display: flex;
+    column-gap: 140px;
+  }
+
   &__title {
     margin: 0;
     margin-bottom: 40px;
@@ -8,9 +13,7 @@
     color: var(--black-color);
   }
 
-  &__choice {
-    // display: flex;
-    // flex-direction: column;
+  &__left {
     width: 280px;
   }
 }
@@ -145,6 +148,7 @@
   border: 1px solid #8F5C44;
   width: 14px;
   height: 14px;
+  cursor: pointer;
 }
 
 .noUi-handle {
@@ -192,9 +196,20 @@
   }
 
   &__btn {
+    display: none;
     border: 1px solid var(--black-color);
     padding: 13px 94px;
     font-size: 20px;
+    transition: all .3s;
+
+    &--active {
+      display: block;
+    }
+
+    @include hover {
+      color: #fff;
+      background-color: rgba(#272727, 0.8);
+    }
   }
 }
 
@@ -206,6 +221,11 @@
     align-items: flex-end;
     justify-content: space-between;
     border-bottom: 1px solid rgba(#8F5C44, 0.4);
+    transition: all .3s;
+
+    &--active {
+      border-bottom: 1px solid rgba(#8F5C44, 1);
+    }
   }
 
   &__item +  &__item {
@@ -225,9 +245,13 @@
     height: 30px;
     font-size: 16px;
     text-align: center;
+    transition: all .3s;
 
     &:focus {
       outline: none;
+      border-left: 1px solid rgba(#8F5C44, 1);
+      border-top: 1px solid rgba(#8F5C44, 1);
+      border-right: 1px solid rgba(#8F5C44, 1);
     }
   }
 }

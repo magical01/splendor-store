@@ -1,101 +1,346 @@
 <section class="filters">
   <div class="container filters__container">
-    <h3 class="filters__title">Categories</h3>
-    <div class="filters__choice">
-      <div class="filters__categories choice-categories">
-        <div class="choice-categories__item">
-          <span class="choice-categories__text">Chandeliers</span>
-          <button class="choice-categories__btn choice-categories__btn--active btn-reset"></button>
+    <div class="filters__left">
+      <h3 class="filters__title">Categories</h3>
+      <div class="filters__choice">
+        <div class="filters__categories choice-categories">
+          <div class="choice-categories__item">
+            <span class="choice-categories__text">Chandeliers</span>
+            <button class="choice-categories__btn btn-reset"></button>
+          </div>
+          <div class="choice-categories__item">
+            <span class="choice-categories__text">Fixtures</span>
+            <button class="choice-categories__btn btn-reset"></button>
+          </div>
+          <div class="choice-categories__item">
+            <span class="choice-categories__text">Track systems</span>
+            <button class="choice-categories__btn btn-reset"></button>
+          </div>
+          <div class="choice-categories__item">
+            <span class="choice-categories__text">Table lamps</span>
+            <button class="choice-categories__btn btn-reset"></button>
+          </div>
+          <div class="choice-categories__item">
+            <span class="choice-categories__text">Floor lamps</span>
+            <button class="choice-categories__btn btn-reset"></button>
+          </div>
+          <div class="choice-categories__item">
+            <span class="choice-categories__text">Street lamps</span>
+            <button class="choice-categories__btn btn-reset"></button>
+          </div>
         </div>
-        <div class="choice-categories__item">
-          <span class="choice-categories__text">Fixtures</span>
-          <button class="choice-categories__btn btn-reset"></button>
+        <div class="filters__price choice-price">
+          <h3 class="filters__title choice-price__title">Price</h3>
+          <div class="choice-price__slider" id="range-slider"></div>
+          <div class="choice-price__inputs">
+            <label class="choice-price__label">
+              <input class="choice-price__input input-reset" type="number" min="100" max="9999" placeholder="3000"
+                maxlength="4" id="input-0">
+            </label>
+            <label class="choice-price__label">
+              <input class="choice-price__input input-reset" type="number" min="100" max="9999" placeholder="7000"
+                maxlength="4" id="input-1">
+            </label>
+          </div>
         </div>
-        <div class="choice-categories__item">
-          <span class="choice-categories__text">Track systems</span>
-          <button class="choice-categories__btn btn-reset"></button>
+        <div class="filters__view choice-view">
+          <h3 class="filters__title choice-view__title">View:</h3>
+          <button class="choice-view__btn choice-view__btn--active btn-reset">Сeiling</button>
         </div>
-        <div class="choice-categories__item">
-          <span class="choice-categories__text">Table lamps</span>
-          <button class="choice-categories__btn btn-reset"></button>
+        <div class="filters__size choice-size">
+          <h3 class="filters__title choice-size__title">Size</h3>
+          <div class="choice-size__item">
+            <span class="choice-size__text">Height, cm</span>
+            <input class="choice-size__input input-reset" type="number" min="10" max="999" maxlength="3"></input>
+          </div>
+          <div class="choice-size__item">
+            <span class="choice-size__text">Width, cm</span>
+            <input class="choice-size__input input-reset" type="number" min="10" max="999" maxlength="3"></input>
+          </div>
+          <div class="choice-size__item">
+            <span class="choice-size__text">Depth, cm</span>
+            <input class="choice-size__input input-reset" type="number" min="10" max="999" maxlength="3"></input>
+          </div>
+          <div class="choice-size__item">
+            <span class="choice-size__text">Length, cm</span>
+            <input class="choice-size__input input-reset" type="number" min="10" max="999" maxlength="3"></input>
+          </div>
+          <div class="choice-size__item">
+            <span class="choice-size__text">Lighting area (m2)</span>
+            <input class="choice-size__input input-reset" type="number" min="10" max="999" maxlength="3"></input>
+          </div>
         </div>
-        <div class="choice-categories__item">
-          <span class="choice-categories__text">Floor lamps</span>
-          <button class="choice-categories__btn btn-reset"></button>
+        <div class="filters__style choice-style">
+          <h3 class="filters__title choice-style__title">Style</h3>
+          <ul class="choice-style__list list-reset">
+            <li class="choice-style__item">Loft</li>
+            <li class="choice-style__item">Techno</li>
+            <li class="choice-style__item">Tiffany</li>
+            <li class="choice-style__item">Modern</li>
+            <li class="choice-style__item">Art Deco</li>
+            <li class="choice-style__item">Country</li>
+            <li class="choice-style__item">Ethnic</li>
+            <li class="choice-style__item">Floristry</li>
+            <li class="choice-style__item">Classic</li>
+          </ul>
         </div>
-        <div class="choice-categories__item">
-          <span class="choice-categories__text">Street lamps</span>
-          <button class="choice-categories__btn btn-reset"></button>
+        <div class="filters__color choice-color">
+          <h3 class="filters__title choice-color__title">Color</h3>
+          <ul class="choice-color__list list-reset">
+            <li class="choice-color__item choice-color__item--gray"></li>
+            <li class="choice-color__item choice-color__item--cashmere"></li>
+            <li class="choice-color__item choice-color__item--white"></li>
+            <li class="choice-color__item choice-color__item--black"></li>
+            <li class="choice-color__item choice-color__item--green"></li>
+            <li class="choice-color__item choice-color__item--snuff"></li>
+            <li class="choice-color__item choice-color__item--orange"></li>
+            <li class="choice-color__item choice-color__item--blue"></li>
+          </ul>
         </div>
       </div>
-      <div class="filters__price choice-price">
-        <h3 class="filters__title choice-price__title">Price</h3>
-        <div class="choice-price__slider" id="range-slider"></div>
-        <div class="choice-price__inputs">
-          <label class="choice-price__label">
-            <input class="choice-price__input input-reset" type="number" min="100" max="9999" placeholder="3000" maxlength="4"
-              id="input-0">
-          </label>
-          <label class="choice-price__label">
-            <input class="choice-price__input input-reset" type="number" min="100" max="9999" placeholder="7000" maxlength="4"
-              id="input-1">
-          </label>
-        </div>
+    </div>
+    <div class="filters__right catalog-product">
+      <div class="catalog-product__props">
+        <span class="catalog-product__text">See by</span>
+        <button class="catalog-product__column btn-reset">
+          <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect y="0.714844" width="10" height="10" fill="#272727" />
+            <rect x="13" y="0.714844" width="10" height="10" fill="#272727" />
+            <rect x="13" y="13.7148" width="10" height="10" fill="#272727" />
+            <rect y="13.7148" width="10" height="10" fill="#272727" />
+          </svg>
+        </button>
+        <button class="catalog-product__row btn-reset">
+          <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line y1="1.71484" x2="23" y2="1.71484" stroke="#272727" stroke-width="2" />
+            <line y1="12.7148" x2="23" y2="12.7148" stroke="#272727" stroke-width="2" />
+            <line y1="22.7148" x2="23" y2="22.7148" stroke="#272727" stroke-width="2" />
+          </svg>
+        </button>
       </div>
-      <div class="filters__view choice-view">
-        <h3 class="filters__title choice-view__title">View:</h3>
-        <button class="choice-view__btn btn-reset">Сeiling</button>
-      </div>
-      <div class="filters__size choice-size">
-        <h3 class="filters__title choice-size__title">Size</h3>
-        <div class="choice-size__item">
-          <span class="choice-size__text">Height, cm</span>
-          <input class="choice-size__input input-reset" type="number" min="10" max="999" maxlength="3"></input>
-        </div>
-        <div class="choice-size__item">
-          <span class="choice-size__text">Width, cm</span>
-          <input class="choice-size__input input-reset" type="number" min="10" max="999" maxlength="3"></input>
-        </div>
-        <div class="choice-size__item">
-          <span class="choice-size__text">Depth, cm</span>
-          <input class="choice-size__input input-reset" type="number" min="10" max="999" maxlength="3"></input>
-        </div>
-        <div class="choice-size__item">
-          <span class="choice-size__text">Length, cm</span>
-          <input class="choice-size__input input-reset" type="number" min="10" max="999" maxlength="3"></input>
-        </div>
-        <div class="choice-size__item">
-          <span class="choice-size__text">Lighting area (m2)</span>
-          <input class="choice-size__input input-reset" type="number" min="10" max="999" maxlength="3"></input>
-        </div>
-      </div>
-      <div class="filters__style choice-style">
-        <h3 class="filters__title choice-style__title">Style</h3>
-        <ul class="choice-style__list list-reset">
-          <li class="choice-style__item choice-style__item--active">Loft</li>
-          <li class="choice-style__item">Techno</li>
-          <li class="choice-style__item">Tiffany</li>
-          <li class="choice-style__item">Modern</li>
-          <li class="choice-style__item">Art Deco</li>
-          <li class="choice-style__item">Country</li>
-          <li class="choice-style__item">Ethnic</li>
-          <li class="choice-style__item">Floristry</li>
-          <li class="choice-style__item">Classic</li>
-        </ul>
-      </div>
-      <div class="filters__color choice-color">
-        <h3 class="filters__title choice-color__title">Color</h3>
-        <ul class="choice-color__list list-reset">
-          <li class="choice-color__item choice-color__item--gray choice-color__item--active"></li>
-          <li class="choice-color__item choice-color__item--cashmere"></li>
-          <li class="choice-color__item choice-color__item--white"></li>
-          <li class="choice-color__item choice-color__item--black"></li>
-          <li class="choice-color__item choice-color__item--green"></li>
-          <li class="choice-color__item choice-color__item--snuff"></li>
-          <li class="choice-color__item choice-color__item--orange"></li>
-          <li class="choice-color__item choice-color__item--blue"></li>
-        </ul>
-      </div>
+      <ul class="catalog-product__list list-reset">
+        <li class="catalog-product__item">
+          <a class="catalog-product__link" href="#">
+            <div class="catalog-product__image">
+              <picture>
+                <source srcset="img/product-1.avif" type="image/avif">
+                <source srcset="img/product-1.webp" type="image/webp">
+                <img loading="lazy" src="img/product-1.png" class="image" width="236" height="367" alt="">
+              </picture>
+            </div>
+            <div class="catalog-product__content">
+              <div class="catalog-product__group">
+                <h4 class="catalog-product__title">Retro Grey</h4>
+                <span class="catalog-product__price">500$</span>
+              </div>
+              <span class="catalog-product__size">Size: 25*45</span>
+            </div>
+          </a>
+        </li>
+        <li class="catalog-product__item">
+          <a class="catalog-product__link" href="#">
+            <span class="catalog-product__new">New</span>
+            <div class="catalog-product__image">
+              <picture>
+                <source srcset="img/product-2.avif" type="image/avif">
+                <source srcset="img/product-2.webp" type="image/webp">
+                <img loading="lazy" src="img/product-2.png" class="image" width="182" height="344" alt="">
+              </picture>
+            </div>
+            <div class="catalog-product__content">
+              <div class="catalog-product__group">
+                <h4 class="catalog-product__title">Retro Grey</h4>
+                <span class="catalog-product__price">500$</span>
+              </div>
+              <span class="catalog-product__size">Size: 25*45</span>
+            </div>
+          </a>
+        </li>
+        <li class="catalog-product__item catalog-product__item--center">
+          <a class="catalog-product__link" href="#">
+            <div class="catalog-product__image">
+              <picture>
+                <source srcset="img/product-3.avif" type="image/avif">
+                <source srcset="img/product-3.webp" type="image/webp">
+                <img loading="lazy" src="img/product-3.png" class="image" width="196" height="284" alt="">
+              </picture>
+            </div>
+            <div class="catalog-product__content">
+              <div class="catalog-product__group">
+                <h4 class="catalog-product__title">Retro Grey</h4>
+                <span class="catalog-product__price">500$</span>
+              </div>
+              <span class="catalog-product__size">Size: 25*45</span>
+            </div>
+          </a>
+        </li>
+        <li class="catalog-product__item catalog-product__item--center">
+          <a class="catalog-product__link" href="#">
+            <div class="catalog-product__image">
+              <picture>
+                <source srcset="img/product-4.avif" type="image/avif">
+                <source srcset="img/product-4.webp" type="image/webp">
+                <img loading="lazy" src="img/product-4.png" class="image" width="253" height="253" alt="">
+              </picture>
+            </div>
+            <div class="catalog-product__content">
+              <div class="catalog-product__group">
+                <h4 class="catalog-product__title">Retro Grey</h4>
+                <span class="catalog-product__price">500$</span>
+              </div>
+              <span class="catalog-product__size">Size: 25*45</span>
+            </div>
+          </a>
+        </li>
+        <li class="catalog-product__item">
+          <a class="catalog-product__link" href="#">
+            <div class="catalog-product__image">
+              <picture>
+                <source srcset="img/product-5.avif" type="image/avif">
+                <source srcset="img/product-5.webp" type="image/webp">
+                <img loading="lazy" src="img/product-5.png" class="image" width="185" height="323" alt="">
+              </picture>
+            </div>
+            <div class="catalog-product__content">
+              <div class="catalog-product__group">
+                <h4 class="catalog-product__title">Retro Grey</h4>
+                <span class="catalog-product__price">500$</span>
+              </div>
+              <span class="catalog-product__size">Size: 25*45</span>
+            </div>
+          </a>
+        </li>
+        <li class="catalog-product__item">
+          <a class="catalog-product__link" href="#">
+            <span class="catalog-product--white"></span>
+            <div class="catalog-product__image">
+              <picture>
+                <source srcset="img/product-6.avif" type="image/avif">
+                <source srcset="img/product-6.webp" type="image/webp">
+                <img loading="lazy" src="img/product-6.png" class="image" width="188" height="390" alt="">
+              </picture>
+            </div>
+            <div class="catalog-product__content">
+              <div class="catalog-product__group">
+                <h4 class="catalog-product__title">Retro Grey</h4>
+                <span class="catalog-product__price">500$</span>
+              </div>
+              <span class="catalog-product__size">Size: 25*45</span>
+            </div>
+          </a>
+        </li>
+        <li class="catalog-product__item catalog-product__item--center">
+          <a class="catalog-product__link" href="#">
+            <div class="catalog-product__image">
+              <picture>
+                <source srcset="img/product-7.avif" type="image/avif">
+                <source srcset="img/product-7.webp" type="image/webp">
+                <img loading="lazy" src="img/product-7.png" class="image" width="260" height="260" alt="">
+              </picture>
+            </div>
+            <div class="catalog-product__content">
+              <div class="catalog-product__group">
+                <h4 class="catalog-product__title">Retro Grey</h4>
+                <span class="catalog-product__price">500$</span>
+              </div>
+              <span class="catalog-product__size">Size: 25*45</span>
+            </div>
+          </a>
+        </li>
+        <li class="catalog-product__item">
+          <a class="catalog-product__link" href="#">
+            <div class="catalog-product__image">
+              <picture>
+                <source srcset="img/product-8.avif" type="image/avif">
+                <source srcset="img/product-8.webp" type="image/webp">
+                <img loading="lazy" src="img/product-8.png" class="image" width="148" height="364" alt="">
+              </picture>
+            </div>
+            <div class="catalog-product__content">
+              <div class="catalog-product__group">
+                <h4 class="catalog-product__title">Retro Grey</h4>
+                <span class="catalog-product__price">500$</span>
+              </div>
+              <span class="catalog-product__size">Size: 25*45</span>
+            </div>
+          </a>
+        </li>
+        <li class="catalog-product__item catalog-product__item--end">
+          <a class="catalog-product__link" href="#">
+            <div class="catalog-product__image">
+              <picture>
+                <source srcset="img/product-9.avif" type="image/avif">
+                <source srcset="img/product-9.webp" type="image/webp">
+                <img loading="lazy" src="img/product-9.png" class="image" width="235" height="325" alt="">
+              </picture>
+            </div>
+            <div class="catalog-product__content">
+              <div class="catalog-product__group">
+                <h4 class="catalog-product__title">Retro Grey</h4>
+                <span class="catalog-product__price">500$</span>
+              </div>
+              <span class="catalog-product__size">Size: 25*45</span>
+            </div>
+          </a>
+        </li>
+        <li class="catalog-product__item">
+          <a class="catalog-product__link" href="#">
+            <div class="catalog-product__image">
+              <picture>
+                <source srcset="img/product-10.avif" type="image/avif">
+                <source srcset="img/product-10.webp" type="image/webp">
+                <img loading="lazy" src="img/product-10.png" class="image" width="221" height="336" alt="">
+              </picture>
+            </div>
+            <div class="catalog-product__content">
+              <div class="catalog-product__group">
+                <h4 class="catalog-product__title">Retro Grey</h4>
+                <span class="catalog-product__price">500$</span>
+              </div>
+              <span class="catalog-product__size">Size: 25*45</span>
+            </div>
+          </a>
+        </li>
+        <li class="catalog-product__item">
+          <a class="catalog-product__link" href="#">
+            <div class="catalog-product__image">
+              <picture>
+                <source srcset="img/product-11.avif" type="image/avif">
+                <source srcset="img/product-11.webp" type="image/webp">
+                <img loading="lazy" src="img/product-11.png" class="image" width="324" height="324" alt="">
+              </picture>
+            </div>
+            <div class="catalog-product__content">
+              <div class="catalog-product__group">
+                <h4 class="catalog-product__title">Retro Grey</h4>
+                <span class="catalog-product__price">500$</span>
+              </div>
+              <span class="catalog-product__size">Size: 25*45</span>
+            </div>
+          </a>
+        </li>
+        <li class="catalog-product__item">
+          <a class="catalog-product__link" href="#">
+            <div class="catalog-product__image">
+              <picture>
+                <source srcset="img/product-12.avif" type="image/avif">
+                <source srcset="img/product-12.webp" type="image/webp">
+                <img loading="lazy" src="img/product-12.png" class="image" width="263" height="263" alt="">
+              </picture>
+            </div>
+            <div class="catalog-product__content">
+              <div class="catalog-product__group">
+                <h4 class="catalog-product__title">Retro Grey</h4>
+                <span class="catalog-product__price">500$</span>
+              </div>
+              <span class="catalog-product__size">Size: 25*45</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <ul class="catalog-product__pagination">
+
+      </ul>
     </div>
   </div>
 </section>
