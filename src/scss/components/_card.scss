@@ -1,5 +1,5 @@
 .card {
-  padding-bottom: 150px;
+  padding-bottom: 158px;
 
   &__container {
     display: flex;
@@ -61,9 +61,19 @@
   }
 
   &__price {
+    position: relative;
     display: inline-block;
+    margin-left: 10px;
     font-weight: 500;
     font-size: 30px;
+
+    &::before {
+      content: "$";
+      position: absolute;
+      left: -10px;
+      top: 5px;
+      font-size: 18px;
+    }
   }
 
   &__save {
@@ -75,7 +85,7 @@
 
   &__descr {
     margin: 0;
-    margin-top: 42px;
+    margin-top: 32px;
     font-size: 20px;
     color: rgba(#272727, 0.7);
   }
@@ -84,7 +94,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 113px;
   }
 
   &__radiobutton + &__radiobutton {
@@ -147,25 +157,41 @@
   &__btns {
     display: inline-flex;
     column-gap: 30px;
-    margin-top: 42px;
+    margin-top: 46px;
   }
 
   &__cart {
-    padding: 13px 55px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 20px;
+    padding: 17px 55px;
     font-size: 20px;
     color: #fff;
     background-color: #2B2828;
   }
 
   &__favorites {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 20px;
     border: 1px solid #221E1E;
-    padding: 12px 36px;
+    padding: 16px 35px;
     font-size: 20px;
     color: #000;
+
+    svg {
+      opacity: 0.8;
+    }
   }
 
   &__colors {
     position: absolute;
+    right: -29px;
+    top: 44%;
+    transform: translateY(-50%);
+
   }
 
   &__color {
@@ -173,6 +199,17 @@
     border-radius: 50%;
     width: 10px;
     height: 10px;
+    border: 1px solid transparent;
+    transition: all .2s;
+    cursor: pointer;
+
+    &--active {
+      border: 1px solid rgba(#272727, 0.8);
+    }
+  }
+
+  &__color + &__color {
+    margin-top: 39px;
   }
 
   &--black {
