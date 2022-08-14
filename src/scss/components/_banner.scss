@@ -24,5 +24,10 @@
     color: #fff;
     opacity: 0.9;
     background-color: #8F5C44;
+    transition: all .3s;
+
+    @include hover {
+      background-color: #272727;
+    }
   }
 }
