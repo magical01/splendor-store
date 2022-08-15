@@ -5,5 +5,6 @@ import './components/product-grid';
 import './components/catalog-color';
 import './components/card-slider';
 import './components/slider-img';
+import './components/stepper';
 import './components/range-slider';
 

@@ -1,0 +1,118 @@
+.order-data {
+  display: flex;
+  padding: 80px 140px;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  height: 768px;
+  background-color: #F8F2EC;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 70px;
+    font-family: 'KronaOne';
+    font-weight: 400;
+    font-size: 48px;
+    letter-spacing: -0.03em;
+  }
+
+  &__text {
+    margin-bottom: 46px;
+
+    span {
+      font-size: 28px;
+    }
+  }
+
+  &__descr {
+    margin: 0;
+    margin-top: 12px;
+    font-size: 20px;
+    opacity: 0.6;
+  }
+
+  &__radiobutton {
+    margin-top: 0;
+  }
+
+  &__radiobutton + &__radiobutton {
+    margin-left: 0;
+  }
+
+  &__right {
+    margin-left: 12.5%;
+  }
+
+  &__radiobuttons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  .card-info__text::before {
+    width: 40px;
+    height: 40px;
+  }
+
+  .card-info__text::after {
+    top: 3px;
+    left: 12px;
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.main-form {
+
+  &__group {
+    position: relative;
+  }
+
+  &__group + &__group {
+    margin-top: 43px;
+  }
+
+  &__input {
+    position: relative;
+    outline: none;
+    z-index: 10;
+    width: 530px;
+    font-size: 18px;
+    height: 40px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(#272727, 0.8);
+    color: var(--black-color);
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:focus {
+      border-bottom: 1px solid rgba(#272727, 1);
+      transition: all .3s;
+
+      & ~ .main-form__label, .main-form__input:not(:placeholder-shown) ~ .main-form__label {
+        top: -16px;
+        font-size: 16px;
+        transition: all .3s;
+      }
+    }
+
+    &:active {
+      border-bottom: 1px solid rgba(#272727, 1);
+      transition: all .3s;
+
+      & ~ .main-form__label, .main-form__input:not(:placeholder-shown) ~ .main-form__label {
+        top: -16px;
+        font-size: 16px;
+        transition: all .3s;
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    font-size: 20px;
+    color: rgba(#272727, 0.6);
+    transition: all .3s;
+  }
+}
+
