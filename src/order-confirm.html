@@ -59,125 +59,49 @@
             <ul class="breadcrumbs__list list-reset">
               <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Home</a></li>
               <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="catalog.html">Catalog</a></li>
-              <li class="breadcrumbs__item"><a class="breadcrumbs__link breadcrumbs__link--active" href="#">Cart</a>
+              <li class="breadcrumbs__item"><a class="breadcrumbs__link breadcrumbs__link--active" href="#">Making an
+                  order
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <section class="cart-page">
-          <div class="container favorites__container">
-            <div class="order cart-page__inner">
-              <div class="order__titles cart-page__titles">
-                <h4 class="cart-page__title-product order__title-product order-title ">Product</h4>
-                <h4 class="cart-page__title-color order__title-color order-title ">Color</h4>
-                <h4 class="cart-page__title-price order__title-price order-title ">Price</h4>
-                <h4 class="cart-page__title-quantity order-title">quantity</h4>
-                <h4 class="cart-page__title-total order-title ">total</h4>
+        <section class="confirm">
+          <div class="container confirm__container">
+            <article class="confirm__order">
+              <h3 class="confirm__title">Order <span>#85</span></h3>
+              <form class="confirm__form" action="#">
+                <div class="confirm__group">
+                  <input class="confirm__input input-reset" type="text" name="delivery" placeholder="London, Gagarina street, 45. Room 120">
+                  <label class="confirm__label">Delivery</label>
+                </div>
+                <div class="confirm__group">
+                  <input class="confirm__input input-reset" type="text" name="name" placeholder="Maria Tanas">
+                  <label class="confirm__label">Full name</label>
+                </div>
+                <div class="confirm__group">
+                  <input class="confirm__input input-reset" type="email" name="email" placeholder="MariaT@gmail.com">
+                  <label class="confirm__label">Email</label>
+                </div>
+              </form>
+              <div class="confirm__bottom">
+                <div class="confirm__total">
+                  <strong>Total:</strong>
+                  <span class="card-info__price">2700</span>
+                </div>
+                <div class="confirm__date">
+                  <strong>Date</strong>
+                  <span>20 / 03 / 22</span>
+                </div>
               </div>
-              <ul class="order__list list-reset">
-                <li class="order__item">
-                  <button class="order__delete cart-page__delete btn-reset">
-                    <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g opacity="0.7">
-                        <path d="M1.00218 0.728165L18.4712 17.4984" stroke="#272727" />
-                        <path d="M17.5859 0.501587L0.99854 17.4984" stroke="#272727" />
-                      </g>
-                    </svg>
-                  </button>
-                  <div class="order__image cart-page__image">
-                    <picture>
-                      <source srcset="img/product-1.avif" type="image/avif">
-                      <source srcset="img/product-1.webp" type="image/webp">
-                      <img loading="lazy" src="img/product-1.png" class="order__picture" width="" height="" alt="">
-                    </picture>
-                  </div>
-                  <div class="order__description order-text cart-page__description cart-text">
-                    <h5 class="order-text__title cart-text__title">Retro gold</h5>
-                    <p class="order-text__descr cart-text__title">Id congue tellus neque fermentum mi leo lorem</p>
-                  </div>
-                  <span class="order__color choice-color__item choice-color__item--orange cart-page__color"></span>
-                  <span class="order__price card-info__price cart-page__price">300</span>
-                  <div class="cart-page__stepper stepper">
-                    <button class="stepper__btn stepper__btn--minus btn-reset" aria-label="minus">-</button>
-                    <input class="stepper__input input-reset" type="text" min="1" max="999" maxlength="3" value="1">
-                    <button class="stepper__btn stepper__btn--plus btn-reset" aria-label="plus">+</button>
-                  </div>
-                  <span class="cart-page__total card-info__price">300</span>
-                </li>
-                <li class="order__item">
-                  <button class="order__delete cart-page__delete btn-reset">
-                    <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g opacity="0.7">
-                        <path d="M1.00218 0.728165L18.4712 17.4984" stroke="#272727" />
-                        <path d="M17.5859 0.501587L0.99854 17.4984" stroke="#272727" />
-                      </g>
-                    </svg>
-                  </button>
-                  <div class="order__image cart-page__image">
-                    <picture>
-                      <source srcset="img/product-1.avif" type="image/avif">
-                      <source srcset="img/product-1.webp" type="image/webp">
-                      <img loading="lazy" src="img/product-1.png" class="order__picture" width="" height="" alt="">
-                    </picture>
-                  </div>
-                  <div class="order__description order-text cart-page__description cart-text">
-                    <h5 class="order-text__title cart-text__title">Retro gold</h5>
-                    <p class="order-text__descr cart-text__title">Id congue tellus neque fermentum mi leo lorem</p>
-                  </div>
-                  <span class="order__color choice-color__item choice-color__item--orange cart-page__color"></span>
-                  <span class="order__price card-info__price cart-page__price">300</span>
-                  <div class="cart-page__stepper stepper">
-                    <button class="stepper__btn stepper__btn--minus btn-reset" aria-label="minus">-</button>
-                    <input class="stepper__input input-reset" type="text" min="1" max="999" maxlength="3" value="1">
-                    <button class="stepper__btn stepper__btn--plus btn-reset" aria-label="plus">+</button>
-                  </div>
-                  <span class="cart-page__total card-info__price">300</span>
-                </li>
-                <li class="order__item">
-                  <button class="order__delete cart-page__delete btn-reset">
-                    <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g opacity="0.7">
-                        <path d="M1.00218 0.728165L18.4712 17.4984" stroke="#272727" />
-                        <path d="M17.5859 0.501587L0.99854 17.4984" stroke="#272727" />
-                      </g>
-                    </svg>
-                  </button>
-                  <div class="order__image cart-page__image">
-                    <picture>
-                      <source srcset="img/product-1.avif" type="image/avif">
-                      <source srcset="img/product-1.webp" type="image/webp">
-                      <img loading="lazy" src="img/product-1.png" class="order__picture" width="" height="" alt="">
-                    </picture>
-                  </div>
-                  <div class="order__description order-text cart-page__description cart-text">
-                    <h5 class="order-text__title cart-text__title">Retro gold</h5>
-                    <p class="order-text__descr cart-text__title">Id congue tellus neque fermentum mi leo lorem</p>
-                  </div>
-                  <span class="order__color choice-color__item choice-color__item--orange cart-page__color"></span>
-                  <span class="order__price card-info__price cart-page__price">300</span>
-                  <div class="cart-page__stepper stepper">
-                    <button class="stepper__btn stepper__btn--minus btn-reset" aria-label="minus">-</button>
-                    <input class="stepper__input input-reset" type="text" min="1" max="999" maxlength="3" value="1">
-                    <button class="stepper__btn stepper__btn--plus btn-reset" aria-label="plus">+</button>
-                  </div>
-                  <span class="cart-page__total card-info__price">300</span>
-                </li>
-              </ul>
-              @include('partials/order.html')
-              <div class="cart-page__amount cart-amount">
-                <h3 class="cart-amount__title">Total amount</h3>
-                <span class="cart-amount__total">2700</span>
+              <div class="confirm__links">
+                <a class="confirm__track" href="order.html">Track in order</a>
+                <a class="confirm__continue" href="#">Continue shopping</a>
               </div>
-              <div class="favorites__links cart-page__links">
-                <a class="favorites__to-cart cart-page__order" href="order-confirm.html">Place an order</a>
-                <a class="favorites__continue cart-page__continue" href="#">Continue shopping</a>
-              </div>
-            </div>
+            </article>
           </div>
         </section>
-
-
       </main>
 
       <footer class="footer">

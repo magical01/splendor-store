@@ -4,6 +4,7 @@
   border: 1px solid rgba(0, 0, 0, 0.7);
   height: 768px;
   background-color: #F8F2EC;
+  margin-bottom: 150px;
 
   &__title {
     margin: 0;
@@ -31,6 +32,7 @@
 
   &__radiobutton {
     margin-top: 0;
+    justify-content: flex-start;
   }
 
   &__radiobutton + &__radiobutton {
@@ -38,13 +40,22 @@
   }
 
   &__right {
+    margin-top: 129px;
     margin-left: 12.5%;
   }
 
   &__radiobuttons {
     display: flex;
     flex-direction: column;
-    row-gap: 40px;
+    row-gap: 59px;
+  }
+
+  &__label + &__label{
+    margin-left: 45px;
+  }
+
+  .card-info__text {
+    padding-left: 65px;
   }
 
   .card-info__text::before {
