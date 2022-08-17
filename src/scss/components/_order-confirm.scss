@@ -129,7 +129,7 @@
     transition: all .3s;
 
     @include hover {
-      color: #272727;
+      color: var(--black-color);
       background-color: transparent;
     }
   }

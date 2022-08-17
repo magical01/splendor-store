@@ -29,7 +29,7 @@ const setRangeSlider = (i, value) => {
 };
 
 inputs.forEach((elem, index) => {
-  elem.addEventListener('change', (e) => {
+  elem?.addEventListener('change', (e) => {
     setRangeSlider(index, e.currentTarget.value);
   });
 });

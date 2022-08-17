@@ -104,7 +104,7 @@
 }
 
 .product-custom {
-  height: 16px;
+  height: 21px;
   overflow: hidden;
 
   &__top {
@@ -150,6 +150,7 @@
 .swiper-scrollbar-drag {
   width: 310px;
   background: rgba(#272727, 1);
+  cursor: pointer;
 }
 
 .slider-btn-next {

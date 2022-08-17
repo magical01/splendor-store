@@ -1,0 +1,33 @@
+.error {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 160px;
+    padding-bottom: 150px;
+  }
+
+  &__text {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 28px;
+
+    &:nth-child(1) {
+      margin-bottom: 40px;
+    }
+
+    &:last-child {
+      margin-top: 40px;
+    }
+  }
+
+  &__num {
+    font-family: 'KronaOne';
+    font-size: 350px;
+    background-color: transparent;
+  }
+
+  &__image {
+    display: block;
+  }
+}

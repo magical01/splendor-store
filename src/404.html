@@ -15,8 +15,8 @@
             <ul class="nav__list list-reset">
               <li class="nav__item"><a class="nav__link" href="index.html">Home</a></li>
               <li class="nav__item"><a class="nav__link" href="catalog.html">Catalog</a></li>
-              <li class="nav__item"><a class="nav__link" href="index.html#about">About Us</a></li>
-              <li class="nav__item"><a class="nav__link" href="#">Contacts</a></li>
+              <li class="nav__item"><a class="nav__link" href="index.html#about" data-scroll>About Us</a></li>
+              <li class="nav__item"><a class="nav__link" href="contacts.html">Contacts</a></li>
             </ul>
           </nav>
           <ul class="header__list list-reset">
@@ -54,31 +54,15 @@
       </header>
 
       <main class="main">
-        <div class="container breadcrumbs__container">
-          <div class="breadcrumbs">
-            <ul class="breadcrumbs__list list-reset">
-              <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Home</a></li>
-              <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="catalog.html">Catalog</a></li>
-              <li class="breadcrumbs__item"><a class="breadcrumbs__link breadcrumbs__link--active" href="#">Contacts</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <section class="contacts">
-          <div class="container contacts__container">
-            <article class="contacts__card">
-              <h3 class="contacts__title">Contacts</h3>
-              <a class="contacts__link" href="tel:+8800000000">8 800 000 00 00</a>
-              <address class="contacts__address">London /Boundary Road/office 5</address>
-              <span class="contacts__company">OOO company “splendor” / 140056</span>
-              <a class="contacts__link" href="mailto:splendor@gmail.com">Splendor@gmail.com</a>
-            </article>
-            <div class="contacts__map map" id="map"></div>
-            <div class="contacts__links">
-              <a class="contacts__track confirm__track" href="order.html">Track in order</a>
-              <a class="contacts__continue confirm__continue" href="catalog.html">Continue shopping</a>
-            </div>
+        <section class="error">
+          <div class="container error__container">
+            <span class="error__text">The page does not exit</span>
+            <picture>
+              <source srcset="img/404.avif" type="image/avif">
+              <source srcset="img/404.webp" type="image/webp">
+              <img loading="lazy" src="img/404.png" class="error__image" width="" height="" alt="">
+            </picture>
+            <span class="error__text">Chech out these sections</span>
           </div>
         </section>
       </main>
@@ -94,21 +78,21 @@
                   <a class="footer-nav__link" href="index.html">Home</a>
                   <a class="footer-nav__link" href="catalog.html">Catalog</a>
                   <a class="footer-nav__link" href="index.html#about" data-scroll>About Us</a>
-                  <a class="footer-nav__link" href="#">Contacts</a>
+                  <a class="footer-nav__link" href="contacts.html">Contacts</a>
                 </li>
                 <li class="footer-nav__item">
                   <strong class="footer-nav__title">Categories</strong>
                   <a class="footer-nav__link" href="index.html">Home</a>
                   <a class="footer-nav__link" href="catalog.html">Catalog</a>
                   <a class="footer-nav__link" href="index.html#about" data-scroll>About Us</a>
-                  <a class="footer-nav__link" href="#">Contacts</a>
+                  <a class="footer-nav__link" href="contacts.html">Contacts</a>
                 </li>
                 <li class="footer-nav__item">
                   <strong class="footer-nav__title">Categories</strong>
                   <a class="footer-nav__link" href="index.html">Home</a>
                   <a class="footer-nav__link" href="catalog.html">Catalog</a>
                   <a class="footer-nav__link" href="index.html#about" data-scroll>About Us</a>
-                  <a class="footer-nav__link" href="#">Contacts</a>
+                  <a class="footer-nav__link" href="contacts.html">Contacts</a>
                 </li>
               </ul>
             </nav>
@@ -166,9 +150,6 @@
       </footer>
     </div>
   </div>
-
-
-
 </body>
 
 </html>
