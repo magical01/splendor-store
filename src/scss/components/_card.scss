@@ -46,6 +46,7 @@
         justify-content: center;
         align-items: center;
         overflow: hidden;
+        cursor: pointer;
       }
     }
   }
@@ -263,5 +264,23 @@
 
   &--paris {
     background-color: #D2E2D7;;
+  }
+}
+
+.card-lamp {
+  picture {
+    img {
+      height: 200px;
+      object-fit: contain;
+    }
+  }
+
+}
+
+.slider-lamp {
+  picture img {
+    width: 450px;
+    height: 400px;
+    object-fit: contain;
   }
 }

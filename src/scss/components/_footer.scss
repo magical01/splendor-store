@@ -128,6 +128,19 @@
     margin-top: 80px;
     padding-left: 334px;
   }
+
+  &__basket--active {
+    svg {
+      fill: #fff;
+      transition: all .3s;
+
+      path {
+        fill: var(--black-color);
+        transition: all .3s;
+      }
+    }
+  }
+
 }
 
 .form {

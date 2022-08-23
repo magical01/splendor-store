@@ -21,7 +21,7 @@
           </nav>
           <ul class="header__list list-reset">
             <li class="header__item search">
-              <a href="">
+              <a href="#">
                 <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path opacity="0.9"
                     d="M15 15.6175L11.6945 12.2262L15 15.6175ZM13.5263 7.6939C13.5263 9.39509 12.8664 11.0266 11.6919 12.2295C10.5173 13.4325 8.92425 14.1083 7.26316 14.1083C5.60207 14.1083 4.00901 13.4325 2.83444 12.2295C1.65987 11.0266 1 9.39509 1 7.6939C1 5.9927 1.65987 4.36119 2.83444 3.15826C4.00901 1.95534 5.60207 1.27954 7.26316 1.27954C8.92425 1.27954 10.5173 1.95534 11.6919 3.15826C12.8664 4.36119 13.5263 5.9927 13.5263 7.6939V7.6939Z"
@@ -40,7 +40,7 @@
             </li>
             <li class="header__item basket">
               <span class="basket__quantity">1</span>
-              <a href="#">
+              <a href="cart.html">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="0.629291" y="0.629291" width="38.7414" height="38.7414" rx="0.629291" stroke="#272727"
                     stroke-width="1.25858" />
@@ -55,17 +55,18 @@
       </header>
 
       <main class="main">
-        <section class="error">
-          <div class="container error__container">
-            <span class="error__text">The page does not exit</span>
-            <picture>
-              <source srcset="img/404.avif" type="image/avif">
-              <source srcset="img/404.webp" type="image/webp">
-              <img loading="lazy" src="img/404.png" class="error__image" width="" height="" alt="">
-            </picture>
-            <span class="error__text">Chech out these sections</span>
+        <div class="container breadcrumbs__container">
+          <div class="breadcrumbs">
+            <ul class="breadcrumbs__list list-reset">
+              <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Home</a></li>
+              <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="catalog.html">Catalog</a></li>
+              <li class="breadcrumbs__item"><a class="breadcrumbs__link breadcrumbs__link--active" href="#">Massa mattis</a></li>
+            </ul>
           </div>
-        </section>
+        </div>
+
+        @include('partials/lamp-blue.html')
+        @include('partials/card-product.html')
       </main>
 
       <footer class="footer">

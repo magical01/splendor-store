@@ -104,6 +104,11 @@
 }
 
 .basket {
+  position: relative;
+  height: 40px;
+  background-color: transparent;
+  transition: all .3s;
+
   svg rect {
     transition: all .3s;
   }
@@ -121,4 +126,25 @@
       fill: var(--accent-color);
     }
   }
+
+  &__quantity {
+    position: absolute;
+    display: none;
+    right: 5px;
+    top: 2px;
+    font-size: 13px;
+    color: #FF0000;
+    transition: all .3s;
+  }
+
+  &--active {
+    .basket__quantity {
+      display: block;
+    }
+  }
+}
+
+.basket.basket--active {
+  background-color: #EBEBEB;
+  transition: all .3s;
 }
