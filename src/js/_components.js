@@ -9,6 +9,7 @@ import './components/stepper';
 import './components/smooth-scroll';
 import './components/cart';
 import './components/cart-content-slider';
+import './components/simple-bar';
 import './components/map';
 import './components/range-slider';
 

@@ -46,6 +46,11 @@
     position: relative;
     width: 100%;
 
+    &--centered {
+      .product-slider__image {
+        align-items: center;
+      }
+    }
   }
 
   &__image {
@@ -70,6 +75,7 @@
     margin-bottom: 4px;
     font-weight: 400;
     font-size: 20px;
+    text-transform: capitalize;
 
     a {
       &::before {
@@ -191,4 +197,15 @@
       opacity: 1;
     }
   }
+}
+
+.cart-overlay.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
 }

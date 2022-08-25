@@ -1,5 +1,5 @@
-<div class="cart-overlay cart-overlay--visible">
-  <div class="cart-content">
+<div class="cart-overlay">
+  <div class="cart-content" data-bar data-simplebar>
     <div class="cart-content__top">
       <h4 class="cart-content__title">Item added to cart</h4>
       <button class="cart-content__close btn-reset">
@@ -23,7 +23,10 @@
             </picture>
           </div>
           <div class="cart-product__text">
-            <h4 class="cart-product__title">Retro Grey Gold</h4>
+            <div class="cart-product__top">
+              <h4 class="cart-product__title">Retro Grey Gold</h4>
+              <span class="cart-product__color"></span>
+            </div>
             <span class="cart-product__size">10'' * 50''</span>
             <div class="cart-product__bottom">
               <div class="cart-product__stepper stepper">
@@ -46,7 +49,10 @@
             </picture>
           </div>
           <div class="cart-product__text">
-            <h4 class="cart-product__title">Retro Grey Gold</h4>
+            <div class="cart-product__top">
+              <h4 class="cart-product__title">Retro Grey Gold</h4>
+              <span class="cart-product__color"></span>
+            </div>
             <span class="cart-product__size">10'' * 50''</span>
             <div class="cart-product__bottom">
               <div class="cart-product__stepper stepper">
@@ -60,7 +66,7 @@
         </article>
       </li>
       <a class="cart-content__link" href="cart.html">
-        See all products
+        All products
         <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1.16917 0.830828L10.3383 10L1.16917 19.1692" stroke="black" stroke-linecap="round" />
         </svg>
@@ -104,9 +110,51 @@
               <div class="product-slider__card">
                 <div class="product-slider__image">
                   <picture>
+                    <source srcset="img/product-3-2.avif" type="image/avif">
+                    <source srcset="img/product-3-2.webp" type="image/webp">
+                    <img loading="lazy" src="img/product-3-2.png" class="image" width="117" height="146" alt="">
+                  </picture>
+                </div>
+                <div class="product-slider__specific">
+                  <h4 class="product-slider__title">
+                    <a href="#">Retro black</a>
+                  </h4>
+                  <div class="product-slider__prices">
+                    <span class="product-slider__newprice">300$</span>
+                    <span class="product-slider__oldprice">670$</span>
+                  </div>
+                  <a class="product-slider__to-cart" href="cart.html">Add to cart</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide product-slider__slide">
+              <div class="product-slider__card product-slider__card--centered">
+                <div class="product-slider__image">
+                  <picture>
+                    <source srcset="img/product-4.avif" type="image/avif">
+                    <source srcset="img/product-4.webp" type="image/webp">
+                    <img loading="lazy" src="img/product-4.png" class="image" width="117" height="117" alt="">
+                  </picture>
+                </div>
+                <div class="product-slider__specific">
+                  <h4 class="product-slider__title">
+                    <a href="#">Retro black</a>
+                  </h4>
+                  <div class="product-slider__prices">
+                    <span class="product-slider__newprice">450$</span>
+                    <span class="product-slider__oldprice">700$</span>
+                  </div>
+                  <a class="product-slider__to-cart" href="cart.html">Add to cart</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide product-slider__slide">
+              <div class="product-slider__card">
+                <div class="product-slider__image">
+                  <picture>
                     <source srcset="img/product-1.avif" type="image/avif">
                     <source srcset="img/product-1.webp" type="image/webp">
-                    <img loading="lazy" src="img/product-1." class="image" width="" height="" alt="">
+                    <img loading="lazy" src="img/product-1.png" class="image" width="89" height="144" alt="">
                   </picture>
                 </div>
                 <div class="product-slider__specific">
@@ -125,9 +173,72 @@
               <div class="product-slider__card">
                 <div class="product-slider__image">
                   <picture>
+                    <source srcset="img/product-2.avif" type="image/avif">
+                    <source srcset="img/product-2.webp" type="image/webp">
+                    <img loading="lazy" src="img/product-2.png" class="image" width="75" height="140" alt="">
+                  </picture>
+                </div>
+                <div class="product-slider__specific">
+                  <h4 class="product-slider__title">
+                    <a href="#">Retro black</a>
+                  </h4>
+                  <div class="product-slider__prices">
+                    <span class="product-slider__newprice">350$</span>
+                    <span class="product-slider__oldprice">900$</span>
+                  </div>
+                  <a class="product-slider__to-cart" href="cart.html">Add to cart</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide product-slider__slide">
+              <div class="product-slider__card">
+                <div class="product-slider__image">
+                  <picture>
+                    <source srcset="img/product-3-2.avif" type="image/avif">
+                    <source srcset="img/product-3-2.webp" type="image/webp">
+                    <img loading="lazy" src="img/product-3-2.png" class="image" width="117" height="146" alt="">
+                  </picture>
+                </div>
+                <div class="product-slider__specific">
+                  <h4 class="product-slider__title">
+                    <a href="#">Retro black</a>
+                  </h4>
+                  <div class="product-slider__prices">
+                    <span class="product-slider__newprice">300$</span>
+                    <span class="product-slider__oldprice">670$</span>
+                  </div>
+                  <a class="product-slider__to-cart" href="cart.html">Add to cart</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide product-slider__slide">
+              <div class="product-slider__card product-slider__card--centered">
+                <div class="product-slider__image">
+                  <picture>
+                    <source srcset="img/product-4.avif" type="image/avif">
+                    <source srcset="img/product-4.webp" type="image/webp">
+                    <img loading="lazy" src="img/product-4.png" class="image" width="117" height="117" alt="">
+                  </picture>
+                </div>
+                <div class="product-slider__specific">
+                  <h4 class="product-slider__title">
+                    <a href="#">Retro black</a>
+                  </h4>
+                  <div class="product-slider__prices">
+                    <span class="product-slider__newprice">450$</span>
+                    <span class="product-slider__oldprice">700$</span>
+                  </div>
+                  <a class="product-slider__to-cart" href="cart.html">Add to cart</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide product-slider__slide">
+              <div class="product-slider__card">
+                <div class="product-slider__image">
+                  <picture>
                     <source srcset="img/product-1.avif" type="image/avif">
                     <source srcset="img/product-1.webp" type="image/webp">
-                    <img loading="lazy" src="img/product-1." class="image" width="" height="" alt="">
+                    <img loading="lazy" src="img/product-1.png" class="image" width="89" height="144" alt="">
                   </picture>
                 </div>
                 <div class="product-slider__specific">
@@ -146,9 +257,9 @@
               <div class="product-slider__card">
                 <div class="product-slider__image">
                   <picture>
-                    <source srcset="img/product-1.avif" type="image/avif">
-                    <source srcset="img/product-1.webp" type="image/webp">
-                    <img loading="lazy" src="img/product-1." class="image" width="" height="" alt="">
+                    <source srcset="img/product-2.avif" type="image/avif">
+                    <source srcset="img/product-2.webp" type="image/webp">
+                    <img loading="lazy" src="img/product-2.png" class="image" width="75" height="140" alt="">
                   </picture>
                 </div>
                 <div class="product-slider__specific">
@@ -156,92 +267,8 @@
                     <a href="#">Retro black</a>
                   </h4>
                   <div class="product-slider__prices">
-                    <span class="product-slider__newprice">500$</span>
-                    <span class="product-slider__oldprice">650$</span>
-                  </div>
-                  <a class="product-slider__to-cart" href="cart.html">Add to cart</a>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide product-slider__slide">
-              <div class="product-slider__card">
-                <div class="product-slider__image">
-                  <picture>
-                    <source srcset="img/product-1.avif" type="image/avif">
-                    <source srcset="img/product-1.webp" type="image/webp">
-                    <img loading="lazy" src="img/product-1." class="image" width="" height="" alt="">
-                  </picture>
-                </div>
-                <div class="product-slider__specific">
-                  <h4 class="product-slider__title">
-                    <a href="#">Retro black</a>
-                  </h4>
-                  <div class="product-slider__prices">
-                    <span class="product-slider__newprice">500$</span>
-                    <span class="product-slider__oldprice">650$</span>
-                  </div>
-                  <a class="product-slider__to-cart" href="cart.html">Add to cart</a>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide product-slider__slide">
-              <div class="product-slider__card">
-                <div class="product-slider__image">
-                  <picture>
-                    <source srcset="img/product-1.avif" type="image/avif">
-                    <source srcset="img/product-1.webp" type="image/webp">
-                    <img loading="lazy" src="img/product-1." class="image" width="" height="" alt="">
-                  </picture>
-                </div>
-                <div class="product-slider__specific">
-                  <h4 class="product-slider__title">
-                    <a href="#">Retro black</a>
-                  </h4>
-                  <div class="product-slider__prices">
-                    <span class="product-slider__newprice">500$</span>
-                    <span class="product-slider__oldprice">650$</span>
-                  </div>
-                  <a class="product-slider__to-cart" href="cart.html">Add to cart</a>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide product-slider__slide">
-              <div class="product-slider__card">
-                <div class="product-slider__image">
-                  <picture>
-                    <source srcset="img/product-1.avif" type="image/avif">
-                    <source srcset="img/product-1.webp" type="image/webp">
-                    <img loading="lazy" src="img/product-1." class="image" width="" height="" alt="">
-                  </picture>
-                </div>
-                <div class="product-slider__specific">
-                  <h4 class="product-slider__title">
-                    <a href="#">Retro black</a>
-                  </h4>
-                  <div class="product-slider__prices">
-                    <span class="product-slider__newprice">500$</span>
-                    <span class="product-slider__oldprice">650$</span>
-                  </div>
-                  <a class="product-slider__to-cart" href="cart.html">Add to cart</a>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide product-slider__slide">
-              <div class="product-slider__card">
-                <div class="product-slider__image">
-                  <picture>
-                    <source srcset="img/product-1.avif" type="image/avif">
-                    <source srcset="img/product-1.webp" type="image/webp">
-                    <img loading="lazy" src="img/product-1." class="image" width="" height="" alt="">
-                  </picture>
-                </div>
-                <div class="product-slider__specific">
-                  <h4 class="product-slider__title">
-                    <a href="#">Retro black</a>
-                  </h4>
-                  <div class="product-slider__prices">
-                    <span class="product-slider__newprice">500$</span>
-                    <span class="product-slider__oldprice">650$</span>
+                    <span class="product-slider__newprice">350$</span>
+                    <span class="product-slider__oldprice">900$</span>
                   </div>
                   <a class="product-slider__to-cart" href="cart.html">Add to cart</a>
                 </div>

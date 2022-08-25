@@ -203,13 +203,14 @@
     padding: 0px;
   }
 
-  .product-slider__slide {
-    width: 140px;
-  }
+  // .product-slider__slide {
+  //   width: 140px;
+  // }
 
   .product-slider__image {
-    width: fit-content;
-    height: auto;
+    width: 100%;
+    height: 196px;
+
   }
 
   .product-slider__specific {
@@ -218,7 +219,7 @@
 
   .product-slider__title {
     margin-bottom: 10px;
-    font-size: 11.2px;
+    font-size: 12px;
     text-transform: capitalize;
   }
 
@@ -286,9 +287,22 @@
     width: calc(100% - 190px - 56px);
   }
 
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__color {
+    border-radius: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: #BE9364;
+  }
+
   &__title {
     margin: 0;
-    margin-bottom: 6%;
     font-weight: 400;
     font-size: 28px;
     text-transform: capitalize;
