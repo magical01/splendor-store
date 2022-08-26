@@ -3,6 +3,8 @@
   left: 0;
   top: 0;
   right: 0;
+  display: flex;
+  justify-content: flex-end;
   background-color: rgba(39, 39, 39, 0.5);
   height: 100vh;
   width: 100%;
@@ -18,7 +20,7 @@
   }
 }
 .cart-content {
-  position: absolute;
+  position: relative;
   top: 0;
   right: 0;
   z-index: 100;
@@ -29,6 +31,22 @@
   box-shadow: 0px 4px 80px rgba(203, 203, 203, 0.42);
   border-radius: 10px 0px 0px 10px;
   background-color: #fff;
+
+  &__empty {
+    position: absolute;
+    top: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    width: calc(100% - 46px - 31px);
+    height: 170px;
+    background-color: #fff;
+
+    &--hide {
+      display: none;
+    }
+  }
 
   &__top {
     display: flex;
@@ -71,15 +89,18 @@
     display: flex;
     flex-direction: column;
     row-gap: 24px;
-    border-bottom: 1px solid rgba(#8F5C44, 0.4)
+    max-height: 412px;
+    overflow: hidden;
+
   }
 
   &__link {
-    margin-top: 36px;
-    margin-bottom: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 1px solid rgba(#8F5C44, 0.4);
+    margin-top: 36px;
+    padding-bottom: 40px;
     font-weight: 500;
     font-size: 24px;
     color: rgba(#000, 0.5);
@@ -214,7 +235,10 @@
   }
 
   .product-slider__specific {
+    display: flex;
+    flex-direction: column;
     margin-top: 10px;
+    width: 100%;
   }
 
   .product-slider__title {
@@ -247,6 +271,7 @@
     display: flex;
     justify-content: center;
     border: 1px solid var(--black-color);
+    padding: 0 20px;
     padding-top: 7px;
     padding-bottom: 7px;
     font-size: 12px;
@@ -271,12 +296,20 @@
   }
 }
 
+.cart-empty {
+  &__text {
+    font-family: "KronaOne";
+    font-size: 28px;
+  }
+}
+
 .cart-product {
   display: flex;
 
   &__image {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 194px;
     height: 194px;
     background-color: #F8F2EC;
@@ -295,10 +328,61 @@
   }
 
   &__color {
-    border-radius: 2px;
-    width: 20px;
-    height: 20px;
-    background-color: #BE9364;
+
+    &--black {
+      color: var(--black-color);
+    }
+
+    &--gold {
+      color: #BE9364;
+    }
+
+    &--grey {
+      color: #D2E2D7;
+    }
+  }
+
+  &__delete {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 10px;
+    font-weight: 300;
+    font-size: 13px;
+    color: rgba(#272727, 0.5);
+    transition: all .3s;
+
+    svg {
+      width: 12px;
+      height: 12px;
+
+      g {
+        transition: all .3s;
+      }
+    }
+
+    @include hover {
+      color: rgba(#272727, 1);
+
+      svg g {
+        opacity: 1;
+      }
+    }
+
+    &:focus {
+      color: rgba(#272727, 1);
+
+      svg g {
+        opacity: 1;
+      }
+    }
+
+    &:active {
+      color: rgba(#272727, 1);
+
+      svg g {
+        opacity: 1;
+      }
+    }
   }
 
   &__title {
@@ -430,8 +514,70 @@
   }
 }
 
-
 .cart-slider__scroll {
   height: 2px;
   background-color: rgba(#8F5C44, 0.4);
+}
+
+.custom-select {
+  position: relative;
+
+  &__top {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-right: 20px;
+    font-size: 28px;
+    font-weight: 400;
+    text-transform: capitalize;
+    cursor: pointer;
+
+    span {
+      min-width: 70px;
+      transition: all .2s;
+    }
+
+    svg {
+      transition: all .3s;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 10;
+    display: none;
+    width: 100%;
+  }
+
+  &__item {
+    text-transform: capitalize;
+    cursor: pointer;
+
+    &--black {
+      color: var(--black-color);
+    }
+
+    &--gold {
+      color: #BE9364;
+    }
+
+    &--grey {
+      color: #D2E2D7;
+    }
+  }
+
+  &--open {
+    .custom-select__top {
+      svg {
+
+        transform: rotate(180deg);
+      }
+    }
+
+    .custom-select__dropdown {
+      display: block;
+    }
+  }
 }

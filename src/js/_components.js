@@ -5,11 +5,12 @@ import './components/product-grid';
 import './components/catalog-color';
 import './components/card-slider';
 import './components/slider-img';
-import './components/stepper';
 import './components/smooth-scroll';
-import './components/cart';
+import './components/custom-select';
+import './components/stepper';
 import './components/cart-content-slider';
-import './components/simple-bar';
+// import './components/simple-bar';
+import './components/cart';
 import './components/map';
 import './components/range-slider';
 
