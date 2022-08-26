@@ -25,7 +25,7 @@
   right: 0;
   z-index: 100;
   overflow-y: auto;
-  padding: 67px 46px 64px 31px;
+  padding: 67px 40px 64px 31px;
   width: 700px;
   height: 100vh;
   box-shadow: 0px 4px 80px rgba(203, 203, 203, 0.42);
@@ -224,9 +224,9 @@
     padding: 0px;
   }
 
-  // .product-slider__slide {
-  //   width: 140px;
-  // }
+  .product-slider__slide {
+    width: 138px !important;
+  }
 
   .product-slider__image {
     width: 100%;
@@ -243,7 +243,7 @@
 
   .product-slider__title {
     margin-bottom: 10px;
-    font-size: 12px;
+    font-size: 13px;
     text-transform: capitalize;
   }
 
@@ -252,9 +252,17 @@
   }
 
   .product-slider__newprice {
+    position: relative;
     display: inline-block;
+    padding-right: 10px;
     font-weight: 500;
     font-size: 16px;
+
+    &::before {
+      content: "$";
+      position: absolute;
+      right: 0;
+    }
   }
 
   .product-slider__oldprice {
@@ -278,6 +286,8 @@
     color: #fff;
     background-color: var(--black-color);
     transition: all .3s;
+    cursor: pointer;
+
 
     @include hover {
       color: var(--black-color);
@@ -298,8 +308,9 @@
 
 .cart-empty {
   &__text {
-    font-family: "KronaOne";
-    font-size: 28px;
+    font-weight: 500;
+    font-size: 36px;
+    color: var(--accent-color);
   }
 }
 

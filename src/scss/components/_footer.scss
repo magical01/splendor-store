@@ -85,6 +85,30 @@
       justify-content: flex-end;
     }
 
+    .footer__basket.basket--active {
+      background-color: transparent;
+
+      svg rect {
+        stroke: var(--black-color);
+        transition: all .3s;
+      }
+
+      svg path {
+        fill: var(--black-color);
+        transition: all .3s;
+      }
+
+      @include hover {
+        svg rect {
+          stroke: #fff;
+        }
+
+        svg path {
+          fill: #fff;
+        }
+      }
+    }
+
     .footer__scroll-top {
       margin-bottom: 10px;
 

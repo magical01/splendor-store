@@ -10,6 +10,7 @@ const cartProdictList = document?.querySelector('.cart-content__list');
 const addCart = document?.querySelector('.card-info__cart');
 const basketQuantity = document?.querySelectorAll('.basket__quantity');
 const fullPrice = document?.querySelector('.cart-content__fullprice');
+const btnsAddCart = document?.querySelectorAll('.product-slider__to-cart');
 let totalPrice = 0;
 
 const randomId = () => {
@@ -110,6 +111,62 @@ const generateCartProduct = (img, title, price, id, nameColor, size) => {
   `
 }
 
+const generateProduct = (img, title, price, id, color = 'Gold', size = "10'' * 30''") => {
+  return `
+
+    <li class="cart-content__item">
+      <article class="cart-content__product cart-product" data-id="${id}">
+        <div class="cart-product__image">
+          <picture>
+            <source srcset="${img}.avif" type="image/avif">
+            <source srcset="${img}.webp" type="image/webp">
+            <img loading="lazy" src="${img}.png" class="cart-product__picture" width="84" height="160" alt="">
+          </picture>
+        </div>
+        <div class="cart-product__text">
+          <div class="cart-product__top">
+            <h4 class="cart-product__title">${title}</h4>
+            <div class="cart-product__select custom-select">
+              <div class="cart-product__color cart-product__color--gold custom-select__top">
+                <span>${color}</span>
+                <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19.3371 1.16917L10.168 10.3383L0.998797 1.16917" stroke="#BE9364" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div class="custom-select__dropdown">
+                <ul class="custom-select__list list-reset">
+                  <li class="custom-select__item custom-select__item--black" data-color="#272727">Black</li>
+                  <li class="custom-select__item custom-select__item--gold" data-color="#BE9364">Gold</li>
+                  <li class="custom-select__item custom-select__item--grey" data-color="#D2E2D7">Grey</li>
+                </ul>
+              </div>
+            </div>
+            <button class="cart-product__delete btn-reset" aria-label="Remove from cart">
+              Delete
+              <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g opacity="0.7">
+                  <path d="M1.00218 0.728165L18.4712 17.4984" stroke="#272727" />
+                  <path d="M17.5859 0.501587L0.99854 17.4984" stroke="#272727" />
+                </g>
+              </svg>
+            </button>
+          </div>
+          <span class="cart-product__size">${size}</span>
+          <div class="cart-product__bottom">
+            <div class="cart-product__stepper stepper">
+              <button class="stepper__btn stepper__btn--minus btn-reset" aria-label="minus">-</button>
+              <input class="stepper__input input-reset" type="text" min="1" max="999" value="1">
+              <button class="stepper__btn stepper__btn--plus btn-reset" aria-label="plus">+</button>
+            </div>
+            <span class="cart-product__price card-info__price">${price}</span>
+          </div>
+        </div>
+      </article>
+    </li>
+
+  `
+}
+
 document.querySelector('.card__container')?.setAttribute('data-id', randomId());
 
 const deleteProducts = (productParent) => {
@@ -167,11 +224,40 @@ addCart?.addEventListener('click', (e) => {
   printQuantity();
 });
 
+btnsAddCart.forEach(elem => {
+  elem.closest('.product-slider__card')?.setAttribute('data-id', randomId());
+  elem?.addEventListener('click', (e) => {
+    let self = e.currentTarget;
+    let parent = self.closest('.product-slider__card');
+    let id = parent?.dataset.id;
+    let img = parent?.querySelector('.product-slider__image picture img').getAttribute('src');
+    let title = parent?.querySelector('.product-slider__title').textContent;
+    let price = +parent?.querySelector('.product-slider__newprice').textContent;
+    let color = 'Gold';
+    let size = "10'' * 30''";
+
+    const pathImage = (img) => {
+      let index = img.indexOf('.');
+      return img.substring(0, index);
+    }
+
+    plusFullPrice(price);
+    console.log(totalPrice)
+    printFullPrice();
+    cartProdictList.insertAdjacentHTML('afterbegin', generateCartProduct(pathImage(img), title, price, id, color, size))
+    printQuantity();
+  });
+});
+
 cartProdictList.addEventListener('click', (e) => {
   if (e.target.classList.contains('cart-product__delete')) {
-    deleteProducts(e.target.closest('.cart-content__item'))
+    deleteProducts(e.target.closest('.cart-content__item'));
   }
-})
+
+  if (e.target === document.querySelector('.cart-product__delete svg')) {
+    deleteProducts(e.target.closest('.cart-content__item'));
+  }
+});
 
 const calcScroll = () => {
   let div = document.createElement('div');
