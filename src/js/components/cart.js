@@ -1,4 +1,4 @@
-const cartClose = document?.querySelector('.cart-content__close');
+const cartClose = document?.querySelectorAll('.cart-content__close');
 const basket = document?.querySelectorAll('.basket');
 const cartOverlay = document?.querySelector('.cart-overlay');
 const cartContent = document?.querySelector('.cart-content');
@@ -46,16 +46,18 @@ const printQuantity = () => {
     basket.forEach(elem => {
       elem.classList.add('basket--active');
     });
+    document.querySelector('.cart-content__main').classList.remove('cart-content__main--hide');
     document.querySelector('.cart-empty').classList.add('cart-content__empty--hide');
   } else {
     basket.forEach(elem => {
       elem.classList.remove('basket--active');
     });
+    document.querySelector('.cart-content__main').classList.add('cart-content__main--hide');
     document.querySelector('.cart-empty').classList.remove('cart-content__empty--hide');
   }
 }
 
-const generateCartProduct = (img, title, price, id, nameColor, size) => {
+const generateCartProduct = (img, title, price, id, nameColor, size, dataColor) => {
   return `
 
     <li class="cart-content__item">
@@ -72,9 +74,9 @@ const generateCartProduct = (img, title, price, id, nameColor, size) => {
             <h4 class="cart-product__title">${title}</h4>
             <div class="cart-product__select custom-select">
               <div class="cart-product__color cart-product__color--gold custom-select__top">
-                <span>${nameColor}</span>
+                <span style="color: ${dataColor}">${nameColor}</span>
                 <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M19.3371 1.16917L10.168 10.3383L0.998797 1.16917" stroke="#BE9364" stroke-linecap="round" />
+                  <path d="M19.3371 1.16917L10.168 10.3383L0.998797 1.16917" stroke="${dataColor}" stroke-linecap="round" />
                 </svg>
               </div>
               <div class="custom-select__dropdown">
@@ -99,7 +101,7 @@ const generateCartProduct = (img, title, price, id, nameColor, size) => {
           <div class="cart-product__bottom">
             <div class="cart-product__stepper stepper">
               <button class="stepper__btn stepper__btn--minus btn-reset" aria-label="minus">-</button>
-              <input class="stepper__input input-reset" type="text" min="1" max="999" value="1">
+              <input class="stepper__input input-reset" type="text" min="1" max="99" maxlength="2" value="1">
               <button class="stepper__btn stepper__btn--plus btn-reset" aria-label="plus">+</button>
             </div>
             <span class="cart-product__price card-info__price">${price}</span>
@@ -111,7 +113,7 @@ const generateCartProduct = (img, title, price, id, nameColor, size) => {
   `
 }
 
-const generateProduct = (img, title, price, id, color = 'Gold', size = "10'' * 30''") => {
+const generateProduct = (img, title, price, id, color = 'Gold', size = "10'' * 30''", nameColor = '#BE9364') => {
   return `
 
     <li class="cart-content__item">
@@ -128,9 +130,9 @@ const generateProduct = (img, title, price, id, color = 'Gold', size = "10'' * 3
             <h4 class="cart-product__title">${title}</h4>
             <div class="cart-product__select custom-select">
               <div class="cart-product__color cart-product__color--gold custom-select__top">
-                <span>${color}</span>
+                <span style="${nameColor}">${color}</span>
                 <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M19.3371 1.16917L10.168 10.3383L0.998797 1.16917" stroke="#BE9364" stroke-linecap="round" />
+                  <path d="M19.3371 1.16917L10.168 10.3383L0.998797 1.16917" stroke="${nameColor}" stroke-linecap="round" />
                 </svg>
               </div>
               <div class="custom-select__dropdown">
@@ -155,7 +157,7 @@ const generateProduct = (img, title, price, id, color = 'Gold', size = "10'' * 3
           <div class="cart-product__bottom">
             <div class="cart-product__stepper stepper">
               <button class="stepper__btn stepper__btn--minus btn-reset" aria-label="minus">-</button>
-              <input class="stepper__input input-reset" type="text" min="1" max="999" value="1">
+              <input class="stepper__input input-reset" type="text" min="1" max="99" maxlength="2" value="1">
               <button class="stepper__btn stepper__btn--plus btn-reset" aria-label="plus">+</button>
             </div>
             <span class="cart-product__price card-info__price">${price}</span>
@@ -187,12 +189,18 @@ addCart?.addEventListener('click', (e) => {
   let price = +parent?.querySelector('.card-info__price').textContent;
   let selectorColor = parent?.querySelector('.card-info__color--active');
   let nameColor = selectorColor?.dataset.name;
+  let dataColor = selectorColor?.dataset.color;
   let selectSize = parent?.querySelectorAll('.card-info__label');
   let size = null;
   let indexRadio = null;
 
   if (selectorColor == null) {
-    alert("Choose a color, please");
+    document?.querySelector('.card-color').classList.add('card-color--active');
+    document?.querySelector('.card-color__close')?.addEventListener('click', (e) => {
+      if (e.target.closest('.card-color__close')) {
+        document?.querySelector('.card-color').classList.remove('card-color--active');
+      }
+    });
     return;
   }
   let checkedSize = [];
@@ -208,7 +216,16 @@ addCart?.addEventListener('click', (e) => {
   });
 
   if (size == undefined) {
-    alert("Choose a size, please");
+    document?.querySelector('.card-size').classList.add('card-size--active');
+    document?.querySelector('.card-size__close')?.addEventListener('click', (e) => {
+      if (e.target.closest('.card-size__close')) {
+        document?.querySelector('.card-size').classList.remove('card-size--active');
+      }
+
+      else if (e.target.closest('.card-size') === false) {
+        document?.querySelector('.card-size').classList.remove('card-size--active');
+      }
+    });
     return;
   }
 
@@ -220,7 +237,7 @@ addCart?.addEventListener('click', (e) => {
   plusFullPrice(price);
   console.log(totalPrice)
   printFullPrice();
-  cartProdictList.insertAdjacentHTML('afterbegin', generateCartProduct(pathImage(img), title, price, id, nameColor, size))
+  cartProdictList.insertAdjacentHTML('afterbegin', generateCartProduct(pathImage(img), title, price, id, nameColor, size, dataColor))
   printQuantity();
 });
 
@@ -235,6 +252,7 @@ btnsAddCart.forEach(elem => {
     let price = +parent?.querySelector('.product-slider__newprice').textContent;
     let color = 'Gold';
     let size = "10'' * 30''";
+    let nameColor = '#BE9364'
 
     const pathImage = (img) => {
       let index = img.indexOf('.');
@@ -244,7 +262,7 @@ btnsAddCart.forEach(elem => {
     plusFullPrice(price);
     console.log(totalPrice)
     printFullPrice();
-    cartProdictList.insertAdjacentHTML('afterbegin', generateCartProduct(pathImage(img), title, price, id, color, size))
+    cartProdictList.insertAdjacentHTML('afterbegin', generateCartProduct(pathImage(img), title, price, id, color, size, nameColor))
     printQuantity();
   });
 });
@@ -294,18 +312,20 @@ basket.forEach(elem => {
   });
 });
 
-cartClose?.addEventListener('click', (e) => {
-  cartOverlay.classList.remove('cart-overlay--visible');
-  body.classList.remove('stop-scroll');
-  body.style.marginRight = `0px`;
-  if (headerMain) {
-    headerMain.style.position = 'absolute';
-  }
+cartClose.forEach(elem => {
+  elem?.addEventListener('click', (e) => {
+    cartOverlay.classList.remove('cart-overlay--visible');
+    body.classList.remove('stop-scroll');
+    body.style.marginRight = `0px`;
+    if (headerMain) {
+      headerMain.style.position = 'absolute';
+    }
 
-  if (hero) {
-    hero.style.top = '0px';
-  }
-});
+    if (hero) {
+      hero.style.top = '0px';
+    }
+  });
+})
 
 cartOverlay?.addEventListener('click', (e) => {
   if (e.target === document.querySelector('.cart-overlay--visible')) {

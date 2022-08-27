@@ -285,3 +285,123 @@
     object-fit: contain;
   }
 }
+
+.card-size {
+  position: absolute;
+  z-index: 1000;
+  top: 21%;
+  left: 49%;
+  width: 564px;
+  height: 365px;
+  background-color: #F8F2EC;
+  box-shadow: 0px 40px 144px rgba(134, 134, 134, 0.19);
+  visibility: hidden;
+  transform: translate(-50%, -150%);
+  transition: all .3s;
+
+
+  &--active {
+    visibility: visible;
+    transform: translate(-50%, 0%);
+  }
+
+  &__content {
+    padding: 30px 30px 68px 30px;
+    height: 100%;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+  }
+
+  &__close {
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 40px;
+  }
+
+  &__text {
+    font-size: 28px;
+  }
+
+  &__smile {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-image: url('../img/smile.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.card-color {
+  position: absolute;
+  z-index: 1000;
+  top: 21%;
+  left: 49%;
+  width: 564px;
+  height: 365px;
+  background-color: #F8F2EC;
+  box-shadow: 0px 40px 144px rgba(134, 134, 134, 0.19);
+  visibility: hidden;
+  transform: translate(-50%, -150%);
+  transition: all .3s;
+
+
+  &--active {
+    visibility: visible;
+    transform: translate(-50%, 0%);
+  }
+
+  &__content {
+    padding: 30px 30px 68px 30px;
+    height: 100%;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+  }
+
+  &__close {
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 40px;
+  }
+
+  &__text {
+    font-size: 28px;
+  }
+
+  &__smile {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-image: url('../img/smile.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
