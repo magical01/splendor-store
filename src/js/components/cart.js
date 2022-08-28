@@ -221,10 +221,6 @@ addCart?.addEventListener('click', (e) => {
       if (e.target.closest('.card-size__close')) {
         document?.querySelector('.card-size').classList.remove('card-size--active');
       }
-
-      else if (e.target.closest('.card-size') === false) {
-        document?.querySelector('.card-size').classList.remove('card-size--active');
-      }
     });
     return;
   }

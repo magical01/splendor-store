@@ -5,7 +5,7 @@ Swiper.use([Navigation, Scrollbar]);
 const swiperProduct = new Swiper('.product-slider', {
   loop: true,
   slidesPerView: '5',
-  spaceBetween: 24,
+  spaceBetween: 20,
   scrollbar: {
     el: '.product-slider__scroll',
     draggable: true,

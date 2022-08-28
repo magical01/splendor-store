@@ -11,7 +11,7 @@
   &__inner {
     position: relative;
     margin-bottom: 80px;
-    padding: 0 140px;
+    padding: 0 131.5px;
 
   }
 }
@@ -20,9 +20,9 @@
   position: relative;
   display: flex;
   justify-content: space-between;
+  width: 1370px;
 
   &__slide {
-    width: 250px;
     cursor: pointer;
 
     &:hover {
