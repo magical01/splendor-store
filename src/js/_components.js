@@ -12,6 +12,7 @@ import './components/cart-content-slider';
 // import './components/simple-bar';
 import './components/cart';
 import './components/cart-render';
+import './components/aos';
 import './components/map';
 import './components/range-slider';
 
