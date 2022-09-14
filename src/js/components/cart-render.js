@@ -1,7 +1,10 @@
+import vars from '../_vars';
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
-  const cartPageList = document?.querySelector('.cart-page__list');
-  const cartContentList = document?.querySelector('.cart-content__list');
+  // const cartPageList = document?.querySelector('.cart-page__list');
+  // const cartContentList = document?.querySelector('.cart-content__list');
   let images = document?.querySelectorAll('.cart-product__image picture img')
   let title = document?.querySelectorAll('.cart-product__title');
   let color = document?.querySelectorAll('.cart-product__color span')
@@ -42,18 +45,19 @@ document.addEventListener('DOMContentLoaded', () => {
       `
   }
 
-  Array.from(cartContentList.children).forEach((elem, i) => {
+  Array.from(vars.cartProdictList.children).forEach((elem, i) => {
 
     const pathImage = (img) => {
       let index = img.indexOf('.');
       return img.substring(0, index)
     }
 
-    cartPageList.insertAdjacentHTML('afterbegin', renderCart(pathImage(images[i].getAttribute('src')), title[i].textContent, color[i].dataset.color, price[i].textContent, count[i].value))
+    vars.cartPageList?.insertAdjacentHTML('afterbegin', renderCart(pathImage(images[i].getAttribute('src')), title[i].textContent, color[i].dataset.color, price[i].textContent, count[i].value))
   });
 
 
 
 });
+
 
 
