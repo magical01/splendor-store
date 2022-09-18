@@ -67,7 +67,6 @@ window.removeCartItem = (id) => {
 // +1 or -1 to selected item in cart (stepper)
 window.plusCartItem = (id, plusOne) => {
   [id, plusOne] = [Number(id), Boolean(plusOne)];
-  let items = newCartModule.getGrouppedItems();
   // +1 to item (duplicate)
   if (plusOne) {
     newCartModule.duplicateItem(id);

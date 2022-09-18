@@ -6,27 +6,56 @@ const totalAmountElement = document?.querySelector(
 
 let totalPrice = 0;
 
+window.removeCartItemOrder = (id) => {
+  id = Number(id);
+  let grouppedItems = newCartModule.getGrouppedItems();
+  // get all links to another objects of object with obj.id == id
+  let links =
+    grouppedItems[grouppedItems.map((item) => item.id).indexOf(id)]
+      .linkToCartItem;
+  // remove each element with id == link
+  for (let link of links) {
+    newCartModule.removeItem(link);
+  }
+  // re-render cart
+  renderOrder();
+};
+
+window.plusCartItemOrder = (id, plusOne) => {
+  [id, plusOne] = [Number(id), Boolean(plusOne)];
+  // +1 to item (duplicate)
+  if (plusOne) {
+    newCartModule.duplicateItem(id);
+  }
+  // -1 to item (remove)
+  else {
+    newCartModule.removeItem(id);
+  }
+  // re-render
+  renderOrder();
+};
+
 // cart component
 const renderOrder = () => {
   let orderContainer = document.querySelector("#orderList");
   let html = "";
   // max count of items in cart
   let itemsCounter = 0;
-  const itemsLimit = 2;
+  // const itemsLimit = 2;
   // output
   let uniqueItems = newCartModule.getGrouppedItems();
   for (let item of uniqueItems) {
-    if (itemsCounter >= itemsLimit) break;
+    // if (itemsCounter >= itemsLimit) break;
     // add item
     html += generateOrderProduct(
       item.icon,
       item.title,
       item.cost,
-      item.linkToCartItem,
+      item.id,
       item.color,
       item.size,
       item?.dataset?.dataColor || "#BE9364",
-      item.count,
+      item.itemCount,
       item.description
     );
     itemsCounter++;
@@ -53,7 +82,7 @@ const generateOrderProduct = (
   return `
 
     <li class="order__item">
-      <button class="order__delete cart-page__delete btn-reset">
+      <button class="order__delete cart-page__delete btn-reset" onclick="removeCartItemOrder('${id}');">
         <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g opacity="0.7">
             <path d="M1.00218 0.728165L18.4712 17.4984" stroke="#272727" />
@@ -75,9 +104,9 @@ const generateOrderProduct = (
       <span class="order__color choice-color__item choice-color__item--orange cart-page__color"></span>
       <span class="order__price card-info__price cart-page__price">${price}</span>
       <div class="cart-page__stepper stepper">
-        <button class="stepper__btn stepper__btn--minus btn-reset" aria-label="minus">-</button>
+        <button class="stepper__btn stepper__btn--minus btn-reset" aria-label="minus" onclick="plusCartItemOrder('${id}', false);">-</button>
         <input class="stepper__input input-reset" type="text" min="1" max="999" maxlength="3" value="${count}">
-        <button class="stepper__btn stepper__btn--plus btn-reset" aria-label="plus">+</button>
+        <button class="stepper__btn stepper__btn--plus btn-reset" aria-label="plus" onclick="plusCartItemOrder('${id}', true);">+</button>
       </div>
       <span class="cart-page__total card-info__price">${priceTotal}</span>
     </li>
