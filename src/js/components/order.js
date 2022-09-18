@@ -6,6 +6,7 @@ const totalAmountElement = document?.querySelector(
 
 let totalPrice = 0;
 
+// order.js
 window.removeCartItemOrder = (id) => {
   id = Number(id);
   let grouppedItems = newCartModule.getGrouppedItems();
@@ -21,6 +22,7 @@ window.removeCartItemOrder = (id) => {
   renderOrder();
 };
 
+// order.js
 window.plusCartItemOrder = (id, plusOne) => {
   [id, plusOne] = [Number(id), Boolean(plusOne)];
   // +1 to item (duplicate)
@@ -35,7 +37,7 @@ window.plusCartItemOrder = (id, plusOne) => {
   renderOrder();
 };
 
-// cart component
+// cart component (order.js)
 const renderOrder = () => {
   let orderContainer = document.querySelector("#orderList");
   let html = "";
