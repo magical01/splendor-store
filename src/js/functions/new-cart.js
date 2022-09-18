@@ -1,14 +1,9 @@
 const storageCartName = "cartItems";
 
-export function main() {
-  //alert(123);
-  // document
-  //   .querySelector(
-  //     "body > div > div > main > section.card > div > div.card__right > div > div.card-info__btns > button.card-info__cart.btn-reset"
-  //   )
-  //   .addEventListener("click", () => {
-  //     alert(123);
-  //   });
+function sortItems(items) {
+  return items.sort((a, b) => {
+    return a.id > b.id;
+  });
 }
 
 export function createItem(props) {
@@ -27,19 +22,10 @@ export function createItem(props) {
     dataset: props.dataset || {},
   };
 }
-// function findItemById(id) {
-//   let cartItems = localStorage.getItem(storageCartName) || [];
-//   return cartItems.map((element) => element.id).indexOf(id);
-//   // let foundedIndex = -1;
-//   // cartItems.forEach((item, index) => {
-//   //   if(item.id == id) {
-//   //     foundedIndex = index;
-//   //     return;
-//   //   }
-//   // });
-// }
-export function getItems() {
-  return JSON.parse(localStorage.getItem(storageCartName)) || [];
+export function getItems(needSort) {
+  let items = JSON.parse(localStorage.getItem(storageCartName)) || [];
+  let sorted = Boolean(needSort) ? sortItems(items) : items;
+  return sorted;
 }
 export function getGrouppedItems() {
   let items = getItems();
@@ -83,7 +69,7 @@ export function getGrouppedItems() {
       uniqueItems.push(item);
     }
   }
-  return uniqueItems;
+  return sortItems(uniqueItems);
 }
 export function setItems(itemsArray) {
   localStorage.setItem(storageCartName, JSON.stringify(itemsArray));
