@@ -443,10 +443,13 @@ btnsAddCart.forEach((elem) => {
     img = img.split(".");
     img.pop();
     img = img.join(".");
-    let title =
-      parent?.querySelector(".product-slider__title").textContent.trim() +
-      " #" +
-      id;
+    // let title =
+    //   parent?.querySelector(".product-slider__title").textContent.trim() +
+    //   " #" +
+    //   id;
+    let title = parent
+      ?.querySelector(".product-slider__title")
+      .textContent.trim();
     let price = +parent?.querySelector(".product-slider__newprice").textContent;
     // add product to cart
     let product = newCartModule.createItem({
