@@ -50,7 +50,6 @@ let randomId = 0;
 
 window.removeCartItem = (id) => {
   id = Number(id);
-  let items = newCartModule.getItems();
   let grouppedItems = newCartModule.getGrouppedItems();
   // get all links to another objects of object with obj.id == id
   let links =
@@ -62,17 +61,21 @@ window.removeCartItem = (id) => {
   }
   // re-render cart
   renderCart();
-  // let links = grouppedItems.map((item) => item.id);
-  // console.log(id);
-  // console.log(links);
-  // console.log(items);
-  // console.log(grouppedItems);
-  // console.log(items);
-  // for (let item of grouppedItems) {
-  //   if (item.linkToCartItem == id) {
-  //     console.log(item.id);
-  //   }
-  // }
+};
+
+window.plusCartItem = (id, plusOne) => {
+  [id, plusOne] = [Number(id), Boolean(plusOne)];
+  let items = newCartModule.getGrouppedItems();
+  // +1 to item (duplicate)
+  if (plusOne) {
+    newCartModule.duplicateItem(id);
+  }
+  // -1 to item (remove)
+  else {
+    newCartModule.removeItem(id);
+  }
+  // re-render
+  renderCart();
 };
 
 const printFullPrice = () => {
@@ -101,13 +104,6 @@ const renderCart = () => {
       item?.dataset?.dataColor || "#BE9364",
       item.itemCount
     );
-    // add event listener to remove btn
-    // listeners.push({
-    //   selector: "mini-cart-item-id" + item.linkToCartItem,
-    //   func: () => {
-    //     removeCartItem(item.linkToCartItem);
-    //   },
-    // });
 
     itemsCounter++;
   }
@@ -213,9 +209,9 @@ const generateCartProduct = (
           <span class="cart-product__size">${size}</span>
           <div class="cart-product__bottom">
             <div class="cart-product__stepper stepper">
-              <button class="stepper__btn stepper__btn--minus btn-reset" aria-label="minus" onclick="">-</button>
+              <button class="stepper__btn stepper__btn--minus btn-reset" aria-label="minus" onclick="plusCartItem('${id}', false);">-</button>
               <input class="stepper__input input-reset" type="text" min="1" max="99" maxlength="2" value="${count}">
-              <button class="stepper__btn stepper__btn--plus btn-reset" aria-label="plus">+</button>
+              <button class="stepper__btn stepper__btn--plus btn-reset" aria-label="plus" onclick="plusCartItem('${id}', true);">+</button>
             </div>
             <span class="cart-product__price card-info__price">${price}</span>
           </div>

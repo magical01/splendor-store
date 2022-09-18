@@ -110,3 +110,10 @@ export function calculateCartPrice() {
   });
   return price;
 }
+export function duplicateItem(id) {
+  const items = getItems();
+  const index = items.map((item) => item.id).indexOf(id);
+  const item = items[index];
+  const copiedItem = JSON.parse(JSON.stringify(item));
+  addItem(copiedItem);
+}
