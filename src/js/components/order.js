@@ -79,6 +79,9 @@ const generateOrderProduct = (
   description
 ) => {
   const priceTotal = price * count;
+  const colorChoice = ["black", "orange", "gray"][
+    ["Black", "Gold", "Grey"].indexOf(nameColor)
+  ];
   return `
 
     <li class="order__item">
@@ -101,7 +104,7 @@ const generateOrderProduct = (
         <h5 class="order-text__title cart-text__title">${title}</h5>
         <p class="order-text__descr cart-text__title">${description}</p>
       </div>
-      <span class="order__color choice-color__item choice-color__item--orange cart-page__color"></span>
+      <span class="order__color choice-color__item choice-color__item--${colorChoice} cart-page__color"></span>
       <span class="order__price card-info__price cart-page__price">${price}</span>
       <div class="cart-page__stepper stepper">
         <button class="stepper__btn stepper__btn--minus btn-reset" aria-label="minus" onclick="plusCartItemOrder('${id}', false);">-</button>
