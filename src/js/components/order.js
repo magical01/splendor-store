@@ -8,6 +8,7 @@ let totalPrice = 0;
 
 // cart component
 const renderOrder = () => {
+  let orderContainer = document.querySelector("#orderList");
   let html = "";
   // max count of items in cart
   let itemsCounter = 0;
@@ -30,10 +31,10 @@ const renderOrder = () => {
     );
     itemsCounter++;
   }
-  orderContainer.innerHTML = html;
-
   // total amount
   totalAmountElement.innerHTML = newCartModule.calculateCartPrice();
+  // orders
+  orderContainer.innerHTML = html;
 };
 
 // product component

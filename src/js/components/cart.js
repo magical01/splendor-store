@@ -37,6 +37,44 @@ let randomId = 0;
 //   return (totalPrice -= currentPrice);
 // };
 
+// const removeCartItem = (id) => {
+//   let items = newCartModule.getGrouppedItems();
+//   for (let item of items) {
+//     if (item.id == id) {
+//       alert(item.cost);
+//     }
+//   }
+//   //alert(newCartModule.)
+//   //newCartModule.
+// };
+
+window.removeCartItem = (id) => {
+  id = Number(id);
+  let items = newCartModule.getItems();
+  let grouppedItems = newCartModule.getGrouppedItems();
+  // get all links to another objects of object with obj.id == id
+  let links =
+    grouppedItems[grouppedItems.map((item) => item.id).indexOf(id)]
+      .linkToCartItem;
+  // remove each element with id == link
+  for (let link of links) {
+    newCartModule.removeItem(link);
+  }
+  // re-render cart
+  renderCart();
+  // let links = grouppedItems.map((item) => item.id);
+  // console.log(id);
+  // console.log(links);
+  // console.log(items);
+  // console.log(grouppedItems);
+  // console.log(items);
+  // for (let item of grouppedItems) {
+  //   if (item.linkToCartItem == id) {
+  //     console.log(item.id);
+  //   }
+  // }
+};
+
 const printFullPrice = () => {
   fullPrice.textContent = `${totalPrice}`;
 };
@@ -48,6 +86,7 @@ const renderCart = () => {
   let itemsCounter = 0;
   const itemsLimit = 2;
   // output
+  // let listeners = [];
   let uniqueItems = newCartModule.getGrouppedItems();
   for (let item of uniqueItems) {
     if (itemsCounter >= itemsLimit) break;
@@ -56,22 +95,39 @@ const renderCart = () => {
       item.icon,
       item.title,
       item.cost,
-      item.linkToCartItem,
+      item.id,
       item.color,
       item.size,
       item?.dataset?.dataColor || "#BE9364",
-      item.count
+      item.itemCount
     );
+    // add event listener to remove btn
+    // listeners.push({
+    //   selector: "mini-cart-item-id" + item.linkToCartItem,
+    //   func: () => {
+    //     removeCartItem(item.linkToCartItem);
+    //   },
+    // });
+
     itemsCounter++;
   }
   cartProdictList.innerHTML = html;
   countSumm();
   printQuantity();
   printFullPrice();
+  // event listeners
   // stepper
-  setTimeout(() => {
-    // pass
-  }, 10);
+  // setTimeout(() => {
+  //   for (let listener of listeners) {
+  //     console.log(listener.selector);
+  //     document
+  //       .getElementById(listener.selector)
+  //       .addEventListener("click", listener.func);
+  //   }
+  // }, 100);
+  // setTimeout(() => {
+  //   // pass
+  // }, 10);
 };
 
 // quantity component
@@ -144,7 +200,7 @@ const generateCartProduct = (
                 </ul>
               </div>
             </div>
-            <button class="cart-product__delete btn-reset" aria-label="Remove from cart">
+            <button class="cart-product__delete btn-reset" aria-label="Remove from cart" onclick="removeCartItem('${id}')">
               Delete
               <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.7">
@@ -350,7 +406,7 @@ addCart?.addEventListener("click", (e) => {
 
   // add product to cart
   let product = newCartModule.createItem({
-    id: 1,
+    id: Math.trunc(Math.random() * 9999999999),
     icon: img,
     size: size.trim(),
     sizeOptions: ["10'' * 30''", "20'' * 50''"],
@@ -415,15 +471,15 @@ btnsAddCart.forEach((elem) => {
   });
 });
 
-cartProdictList.addEventListener("click", (e) => {
-  if (e.target.classList.contains("cart-product__delete")) {
-    deleteProducts(e.target.closest(".cart-content__item"));
-  }
+// cartProdictList.addEventListener("click", (e) => {
+//   if (e.target.classList.contains("cart-product__delete")) {
+//     deleteProducts(e.target.closest(".cart-content__item"));
+//   }
 
-  if (e.target === document.querySelector(".cart-product__delete svg")) {
-    deleteProducts(e.target.closest(".cart-content__item"));
-  }
-});
+//   if (e.target === document.querySelector(".cart-product__delete svg")) {
+//     deleteProducts(e.target.closest(".cart-content__item"));
+//   }
+// });
 
 const calcScroll = () => {
   let div = document.createElement("div");

@@ -5,13 +5,6 @@
 import { mobileCheck } from "./functions/mobile-check";
 console.log(mobileCheck());
 
-import * as newCartModule from "./functions/new-cart.js";
-newCartModule.main();
-
-function stepperLeft() {
-  console.log("!!!");
-}
-
 // newCartModule.addItem(newCartModule.createItem({
 //   id: 123,
 //   title

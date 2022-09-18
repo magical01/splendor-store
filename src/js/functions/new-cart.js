@@ -48,9 +48,10 @@ export function getGrouppedItems() {
   let j = 0;
   for (let item of items) {
     // add count property
-    if (!item.hasOwnProperty("count")) item.count = 1;
+    if (!item.hasOwnProperty("itemCount")) item.itemCount = 1;
     // add link to original item in cart
-    if (!item.hasOwnProperty("linkToCartItem")) item.linkToCartItem = j;
+    if (!item.hasOwnProperty("linkToCartItem")) item.linkToCartItem = [item.id];
+    // else item.linkToCartItem.push(item.id);
     j++;
     // add first item as unique
     if (uniqueItems.length < 1) {
@@ -71,7 +72,8 @@ export function getGrouppedItems() {
       // is not a unique element, group it
       if (score >= 3) {
         isUnique = false;
-        uniqueItems[i].count++;
+        uniqueItems[i].itemCount++;
+        uniqueItems[i].linkToCartItem.push(item.id);
         break;
       }
       i++;
