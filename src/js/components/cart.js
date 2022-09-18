@@ -48,6 +48,7 @@ let randomId = 0;
 //   //newCartModule.
 // };
 
+// remove group of items from cart
 window.removeCartItem = (id) => {
   id = Number(id);
   let grouppedItems = newCartModule.getGrouppedItems();
@@ -63,6 +64,7 @@ window.removeCartItem = (id) => {
   renderCart();
 };
 
+// +1 or -1 to selected item in cart (stepper)
 window.plusCartItem = (id, plusOne) => {
   [id, plusOne] = [Number(id), Boolean(plusOne)];
   let items = newCartModule.getGrouppedItems();
@@ -78,6 +80,7 @@ window.plusCartItem = (id, plusOne) => {
   renderCart();
 };
 
+// print full cart of the cost
 const printFullPrice = () => {
   fullPrice.textContent = `${totalPrice}`;
 };
@@ -428,43 +431,82 @@ addCart?.addEventListener("click", (e) => {
   // updateStorage();
 });
 
+//
 btnsAddCart.forEach((elem) => {
-  elem.closest(".product-slider__card")?.setAttribute("data-id", randomId++);
   elem?.addEventListener("click", (e) => {
-    let self = e.currentTarget;
-    let parent = self.closest(".product-slider__card");
-    let id = parent?.dataset.id;
+    const parent = elem.closest(".product-slider__card");
+    // set id
+    let id = Math.trunc(Math.random() * 999);
+    parent.setAttribute("data-id", id);
     let img = parent
       ?.querySelector(".product-slider__image picture img")
       .getAttribute("src");
-    let title = parent?.querySelector(".product-slider__title").textContent;
+    img = img.split(".");
+    img.pop();
+    img = img.join(".");
+    let title =
+      parent?.querySelector(".product-slider__title").textContent.trim() +
+      " #" +
+      id;
     let price = +parent?.querySelector(".product-slider__newprice").textContent;
-    let color = "Gold";
-    let size = "10'' * 30''";
-    let nameColor = "#BE9364";
-
-    const pathImage = (img) => {
-      let index = img.indexOf(".");
-      return img.substring(0, index);
-    };
-
-    plusFullPrice(price);
-    console.log(totalPrice);
-    printFullPrice();
-    cartProdictList.insertAdjacentHTML(
-      "afterbegin",
-      generateCartProduct(
-        pathImage(img),
-        title,
-        price,
-        id,
-        color,
-        size,
-        nameColor
-      )
-    );
-    printQuantity();
+    // add product to cart
+    let product = newCartModule.createItem({
+      // id: Math.trunc(Math.random() * 9999999999),
+      id: id,
+      title: title,
+      cost: price,
+      icon: img,
+      size: "10'' * 30''",
+      sizeOptions: ["10'' * 30''", "20'' * 50''"],
+      color: "Black",
+      colorOptions: ["Black", "Gold", "Grey"],
+      dataset: {
+        dataColor: "#272727",
+        dataColorOptions: ["#272727", "#BE9364", "#D2E2D7"],
+      },
+    });
+    newCartModule.addItem(product);
+    renderCart();
   });
+
+  // newCartModule.addItem(product);
+
+  // elem.closest(".product-slider__card")?.setAttribute("data-id", randomId++);
+  // elem?.addEventListener("click", (e) => {
+  //   let self = e.currentTarget;
+  //   let parent = self.closest(".product-slider__card");
+  //   let id = parent?.dataset.id;
+  //   let img = parent
+  //     ?.querySelector(".product-slider__image picture img")
+  //     .getAttribute("src");
+  //   let title = parent?.querySelector(".product-slider__title").textContent;
+  //   let price = +parent?.querySelector(".product-slider__newprice").textContent;
+  //   let color = "Gold";
+  //   let size = "10'' * 30''";
+  //   let nameColor = "#BE9364";
+
+  //   const pathImage = (img) => {
+  //     let index = img.indexOf(".");
+  //     return img.substring(0, index);
+  //   };
+
+  //   plusFullPrice(price);
+  //   console.log(totalPrice);
+  //   printFullPrice();
+  //   cartProdictList.insertAdjacentHTML(
+  //     "afterbegin",
+  //     generateCartProduct(
+  //       pathImage(img),
+  //       title,
+  //       price,
+  //       id,
+  //       color,
+  //       size,
+  //       nameColor
+  //     )
+  //   );
+  //   printQuantity();
+  // });
 });
 
 // cartProdictList.addEventListener("click", (e) => {
