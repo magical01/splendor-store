@@ -44,11 +44,19 @@
   }
 
   &__link {
+    border: 1px solid var(--black-color);
     padding: 19px 67px;
     font-size: 30px;
     line-height: 40px;
     color: #fff;
     background-color: var(--black-color);
+    transition: all .3s;
+
+    &:hover {
+      color: var(--black-color);
+      background-color: transparent;
+    }
+
   }
 
   &__pagination {

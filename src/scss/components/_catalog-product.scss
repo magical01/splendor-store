@@ -26,6 +26,12 @@
         fill: rgba(#272727, 1);
       }
     }
+
+    &--active {
+      svg rect {
+        fill: rgba(#272727, 1);
+      }
+    }
   }
 
   &__row {
@@ -43,6 +49,12 @@
     }
 
     &:focus {
+      svg line {
+        stroke: rgba(#272727, 1);
+      }
+    }
+
+    &--active {
       svg line {
         stroke: rgba(#272727, 1);
       }

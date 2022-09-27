@@ -180,8 +180,15 @@
     text-align: start;
   }
 
+  &__list {
+    .cart-page__total::before {
+      left: 5px;
+    }
+  }
+
   .order__item {
     padding-left: 23px;
+
   }
 
   .order__image {
@@ -201,7 +208,14 @@
   }
 
   &__total {
-    transform: translateX(-14px);
+    display: flex;
+    justify-content: center;
+    min-width: 120px;
+    transform: translateX(20px);
+
+    .card-info__price::before {
+      left: 10px;
+    }
   }
 
   &__order {

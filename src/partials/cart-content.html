@@ -1,10 +1,10 @@
 <div class="cart-overlay">
-  <div class="cart-content" data-bar data-simplebar>
+  <div class="cart-content">
     <div class="cart-content__empty cart-empty">
       <div class="cart-empty__top">
         <span>e</span>
         <h4 class="cart-empty__title">Cart is empty</h4>
-        <button class="cart-content__close btn-reset">
+        <button class="cart-content__close btn-reset" aria-label="Close cart">
           <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g opacity="0.8">
               <path d="M14.0352 14.521L26.5352 26.521" stroke="#272727" />
@@ -29,18 +29,20 @@
           </svg>
         </button>
       </div>
-      <ul class="cart-content__list list-reset">
-
+      <ul class="cart-content__list list-reset" data-simplebar data-bar>
+        <span class="cart-content__count"></span>
       </ul>
       <a class="cart-content__link" href="cart.html">
         All products
         <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1.16917 0.830828L10.3383 10L1.16917 19.1692" stroke="black" stroke-linecap="round" />
         </svg>
+        <span class="cart-content__count">+</span>
       </a>
       <div class="cart-content__inner">
         <p class="cart-content__descr">
-          After placing the order, the manager will contact you to clarify all the details
+          After placing the order, the manager will contact you to clarify all
+          the details
         </p>
         <div class="cart-content__box">
           <span class="cart-content__total">Total amount</span>
@@ -51,18 +53,16 @@
     <a class="cart-content__order" href="order.html">Checkout</a>
     <section class="card-product">
       <div class="card-product__top">
-        <h3 class="card-product__title">
-          You might also like
-        </h3>
+        <h3 class="card-product__title">You might also like</h3>
         <div class="card-product__buttons">
-          <button class="cart-btn-prev btn-reset">
+          <button class="cart-btn-prev btn-reset" aria-label="Previous product">
             <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.4" d="M24.1707 11.8308L15.0015 21L24.1707 30.1692" stroke="black"
                 stroke-linecap="round" />
               <circle opacity="0.4" cx="21" cy="21" r="20.5" stroke="#272727" />
             </svg>
           </button>
-          <button class="cart-btn-next btn-reset">
+          <button class="cart-btn-next btn-reset" aria-label="Next product">
             <svg width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M21.1692 14.8308L30.3383 24L21.1692 33.1692" stroke="black" stroke-linecap="round" />
               <circle cx="24.5" cy="24.5" r="24" stroke="#272727" />
@@ -77,14 +77,14 @@
               <div class="product-slider__card">
                 <div class="product-slider__image">
                   <picture>
-                    <source srcset="img/product-3-2.avif" type="image/avif">
-                    <source srcset="img/product-3-2.webp" type="image/webp">
-                    <img loading="lazy" src="img/product-3-2.png" class="image" width="117" height="146" alt="">
+                    <source srcset="img/product-3-2.avif" type="image/avif" />
+                    <source srcset="img/product-3-2.webp" type="image/webp" />
+                    <img loading="lazy" src="img/product-3-2.png" class="image" width="117" height="146" alt="" />
                   </picture>
                 </div>
                 <div class="product-slider__specific">
                   <h4 class="product-slider__title">
-                    <a href="#">Retro black</a>
+                    <a href="#">Modern black</a>
                   </h4>
                   <div class="product-slider__prices">
                     <span class="product-slider__newprice">300</span>
@@ -98,14 +98,14 @@
               <div class="product-slider__card product-slider__card--centered">
                 <div class="product-slider__image">
                   <picture>
-                    <source srcset="img/product-4.avif" type="image/avif">
-                    <source srcset="img/product-4.webp" type="image/webp">
-                    <img loading="lazy" src="img/product-4.png" class="image" width="117" height="117" alt="">
+                    <source srcset="img/product-4.avif" type="image/avif" />
+                    <source srcset="img/product-4.webp" type="image/webp" />
+                    <img loading="lazy" src="img/product-4.png" class="image" width="117" height="117" alt="" />
                   </picture>
                 </div>
                 <div class="product-slider__specific">
                   <h4 class="product-slider__title">
-                    <a href="#">Retro black</a>
+                    <a href="#">Modern talking</a>
                   </h4>
                   <div class="product-slider__prices">
                     <span class="product-slider__newprice">450</span>
@@ -119,14 +119,14 @@
               <div class="product-slider__card">
                 <div class="product-slider__image">
                   <picture>
-                    <source srcset="img/product-1.avif" type="image/avif">
-                    <source srcset="img/product-1.webp" type="image/webp">
-                    <img loading="lazy" src="img/product-1.png" class="image" width="89" height="144" alt="">
+                    <source srcset="img/product-1.avif" type="image/avif" />
+                    <source srcset="img/product-1.webp" type="image/webp" />
+                    <img loading="lazy" src="img/product-1.png" class="image" width="89" height="144" alt="" />
                   </picture>
                 </div>
                 <div class="product-slider__specific">
                   <h4 class="product-slider__title">
-                    <a href="#">Retro black</a>
+                    <a href="#">Honk Honk</a>
                   </h4>
                   <div class="product-slider__prices">
                     <span class="product-slider__newprice">500</span>
@@ -140,14 +140,14 @@
               <div class="product-slider__card">
                 <div class="product-slider__image">
                   <picture>
-                    <source srcset="img/product-2.avif" type="image/avif">
-                    <source srcset="img/product-2.webp" type="image/webp">
-                    <img loading="lazy" src="img/product-2.png" class="image" width="75" height="140" alt="">
+                    <source srcset="img/product-2.avif" type="image/avif" />
+                    <source srcset="img/product-2.webp" type="image/webp" />
+                    <img loading="lazy" src="img/product-2.png" class="image" width="75" height="140" alt="" />
                   </picture>
                 </div>
                 <div class="product-slider__specific">
                   <h4 class="product-slider__title">
-                    <a href="#">Retro black</a>
+                    <a href="#">Donk Donk</a>
                   </h4>
                   <div class="product-slider__prices">
                     <span class="product-slider__newprice">350</span>
@@ -161,14 +161,14 @@
               <div class="product-slider__card">
                 <div class="product-slider__image">
                   <picture>
-                    <source srcset="img/product-3-2.avif" type="image/avif">
-                    <source srcset="img/product-3-2.webp" type="image/webp">
-                    <img loading="lazy" src="img/product-3-2.png" class="image" width="117" height="146" alt="">
+                    <source srcset="img/product-3-2.avif" type="image/avif" />
+                    <source srcset="img/product-3-2.webp" type="image/webp" />
+                    <img loading="lazy" src="img/product-3-2.png" class="image" width="117" height="146" alt="" />
                   </picture>
                 </div>
                 <div class="product-slider__specific">
                   <h4 class="product-slider__title">
-                    <a href="#">Retro black</a>
+                    <a href="#">Monkey black</a>
                   </h4>
                   <div class="product-slider__prices">
                     <span class="product-slider__newprice">300</span>
@@ -182,14 +182,14 @@
               <div class="product-slider__card product-slider__card--centered">
                 <div class="product-slider__image">
                   <picture>
-                    <source srcset="img/product-4.avif" type="image/avif">
-                    <source srcset="img/product-4.webp" type="image/webp">
-                    <img loading="lazy" src="img/product-4.png" class="image" width="117" height="117" alt="">
+                    <source srcset="img/product-4.avif" type="image/avif" />
+                    <source srcset="img/product-4.webp" type="image/webp" />
+                    <img loading="lazy" src="img/product-4.png" class="image" width="117" height="117" alt="" />
                   </picture>
                 </div>
                 <div class="product-slider__specific">
                   <h4 class="product-slider__title">
-                    <a href="#">Retro black</a>
+                    <a href="#">Obama black</a>
                   </h4>
                   <div class="product-slider__prices">
                     <span class="product-slider__newprice">450</span>
@@ -203,14 +203,14 @@
               <div class="product-slider__card">
                 <div class="product-slider__image">
                   <picture>
-                    <source srcset="img/product-1.avif" type="image/avif">
-                    <source srcset="img/product-1.webp" type="image/webp">
-                    <img loading="lazy" src="img/product-1.png" class="image" width="89" height="144" alt="">
+                    <source srcset="img/product-1.avif" type="image/avif" />
+                    <source srcset="img/product-1.webp" type="image/webp" />
+                    <img loading="lazy" src="img/product-1.png" class="image" width="89" height="144" alt="" />
                   </picture>
                 </div>
                 <div class="product-slider__specific">
                   <h4 class="product-slider__title">
-                    <a href="#">Retro black</a>
+                    <a href="#">Retro white</a>
                   </h4>
                   <div class="product-slider__prices">
                     <span class="product-slider__newprice">500</span>
@@ -224,9 +224,9 @@
               <div class="product-slider__card">
                 <div class="product-slider__image">
                   <picture>
-                    <source srcset="img/product-2.avif" type="image/avif">
-                    <source srcset="img/product-2.webp" type="image/webp">
-                    <img loading="lazy" src="img/product-2.png" class="image" width="75" height="140" alt="">
+                    <source srcset="img/product-2.avif" type="image/avif" />
+                    <source srcset="img/product-2.webp" type="image/webp" />
+                    <img loading="lazy" src="img/product-2.png" class="image" width="75" height="140" alt="" />
                   </picture>
                 </div>
                 <div class="product-slider__specific">

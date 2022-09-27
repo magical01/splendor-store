@@ -77,15 +77,25 @@
   }
 
   &__list {
-    display: flex;
-    flex-direction: column;
-    row-gap: 24px;
+    // display: flex;
+    // flex-direction: column;
+    position: relative;
     max-height: 412px;
-    overflow: hidden;
+    overflow-y: hidden;
+  }
+
+  &__count {
+    position: absolute;
+    right: 0px;
+    padding-left: 80px;
+    font-weight: 500;
+    font-size: 32px;
+    color: var(--black-color);
 
   }
 
   &__link {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,6 +142,10 @@
         transition: all .3s;
       }
     }
+  }
+
+  &__item + &__item {
+    margin-top: 24px;
   }
 
   &__inner {
@@ -194,6 +208,8 @@
       color: #2B2828;
       background-color: transparent;
     }
+
+
   }
 
   .card-product {
@@ -350,8 +366,8 @@
   }
 
   &__text {
-    margin-left: 56px;
-    width: calc(100% - 190px - 56px);
+    margin-left: 20px;
+    width: calc(100% - 190px - 20px);
   }
 
   &__top {
@@ -626,3 +642,8 @@
     display: none;
   }
 }
+
+// .simplebar-content {
+//   display: flex;
+//   flex-direction: column;
+// }
