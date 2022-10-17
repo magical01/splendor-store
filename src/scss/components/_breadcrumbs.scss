@@ -30,6 +30,12 @@
   &__link {
     position: relative;
 
+    &:focus {
+      outline: 1px solid var(--black-color);
+      outline-offset: 2px;
+      transition: none;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -41,15 +47,16 @@
       transition: all .3s;
     }
 
-    @include hover {
+    &:hover {
       &::before {
         width: 100%;
       }
     }
 
+
     &--active {
 
-      @include hover {
+      &:hover {
         &:before {
           width: 0%;
         }

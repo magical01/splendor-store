@@ -25,6 +25,12 @@
       height: 250px;
       background-color: #F8F2EC;
       cursor: pointer;
+
+      &:focus {
+        outline: 1px solid var(--black-color);
+        outline-offset: 2px;
+        transition: none;
+      }
     }
 
     &__thumb + &__thumb {
@@ -114,59 +120,6 @@
 
   &__radiobutton + &__radiobutton {
     margin-left: 40px;
-  }
-
-  &__radio {
-    display: none;
-  }
-
-  &__text {
-    position: relative;
-    padding-left: 52px;
-    display: inline-block;
-    color: rgba(#272727, 0.4);
-    transition: all .2s;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 0;
-      display: inline-block;
-      border: 1px solid rgba(#272727, 0.4);
-      border-radius: 50%;
-      width: 32px;
-      height: 32px;
-      transform: translateY(-50%);
-      transition: all .2s;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 4px;
-      left: 10px;
-      display: inline-block;
-      border-radius: 50%;
-      width: 12px;
-      height: 12px;
-      background-color: var(--black-color);
-      opacity: 0;
-      transition: all .2s;
-    }
-  }
-
-  &__radio:checked + &__text::after {
-    opacity: 1;
-
-  }
-
-  &__radio:checked + &__text {
-    color: rgba(#272727, 1);
-  }
-
-  &__radio:checked + &__text::before {
-    border: 1px solid rgba(#272727, 0.8);
   }
 
   &__btns {
@@ -405,3 +358,63 @@
     background-size: contain;
   }
 }
+
+.custom-radiobtn {
+  &__text {
+    position: relative;
+    padding-left: 52px;
+    display: inline-block;
+    color: rgba(#272727, 0.4);
+    transition: all .2s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: inline-block;
+      border: 1px solid rgba(#272727, 0.4);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      transform: translateY(-50%);
+      transition: all .2s;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 10px;
+      display: inline-block;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      background-color: var(--black-color);
+      opacity: 0;
+      transition: all .2s;
+    }
+  }
+
+
+  &__input:checked + &__text::after {
+    opacity: 1;
+  }
+
+  &__input:checked + &__text {
+    color: rgba(#272727, 1);
+  }
+
+  &__input:focus-visible + &__text::before {
+    outline: 1px solid var(--black-color);
+    outline-offset: 4px;
+    transition: none;
+  }
+
+  &__input:checked + &__text::before {
+    border: 1px solid rgba(#272727, 0.8);
+  }
+}
+
+
+

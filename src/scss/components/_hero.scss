@@ -57,6 +57,12 @@
       background-color: transparent;
     }
 
+    &:focus {
+      outline: 1px solid var(--black-color);
+      outline-offset: 4px;
+      transition: none;
+    }
+
   }
 
   &__pagination {
@@ -92,7 +98,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 49.2%;
-  height: 579px;
+  width: 100%;
+  height: 100%;
   background-color: #F8F2EC;
 }

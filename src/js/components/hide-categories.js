@@ -6,7 +6,7 @@ const input = document?.querySelectorAll('.choice-size__input');
 
 filters.forEach(elem => {
   elem?.addEventListener('click', (e) => {
-    elem.children[1].classList.toggle('choice-categories__btn--active')
+    elem.children[1].classList.toggle('choice-categories__icon--active')
   });
 });
 

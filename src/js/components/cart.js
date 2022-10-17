@@ -211,10 +211,10 @@ addCart?.addEventListener("click", (e) => {
   // size selected ?
   let size = null;
   let indexRadio = null;
-  let selectSize = parent?.querySelectorAll(".card-info__label");
+  let selectSize = parent?.querySelectorAll(".custom-radiobtn");
   let checkedSize = [];
   selectSize.forEach((elem, i) => {
-    checkedSize.push(elem.querySelector(".card-info__radio").checked);
+    checkedSize.push(elem.querySelector(".custom-radiobtn__input").checked);
     checkedSize.forEach((el, index) => {
       if (el == true) {
         indexRadio = index;

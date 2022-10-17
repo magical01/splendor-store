@@ -29,7 +29,14 @@
     align-items: center;
     border-bottom: 1px solid rgba(#8F5C44, 0.4);
     padding-bottom: 3px;
+    width: 100%;
     cursor: pointer;
+
+    &:focus {
+      outline: 1px solid var(--black-color);
+      outline-offset: 2px;
+      transition: none;
+    }
   }
 
   &__item + &__item {
@@ -41,7 +48,7 @@
     opacity: 0.8;
   }
 
-  &__btn {
+  &__icon {
     position: relative;
     display: flex;
     justify-content: center;

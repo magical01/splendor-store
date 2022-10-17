@@ -21,12 +21,6 @@
       }
     }
 
-    &:focus {
-      svg rect {
-        fill: rgba(#272727, 1);
-      }
-    }
-
     &--active {
       svg rect {
         fill: rgba(#272727, 1);
@@ -43,12 +37,6 @@
     }
 
     @include hover {
-      svg line {
-        stroke: rgba(#272727, 1);
-      }
-    }
-
-    &:focus {
       svg line {
         stroke: rgba(#272727, 1);
       }
@@ -72,7 +60,7 @@
   &__item {
     transition: all .3s;
 
-    @include hover {
+    &:hover {
       .catalog-product__image {
         border: 1px solid rgba(#8F5C44, 0.4);
       }
@@ -94,6 +82,12 @@
   &__link {
     position: relative;
     display: block;
+
+    &:focus {
+      outline: 1px solid var(--black-color);
+      outline-offset: 4px;
+      transition: none;
+    }
   }
 
   &__new {
@@ -249,6 +243,12 @@
 
     &--active {
       color: rgba(#272727, 1);
+    }
+
+    &:focus {
+      outline: 1px solid var(--black-color);
+      outline-offset: 2px;
+      transition: none;
     }
   }
 }

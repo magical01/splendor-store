@@ -1,5 +1,6 @@
 .order-data {
   display: flex;
+  flex-direction: column;
   padding: 80px 140px;
   border: 1px solid rgba(0, 0, 0, 0.7);
   height: 768px;
@@ -13,6 +14,19 @@
     font-weight: 400;
     font-size: 48px;
     letter-spacing: -0.03em;
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__left {
+    width: 39.3%;
+    margin-right: 11.8%;
+  }
+
+  &__right {
+    width: calc(100% - 39.3% - 11.8%);
   }
 
   &__text {
@@ -32,16 +46,12 @@
 
   &__radiobutton {
     margin-top: 0;
+    width: 100%;
     justify-content: flex-start;
   }
 
   &__radiobutton + &__radiobutton {
     margin-left: 0;
-  }
-
-  &__right {
-    margin-top: 129px;
-    margin-left: 12.5%;
   }
 
   &__radiobuttons {
@@ -54,16 +64,16 @@
     margin-left: 45px;
   }
 
-  .card-info__text {
+  .custom-radiobtn__text {
     padding-left: 65px;
   }
 
-  .card-info__text::before {
+  .custom-radiobtn__text::before {
     width: 40px;
     height: 40px;
   }
 
-  .card-info__text::after {
+  .custom-radiobtn__text::after {
     top: 3px;
     left: 12px;
     width: 15px;

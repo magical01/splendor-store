@@ -8,14 +8,22 @@
     height: 610px;
   }
 
-  &__title {
+  &__title-link {
+    display: inline-block;
     margin: 0;
+    height: fit-content;
     font-family: "KronaOne";
     font-weight: 400;
     font-size: 27.6888px;
     line-height: 35px;
     text-transform: uppercase;
     color: #fff;
+
+    &:focus {
+      outline: 1px solid var(--white-color);
+      outline-offset: 2px;
+      transition: none;
+    }
   }
 
   &__top {
@@ -68,6 +76,12 @@
           width: 100%;
         }
       }
+
+      &:focus {
+        outline: 1px solid var(--white-color);
+        outline-offset: 2px;
+        transition: none;
+      }
     }
 
     &__link + &__link {
@@ -79,10 +93,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-end;
 
     .footer__basket {
       display: flex;
       justify-content: flex-end;
+      width: fit-content;
+
+      &:focus {
+        outline: 1px solid var(--white-color);
+        outline-offset: 2px;
+        transition: none;
+      }
     }
 
     .footer__basket.basket--active {
@@ -98,7 +120,7 @@
         transition: all .3s;
       }
 
-      @include hover {
+      &:hover {
         svg rect {
           stroke: #fff;
         }
@@ -112,8 +134,14 @@
     .footer__scroll-top {
       margin-bottom: 10px;
 
+      &:focus {
+        outline: 1px solid var(--white-color);
+        outline-offset: 2px;
+        transition: none;
+      }
+
       svg {
-        @include hover {
+        &:hover {
           path {
             stroke: var(--accent-color);
           }
@@ -132,7 +160,7 @@
         transition: all .3s;
       }
 
-      @include hover {
+      &:hover {
         rect {
           stroke: var(--accent-color);
         }
@@ -238,8 +266,14 @@
     border: 1px solid #fff;
     transition: all .3s;
 
-    @include hover {
+    &:hover {
       transform: scale(1.03);
+    }
+
+    &:focus {
+      outline: 1px solid var(--white-color);
+      outline-offset: 4px;
+      transition: none;
     }
   }
 }
@@ -253,17 +287,25 @@
   }
 
   &__link {
+    display: inline-block;
+
+    &:focus {
+      outline: 1px solid var(--white-color);
+      outline-offset: 2px;
+      transition: none;
+    }
+
     svg {
       width: 30px;
       height: 30px;
       fill: #fff;
       transition: all .3s;
 
-      @include hover {
-        rect {
-          fill: var(--accent-color);
-        }
+      &:hover {
+        fill: var(--accent-color);
       }
+
+
     }
   }
 }

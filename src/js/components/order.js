@@ -40,7 +40,9 @@ window.plusCartItemOrder = (id, plusOne) => {
 
 // cart component (order.js)
 const renderOrder = () => {
-  if (document.location.pathname != '/order.html' && document.location.pathname != '/cart.html') return;
+  if (document.location.pathname != '/cart.html' && document.location.pathname != '/order.html') return;
+  // if (document.location.pathname != '/splendor-store/cart.html' && document.location.pathname != '/splendor-store/order.html') return;
+
 
   let orderContainer = document.querySelector("#orderList");
   let html = "";

@@ -169,5 +169,20 @@ input[type=number] {
 
 .stop-scroll {
   overflow: hidden;
+}
 
+.focus-offset {
+  &:focus {
+    outline: 1px solid var(--black-color);
+    outline-offset: 2px;
+    transition: none;
+  }
+}
+
+.focus-offset-4px {
+  &:focus {
+    outline: 1px solid var(--black-color);
+    outline-offset: 4px;
+    transition: none;
+  }
 }
