@@ -1,0 +1,98 @@
+.hero {
+  position: relative;
+  height: 892px;
+
+  &__container {
+    position: relative;
+    height: 100%;
+  }
+
+  &__slider {
+    height: 100%;
+  }
+
+  &__content {
+    max-width: 696px;
+    padding-left: 141px;
+    padding-top: 256px;
+
+    picture img {
+      position: absolute;
+      top: 0;
+      right: 125px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 42px;
+    font-family: "KronaOne";
+    font-size: 64px;
+    line-height: 80px;
+    letter-spacing: -0.03em;
+    opacity: 0.9;
+  }
+
+  &__descr {
+    margin: 0;
+    margin-bottom: 79px;
+    max-width: 424px;
+    font-size: 20px;
+    line-height: 30px;
+    opacity: 0.7;
+    font-weight: 500;
+  }
+
+  &__link {
+    border: 1px solid var(--black-color);
+    padding: 19px 67px;
+    font-size: 30px;
+    line-height: 40px;
+    color: #fff;
+    background-color: var(--black-color);
+    transition: all .3s;
+
+    &:hover {
+      color: var(--black-color);
+      background-color: transparent;
+    }
+
+  }
+
+  &__pagination {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+  }
+}
+
+.hero__slider > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 96px;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: transparent;
+  border: 1px solid rgba(39, 39, 39, 0.9);
+  opacity: 1;
+  transition: all .1s;
+
+  &-active {
+    background-color: rgba(39, 39, 39, 0.9)
+  }
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 24px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 49.2%;
+  height: 579px;
+  background-color: #F8F2EC;
+}

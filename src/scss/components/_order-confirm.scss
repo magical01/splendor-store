@@ -1,0 +1,144 @@
+.confirm {
+  padding-top: 40px;
+  padding-bottom: 150px;
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__order {
+    border: 1px solid rgba(#272727, 0.7);
+    padding: 80px 140px;
+    width: 810px;
+    height: 918px;
+    background-color: #F8F2EC;
+  }
+
+  &__form {
+    margin-bottom: 43px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 150px;
+    font-family: 'KronaOne';
+    font-weight: 400;
+    font-size: 54px;
+    letter-spacing: -0.03em;
+  }
+
+  &__group {
+    position: relative;
+  }
+
+  &__group + &__group {
+    margin-top: 105px;
+  }
+
+  &__input {
+    position: relative;
+    outline: none;
+    z-index: 10;
+    width: 100%;
+    font-size: 18px;
+    height: 40px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(#272727, 0.8);
+    color: var(--black-color);
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:focus {
+      border-bottom: 1px solid rgba(#272727, 1);
+      transition: all .3s;
+
+      & ~ .confirm__label, .confirm__input:not(:placeholder-shown) ~ .confirm__label {
+        top: -60px;
+        font-size: 20px;
+        transition: all .3s;
+      }
+    }
+
+    &:active {
+      border-bottom: 1px solid rgba(#272727, 1);
+      transition: all .3s;
+
+      & ~ .confirm__label, .confirm__input:not(:placeholder-shown) ~ .confirm__label {
+        top: -60px;
+        font-size: 20px;
+        transition: all .3s;
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: -60px;
+    left: 0px;
+    font-size: 28px;
+    color: #272727;
+    transition: all .3s;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 85px;
+  }
+
+  &__total {
+    strong {
+      font-weight: 400;
+      font-size: 28px;
+    }
+
+    .card-info__price {
+      margin-left: 21px;
+      font-size: 28px;
+      font-weight: 400;
+    }
+  }
+
+  &__date {
+    strong {
+      font-weight: 400;
+      font-size: 28px;
+    }
+
+    span {
+      display: inline-block;
+      margin-left: 21px;
+      font-weight: 400;
+      font-size: 28px;
+      text-transform: capitalize;
+    }
+  }
+
+  &__links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__track {
+    border: 1px solid #2B2828;
+    padding: 16px 63px;
+    font-weight: 400;
+    font-size: 20px;
+    color: #fff;
+    background-color: #2B2828;
+    transition: all .3s;
+
+    @include hover {
+      color: var(--black-color);
+      background-color: transparent;
+    }
+  }
+
+  &__continue {
+    border: 1px solid #221E1E;;
+    padding: 16px 37px;
+    font-weight: 400;
+    font-size: 20px;
+    background-color: transparent;
+  }
+}

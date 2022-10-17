@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    <div class="site-bg--gray">
+      <header class="header">
+        <div class="container header__container">
+          <a class="header__logo" href="#">
+            <h3 class="header__title">Splendor</h3>
+          </a>
+          <nav class="nav" title="Главное меню">
+            <ul class="nav__list list-reset">
+              <li class="nav__item"><a class="nav__link" href="index.html">Home</a></li>
+              <li class="nav__item"><a class="nav__link" href="catalog.html">Catalog</a></li>
+              <li class="nav__item"><a class="nav__link" href="index.html#about" data-scroll>About Us</a></li>
+              <li class="nav__item"><a class="nav__link" href="contacts.html">Contacts</a></li>
+            </ul>
+          </nav>
+          <ul class="header__list list-reset">
+            <li class="header__item search">
+              <button class="btn-reset" aria-label="Find a product">
+                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.9"
+                    d="M15 15.6175L11.6945 12.2262L15 15.6175ZM13.5263 7.6939C13.5263 9.39509 12.8664 11.0266 11.6919 12.2295C10.5173 13.4325 8.92425 14.1083 7.26316 14.1083C5.60207 14.1083 4.00901 13.4325 2.83444 12.2295C1.65987 11.0266 1 9.39509 1 7.6939C1 5.9927 1.65987 4.36119 2.83444 3.15826C4.00901 1.95534 5.60207 1.27954 7.26316 1.27954C8.92425 1.27954 10.5173 1.95534 11.6919 3.15826C12.8664 4.36119 13.5263 5.9927 13.5263 7.6939V7.6939Z"
+                    stroke="#272727" stroke-width="1.67811" stroke-linecap="round" />
+                </svg>
+              </button>
+            </li>
+            <li class="header__item favorites">
+              <a href="favorites.html" aria-label="Go to favorites">
+                <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M13.6613 3.21782C13.4441 2.64284 13.1309 2.12179 12.7392 1.68385C12.3472 1.2446 11.8851 0.895536 11.3779 0.655638C10.852 0.405891 10.288 0.278056 9.71847 0.279554C8.91954 0.279554 8.14005 0.529659 7.46266 1.00208C7.3006 1.11509 7.14665 1.23922 7.0008 1.37446C6.85495 1.23922 6.701 1.11509 6.53894 1.00208C5.86155 0.529659 5.08206 0.279554 4.28313 0.279554C3.70783 0.279554 3.15036 0.405533 2.62368 0.655638C2.11483 0.89648 1.65621 1.24292 1.26241 1.68385C0.870233 2.12129 0.556949 2.64247 0.340317 3.21782C0.115059 3.81622 0 4.45168 0 5.10565C0 5.72258 0.110198 6.36544 0.328973 7.01942C0.512096 7.56595 0.774626 8.13285 1.11008 8.70531C1.64162 9.61125 2.37249 10.5561 3.28 11.5139C4.78388 13.1016 6.27317 14.1984 6.33637 14.2428L6.72045 14.5244C6.8906 14.6485 7.10938 14.6485 7.27954 14.5244L7.66361 14.2428C7.72681 14.1965 9.21448 13.1016 10.72 11.5139C11.6275 10.5561 12.3584 9.61125 12.8899 8.70531C13.2254 8.13285 13.4895 7.56595 13.671 7.01942C13.8898 6.36544 14 5.72258 14 5.10565C14.0016 4.45168 13.8865 3.81622 13.6613 3.21782ZM7.0008 13.059C7.0008 13.059 1.23162 8.83314 1.23162 5.10565C1.23162 3.21782 2.59775 1.68755 4.28313 1.68755C5.46776 1.68755 6.49519 2.44342 7.0008 3.54759C7.50641 2.44342 8.53385 1.68755 9.71847 1.68755C11.4039 1.68755 12.77 3.21782 12.77 5.10565C12.77 8.83314 7.0008 13.059 7.0008 13.059Z"
+                    fill="#272727" />
+                </svg>
+              </a>
+            </li>
+            <li class="header__item basket">
+              <span class="basket__quantity">1</span>
+              <button class="btn-reset" aria-label="Modal basket window">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.629291" y="0.629291" width="38.7414" height="38.7414" rx="0.629291" stroke="#272727"
+                    stroke-width="1.25858" />
+                  <path
+                    d="M26.9918 28.0187L25.9625 18.3023C25.9344 18.037 25.6721 17.8337 25.3578 17.8337H23.2352V17.0223C23.2352 15.5099 21.7838 14.2795 19.9997 14.2795C18.2158 14.2795 16.7645 15.5099 16.7645 17.0223V17.8337H14.6404C14.3262 17.8337 14.0638 18.037 14.0358 18.3023L13.0024 28.0569C12.9872 28.2008 13.044 28.3435 13.1591 28.4501C13.2741 28.5568 13.4367 28.6175 13.6071 28.6175H26.3912C26.3917 28.6175 26.3923 28.6175 26.3929 28.6175C26.7282 28.6175 27 28.3871 27 28.1029C26.9999 28.0742 26.9972 28.0461 26.9918 28.0187ZM17.9787 17.0223C17.9787 16.0775 18.8854 15.3088 19.9998 15.3088C21.1144 15.3088 22.0211 16.0775 22.0211 17.0223V17.8337H17.9787V17.0223ZM14.2712 27.5883L15.1955 18.863H16.7645V19.7833C16.7645 20.0675 17.0362 20.2979 17.3716 20.2979C17.707 20.2979 17.9787 20.0675 17.9787 19.7833V18.863H22.0211V19.7833C22.0211 20.0675 22.2928 20.2979 22.6282 20.2979C22.9636 20.2979 23.2353 20.0675 23.2353 19.7833V18.863H24.8029L25.7271 27.5883H14.2712Z"
+                    fill="#272727" />
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="container breadcrumbs__container">
+          <div class="breadcrumbs">
+            <ul class="breadcrumbs__list list-reset">
+              <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Home</a></li>
+              <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="catalog.html">Catalog</a></li>
+              <li class="breadcrumbs__item"><a class="breadcrumbs__link breadcrumbs__link--active" href="#">Making an
+                  order
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <section class="confirm">
+          <div class="container confirm__container">
+            <article class="confirm__order">
+              <h3 class="confirm__title">Order <span>#85</span></h3>
+              <form class="confirm__form" action="#">
+                <div class="confirm__group">
+                  <input class="confirm__input input-reset" type="text" name="delivery" placeholder="London, Gagarina street, 45. Room 120">
+                  <label class="confirm__label">Delivery</label>
+                </div>
+                <div class="confirm__group">
+                  <input class="confirm__input input-reset" type="text" name="name" placeholder="Maria Tanas">
+                  <label class="confirm__label">Full name</label>
+                </div>
+                <div class="confirm__group">
+                  <input class="confirm__input input-reset" type="email" name="email" placeholder="MariaT@gmail.com">
+                  <label class="confirm__label">Email</label>
+                </div>
+              </form>
+              <div class="confirm__bottom">
+                <div class="confirm__total">
+                  <strong>Total:</strong>
+                  <span class="card-info__price">2700</span>
+                </div>
+                <div class="confirm__date">
+                  <strong>Date</strong>
+                  <span>20 / 03 / 22</span>
+                </div>
+              </div>
+              <div class="confirm__links">
+                <a class="confirm__track" href="order.html">Track in order</a>
+                <a class="confirm__continue" href="catalog.html">Continue shopping</a>
+              </div>
+            </article>
+          </div>
+        </section>
+        @include('partials/cart-content.html')
+      </main>
+
+      <footer class="footer">
+        <div class="container footer__container">
+          <div class="footer__top">
+            <h3 class="footer__title">Splendor</h3>
+            <nav class="footer__nav footer-nav">
+              <ul class="footer-nav__list list-reset">
+                <li class="footer-nav__item">
+                  <strong class="footer-nav__title">Pages</strong>
+                  <a class="footer-nav__link" href="index.html">Home</a>
+                  <a class="footer-nav__link" href="catalog.html">Catalog</a>
+                  <a class="footer-nav__link" href="index.html#about" data-scroll>About Us</a>
+                  <a class="footer-nav__link" href="contacts.html">Contacts</a>
+                </li>
+                <li class="footer-nav__item">
+                  <strong class="footer-nav__title">Categories</strong>
+                  <a class="footer-nav__link" href="index.html">Home</a>
+                  <a class="footer-nav__link" href="catalog.html">Catalog</a>
+                  <a class="footer-nav__link" href="index.html#about" data-scroll>About Us</a>
+                  <a class="footer-nav__link" href="contacts.html">Contacts</a>
+                </li>
+                <li class="footer-nav__item">
+                  <strong class="footer-nav__title">Categories</strong>
+                  <a class="footer-nav__link" href="index.html">Home</a>
+                  <a class="footer-nav__link" href="catalog.html">Catalog</a>
+                  <a class="footer-nav__link" href="index.html#about" data-scroll>About Us</a>
+                  <a class="footer-nav__link" href="contacts.html">Contacts</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="footer__icons">
+              <button class="footer__basket basket btn-reset" href="cart.html" aria-label="Modal basket window">
+                <span class="basket__quantity">1</span>
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="38.016" height="38.016" rx="0.758581" stroke="white" />
+                  <path
+                    d="M26.9918 27.3317L25.9625 16.4891C25.9344 16.193 25.6721 15.9662 25.3578 15.9662H23.2352V15.0607C23.2352 13.373 21.7838 12 19.9997 12C18.2158 12 16.7645 13.373 16.7645 15.0607V15.9662H14.6404C14.3262 15.9662 14.0638 16.193 14.0358 16.4891L13.0024 27.3744C12.9872 27.535 13.044 27.6942 13.1591 27.8132C13.2741 27.9322 13.4367 28 13.6071 28H26.3912C26.3917 28 26.3923 28 26.3929 28C26.7282 28 27 27.7428 27 27.4257C26.9999 27.3938 26.9972 27.3623 26.9918 27.3317ZM17.9787 15.0607C17.9787 14.0063 18.8854 13.1486 19.9998 13.1486C21.1144 13.1486 22.0211 14.0063 22.0211 15.0607V15.9662H17.9787V15.0607ZM14.2712 26.8515L15.1955 17.1148H16.7645V18.1417C16.7645 18.4589 17.0362 18.716 17.3716 18.716C17.707 18.716 17.9787 18.4589 17.9787 18.1417V17.1148H22.0211V18.1417C22.0211 18.4589 22.2928 18.716 22.6282 18.716C22.9636 18.716 23.2353 18.4589 23.2353 18.1417V17.1148H24.8029L25.7271 26.8515H14.2712Z"
+                    fill="white" />
+                </svg>
+              </button>
+              <button class="footer__scroll-top btn-reset" aria-label="Scroll top top">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M25 32V17M25 17L20 21.1379M25 17L30 21.1379" stroke="white" />
+                  <rect x="0.5" y="0.5" width="49" height="49" rx="0.5" stroke="white" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <form class="footer__form form" action="#">
+              <span class="form__text">Subscribe to the newsletter and be the first to learn about exclusives</span>
+              <div class="form__group">
+                <input class="form__input input-reset" type="email" name="Email" placeholder="">
+                <label class="form__label">Enter your email</label>
+              </div>
+              <button type="submit" class="form__btn btn-reset">Submit</button>
+            </form>
+            <ul class="footer__social social list-reset" title="We are in social networks">
+              <li class="social__item">
+                <a class="social__link social__link--fb" href="#" aria-label="Our Facebook page">
+                  <svg class="">
+                    <use xlink:href="img/sprite.svg#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link social__link--inst" href="#" aria-label="Our Instagram page">
+                  <svg class="">
+                    <use xlink:href="img/sprite.svg#inst"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link social__link--tw" href="#" aria-label="Our Twitter page">
+                  <svg class="">
+                    <use xlink:href="img/sprite.svg#twitter"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>

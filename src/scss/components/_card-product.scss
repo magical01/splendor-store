@@ -1,0 +1,211 @@
+.card-product {
+  padding-bottom: 150px;
+  &__title {
+    margin: 0;
+    margin-bottom: 68px;
+    font-family: "KronaOne";
+    font-weight: 400;
+    font-size: 40px;
+  }
+
+  &__inner {
+    position: relative;
+    margin-bottom: 80px;
+    padding: 0 131.5px;
+
+  }
+}
+
+.product-slider {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 1370px;
+
+  &__slide {
+    cursor: pointer;
+
+    &:hover {
+      .product-slider__image {
+        border: 1px solid #272727;
+      }
+
+      // .product-custom__top {
+      //   transform: translateY(-100%);
+      //   transition: all .3s;
+      // }
+
+      // .product-custom__bottom {
+      //   transform: translateY(-100%);
+      //   transition: all .3s;
+      // }
+    }
+  }
+
+  &__card {
+    position: relative;
+    width: 100%;
+
+    &--centered {
+      .product-slider__image {
+        align-items: center;
+      }
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    width: 250px;
+    height: 351px;
+    border: 1px solid rgba(#8F5C44, 0.4);
+    transition: all .3s;
+
+  }
+
+  &__specific {
+    margin-top: 20px;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 4px;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: capitalize;
+
+    a {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+
+  &__outdoors {
+    font-size: 10px;
+    opacity: 0.4;
+  }
+
+  &__size {
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+
+  &__price {
+    font-size: 14px;
+  }
+
+  &__scroll {
+    background-color: rgba(#8F5C44, 0.4);
+    height: 2px;
+  }
+}
+
+.product-custom {
+  height: 21px;
+  overflow: hidden;
+
+  &__top {
+    transition: all .3s;
+  }
+
+  &__bottom {
+    position: relative;
+    z-index: 5;
+    transition: all .3s;
+  }
+
+  &__cart {
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+    svg path {
+      fill: var(--black-color);
+      transition: all .3s;
+    }
+
+    @include hover {
+      svg path {
+        fill: #8F5C44;
+      }
+    }
+  }
+
+  &__favorites {
+    svg path {
+      transition: all .3s;
+    }
+
+    @include hover {
+      svg path {
+        fill: #8F5C44;
+      }
+    }
+  }
+}
+
+.swiper-scrollbar-drag {
+  width: 310px;
+  background: rgba(#272727, 1);
+  cursor: pointer;
+}
+
+.slider-btn-next {
+  position: absolute;
+  z-index: 5;
+  top: 44%;
+  right: 42px;
+  transform: translateY(-50%);
+
+  path {
+    stroke: #272727;
+    opacity: 0.4;
+    transition: all .3s;
+  }
+  &:hover {
+    path {
+      opacity: 1;
+    }
+  }
+
+}
+
+.slider-btn-prev {
+  position: absolute;
+  z-index: 5;
+  top: 44%;
+  left: 42px;
+  transform: translateY(-50%);
+
+  path {
+    stroke: #272727;
+    opacity: 0.4;
+    transition: all .3s;
+  }
+
+  &:hover {
+    path {
+      opacity: 1;
+    }
+  }
+}
+
+.cart-overlay.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}

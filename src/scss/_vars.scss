@@ -1,0 +1,14 @@
+// colors
+:root {
+  // base
+  --font-family: "Gilroy", sans-serif;
+  --content-width: 1650px;
+  --container-offset: 135px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // colors
+  --white-color: #fcf8f5;
+  --black-color: #272727;
+  --accent-color: #965335;
+  --addit-color: #eee2d6;
+}

@@ -1,0 +1,262 @@
+.catalog-product {
+  width: 1230px;
+
+  &__props {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 40px;
+  }
+
+  &__column {
+    svg {
+      rect {
+        fill: rgba(#272727, 0.6);
+        transition: all .3s;
+      }
+    }
+
+    @include hover {
+      svg rect {
+        fill: rgba(#272727, 1);
+      }
+    }
+
+    &:focus {
+      svg rect {
+        fill: rgba(#272727, 1);
+      }
+    }
+
+    &--active {
+      svg rect {
+        fill: rgba(#272727, 1);
+      }
+    }
+  }
+
+  &__row {
+    svg {
+      line {
+        stroke: rgba(#272727, 0.6);
+        transition: all .3s;
+      }
+    }
+
+    @include hover {
+      svg line {
+        stroke: rgba(#272727, 1);
+      }
+    }
+
+    &:focus {
+      svg line {
+        stroke: rgba(#272727, 1);
+      }
+    }
+
+    &--active {
+      svg line {
+        stroke: rgba(#272727, 1);
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 65px;
+    row-gap: 35px;
+  }
+
+  &__item {
+    transition: all .3s;
+
+    @include hover {
+      .catalog-product__image {
+        border: 1px solid rgba(#8F5C44, 0.4);
+      }
+
+      // .product-custom__top {
+      //   transform: translateY(-100%);
+      //   transition: all .3s;
+      // }
+
+      // .product-custom__bottom {
+      //   transform: translateY(-100%);
+      //   transition: all .3s;
+      // }
+    }
+
+  }
+
+
+  &__link {
+    position: relative;
+    display: block;
+  }
+
+  &__new {
+    position: absolute;
+    right: 1px;
+    top: 1.5px;
+    font-size: 24px;
+    text-transform: capitalize;
+    color: #fff;
+    background-color: rgba(#8F5C44, 0.8);
+    padding: 5px 40px;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    border: 1px solid var(--black-color);
+    width: 335px;
+    height: 390px;
+    transition: border .3s;
+  }
+
+  &__group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 28px;
+    text-transform: capitalize;
+  }
+
+  &__price {
+    font-size: 28px;
+  }
+
+  &__size {
+    display: block;
+    font-size: 18px;
+    text-transform: capitalize;
+  }
+
+  &__item--center {
+    .catalog-product__image {
+      align-items: center;
+    }
+  }
+
+  &__item--end {
+    .catalog-product__image {
+      align-items: flex-end;
+
+      picture {
+        transform: translateY(4px);
+      }
+    }
+  }
+
+  &--white {
+    position: absolute;
+    top: 61px;
+    left: 55px;
+    width: 78px;
+    height: 91px;
+    background-color: #fff;
+  }
+}
+
+.product-row {
+  .catalog-product__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .catalog-product__group {
+    justify-content: flex-start;
+    column-gap: 15px;
+  }
+
+  .product-custom {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    column-gap: 15px;
+    height: 32px;
+    overflow: visible;
+  }
+
+  .catalog-product__item {
+    width: 100%;
+    transition: all .3s;
+
+    // @include hover {
+    //   .product-custom {
+    //     height: 32px;
+    //     overflow: visible;
+    //   }
+    //   .product-custom__top {
+    //     transform: translateY(0);
+    //   }
+
+    //   .product-custom__bottom {
+    //     transform: translateY(0);
+    //   }
+    // }
+  }
+  .catalog-product__image {
+    width: 100%;
+    transition: all .3s;
+  }
+
+  .catalog-product__content {
+    position: relative;
+  }
+
+  .catalog-product__size {
+    font-size: 24px;
+  }
+
+  .catalog-product--white {
+    top: 73px;
+    left: 39%;
+  }
+
+  .product-custom__bottom {
+    display: flex;
+    column-gap: 15px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.product-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 40px;
+  margin-top: 80px;
+
+  &__btn {
+    font-weight: 400;
+    font-size: 28px;
+    color: rgba(#272727, 0.5);
+
+    &--active {
+      color: rgba(#272727, 1);
+    }
+  }
+}
+
+.prev-btn {
+  font-weight: 500;
+}
+
+.next-btn {
+  font-weight: 500;
+}

@@ -1,0 +1,269 @@
+.footer {
+  background-color: #474747;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 135px;
+    height: 610px;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: "KronaOne";
+    font-weight: 400;
+    font-size: 27.6888px;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-nav {
+    margin-right: 327px;
+    width: 810px;
+
+    &__list {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    &__title {
+      margin-bottom: 40px;
+      font-weight: 500;
+      font-size: 24px;
+      color: #fff;
+    }
+
+    &__link {
+      position: relative;
+      width: fit-content;
+      font-size: 20px;
+      line-height: 30px;
+      color: #fff;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 0%;
+        height: 1px;
+        background-color: #fff;
+        transition: all .3s;
+      }
+
+      &:hover {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+
+    &__link + &__link {
+      margin-top: 30px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .footer__basket {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .footer__basket.basket--active {
+      background-color: transparent;
+
+      svg rect {
+        stroke: var(--black-color);
+        transition: all .3s;
+      }
+
+      svg path {
+        fill: var(--black-color);
+        transition: all .3s;
+      }
+
+      @include hover {
+        svg rect {
+          stroke: #fff;
+        }
+
+        svg path {
+          fill: #fff;
+        }
+      }
+    }
+
+    .footer__scroll-top {
+      margin-bottom: 10px;
+
+      svg {
+        @include hover {
+          path {
+            stroke: var(--accent-color);
+          }
+        }
+      }
+    }
+
+    svg {
+      cursor: pointer;
+
+      rect {
+        transition: all .3s;
+      }
+
+      path {
+        transition: all .3s;
+      }
+
+      @include hover {
+        rect {
+          stroke: var(--accent-color);
+        }
+
+        path {
+          fill: var(--accent-color);
+        }
+      }
+    }
+  }
+
+
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+    padding-left: 334px;
+  }
+
+  &__basket--active {
+    svg {
+      fill: #fff;
+      transition: all .3s;
+
+      path {
+        fill: var(--black-color);
+        transition: all .3s;
+      }
+    }
+  }
+
+}
+
+.form {
+  &__text {
+    display: block;
+    margin-bottom: 40px;
+    font-size: 20px;
+    line-height: 23px;
+    color: #fff;
+  }
+
+  &__group {
+    position: relative;
+    display: inline-block;
+    margin-right: 40px;
+  }
+
+  &__label {
+    position: absolute;
+    top: -15px;
+    left: 2px;
+    font-size: 18px;
+    line-height: 24px;
+    color: #fff;
+    transition: all .3s;
+
+  }
+
+  &__input {
+    position: relative;
+    outline: none;
+    z-index: 10;
+    width: 417px;
+    font-size: 20px;
+    height: 49px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    transition: all .3s;
+    cursor: pointer;
+
+
+    &:focus {
+      border-bottom: 1px solid rgba(255, 255, 255, 1);
+      transition: all .3s;
+
+      & ~ .form__label, .form__input:not(:placeholder-shown) ~ .form__label {
+        top: -22px;
+        font-size: 14px;
+        transition: all .3s;
+      }
+    }
+
+    &:active {
+      border-bottom: 1px solid rgba(255, 255, 255, 1);
+      transition: all .3s;
+
+      & ~ .form__label, .form__input:not(:placeholder-shown) ~ .form__label {
+        top: -22px;
+        font-size: 14px;
+        transition: all .3s;
+      }
+    }
+  }
+
+  &__btn {
+    padding: 11px 41px;
+    line-height: 24px;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #fff;
+    transition: all .3s;
+
+    @include hover {
+      transform: scale(1.03);
+    }
+  }
+}
+
+.social {
+  display: flex;
+  align-items: flex-end;
+
+  &__item + &__item {
+    margin-left: 40px;
+  }
+
+  &__link {
+    svg {
+      width: 30px;
+      height: 30px;
+      fill: #fff;
+      transition: all .3s;
+
+      @include hover {
+        rect {
+          fill: var(--accent-color);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+.contacts {
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border: 1px solid #000000;
+    margin-top: 40px;
+    padding: 60px 100px;
+    padding-left: 312px;
+    width: 1089px;
+    height: 460px;
+    background-color: #F8F2EC;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 40px;
+    font-family: 'KronaOne';
+    font-weight: 400;
+    font-size: 48px;
+  }
+
+  &__link {
+    font-size: 28px;
+  }
+
+  &__address {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-style: normal;
+    font-size: 28px;
+    text-transform: capitalize;
+  }
+
+  &__company {
+    margin-bottom: 20px;
+    font-size: 28px;
+    line-height: 150%;
+    text-transform: capitalize;
+  }
+
+  &__links {
+    margin-bottom: 150px;
+  }
+
+  &__track {
+    display: inline-block;
+  }
+
+  &__continue {
+    display: inline-block;
+  }
+}
+
+.map {
+  margin-top: 80px;
+  margin-bottom: 150px;
+  border: 1px solid rgba(#272727, 0.7);
+  width: 1370px;
+  height: 700px;
+  background-color: #F8F2EC;
+}
+
+[class*="copyrights-pane"] {
+  display: none !important;
+}
