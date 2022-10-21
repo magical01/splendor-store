@@ -2,6 +2,22 @@
   position: relative;
   height: 892px;
 
+  @include md-tablet {
+    height: 795px;
+  }
+
+  @include small-tablet {
+    height: 735px;
+  }
+
+  @include mobile {
+    height: 640px;
+  }
+
+  @include mini-mobile {
+    height: 550px;
+  }
+
   &__container {
     position: relative;
     height: 100%;
@@ -9,6 +25,19 @@
 
   &__slider {
     height: 100%;
+
+    @include xxl-desktop {
+      .swiper-slide {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+    @include xl-tablet {
+      .swiper-slide {
+        justify-content: initial;
+      }
+    }
   }
 
   &__content {
@@ -16,10 +45,72 @@
     padding-left: 141px;
     padding-top: 256px;
 
+    @include xl-desktop {
+      max-width: 565px;
+    }
+
+    @include xl-tablet {
+      padding-left: 0;
+    }
+
+    @include md-tablet {
+      padding-top: 200px;
+      max-width: 433px;
+    }
+
+    @include small-tablet {
+      padding-top: 175px;
+    }
+
+    @include mobile {
+      padding-top: 130px;
+    }
+
+    @include mini-mobile {
+      display: flex;
+      flex-direction: column;
+    }
+
+    picture {
+      @include xl-mobile {
+        display: none;
+      }
+    }
+
     picture img {
       position: absolute;
       top: 0;
       right: 125px;
+
+      @include xxl-desktop {
+        left: 125px;
+        right: auto;
+      }
+
+      @include big-desktop {
+        left: 116px;
+        width: 400px;
+      }
+
+      @include xxl-tablet {
+        left: 111px;
+        width: 330px;
+      }
+
+      @include xl-tablet {
+        left: auto;
+        right: 25px;
+        width: 400px;
+      }
+
+      @include md-tablet {
+        right: -50px;
+      }
+
+      @include small-tablet {
+        right: -35px;
+        width: 330px;
+      }
     }
   }
 
@@ -31,6 +122,30 @@
     line-height: 80px;
     letter-spacing: -0.03em;
     opacity: 0.9;
+
+    @include xl-tablet {
+      font-size: 54px;
+      line-height: 68px;
+    }
+
+    @include md-tablet {
+      font-size: 50px;
+      line-height: 62px;
+    }
+
+    @include small-tablet {
+      margin-bottom: 30px;
+    }
+
+    @include mobile {
+      font-size: 42px;
+      line-height: 54px;
+    }
+
+    @include mini-mobile {
+      font-size: 36px;
+      line-height: 48px;
+    }
   }
 
   &__descr {
@@ -41,9 +156,25 @@
     line-height: 30px;
     opacity: 0.7;
     font-weight: 500;
+
+    @include md-tablet {
+      font-size: 18px;
+      line-height: 26px;
+    }
+
+    @include small-tablet {
+      margin-bottom: 30px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
   }
 
   &__link {
+    display: inline-block;
     border: 1px solid var(--black-color);
     padding: 19px 67px;
     font-size: 30px;
@@ -63,6 +194,18 @@
       transition: none;
     }
 
+
+    @include small-tablet {
+      padding: 16px 48px;
+      font-size: 22px;
+      line-height: 29px;
+    }
+
+    @include mini-mobile {
+      display: inline-flex;
+      justify-content: center;
+      padding: 10px 48px;
+    }
   }
 
   &__pagination {
@@ -75,6 +218,10 @@
 .hero__slider > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: 96px;
+
+  @include mini-mobile {
+    bottom: 58px;
+  }
 }
 
 .swiper-pagination-bullet {
@@ -92,6 +239,10 @@
 
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
   margin: 0 24px;
+
+  @include mobile {
+    margin: 0 12px;
+  }
 }
 
 .background {

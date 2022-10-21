@@ -114,6 +114,14 @@ a {
   margin: 0 auto;
   padding: 0 var(--container-offset);
   max-width: var(--container-width);
+
+  @include xxl-desktop {
+    padding: 0 50px;
+  }
+
+  @include big-desktop {
+    padding: 0 30px;
+  }
 }
 
 .js-focus-visible :focus:not(.focus-visible) {
@@ -185,4 +193,8 @@ input[type=number] {
     outline-offset: 4px;
     transition: none;
   }
+}
+
+.pointer-events {
+  pointer-events: none;
 }

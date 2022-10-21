@@ -101,6 +101,14 @@
     padding-bottom: 80px;
   }
 
+  &__delete {
+    &:focus {
+      outline: 1px solid var(--black-color);
+      outline-offset: 2px;
+      transition: none;
+    }
+  }
+
   &-text {
     display: flex;
     flex-direction: column;
@@ -220,10 +228,22 @@
 
   &__order {
     padding: 18.5px 57px;
+
+    &:focus {
+      outline: 1px solid var(--black-color);
+      outline-offset: 4px;
+      transition: none;
+    }
   }
 
   &__continue {
     padding: 18.5px 37px;
+
+    &:focus {
+      outline: 1px solid var(--black-color);
+      outline-offset: 4px;
+      transition: none;
+    }
   }
 }
 
@@ -286,6 +306,11 @@
     &--disabled {
       opacity: 0.4;
       pointer-events: none;
+    }
+
+    &:focus {
+      outline: 1px solid var(--black-color);
+      transition: none;
     }
   }
 }

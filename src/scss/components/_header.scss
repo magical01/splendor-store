@@ -19,6 +19,10 @@
   &__list {
     display: flex;
     align-items: center;
+
+    @include xl-tablet {
+      display: none;
+    }
   }
 
   &__item {
@@ -41,15 +45,28 @@
     margin: 0;
     font-family: "KronaOne";
     font-weight: 400;
-    font-size: 27.6888px;
+    font-size: 28px;
     line-height: 35px;
     text-transform: uppercase;
+
+    @include xxl-tablet {
+      font-size: 24px;
+    }
+
+    @include small-tablet {
+      font-size: 16px;
+      line-height: 20px;
+    }
   }
 }
 
 .nav {
   &__list {
     display: flex;
+
+    @include xl-tablet {
+      display: none;
+    }
   }
 
   &__link {
@@ -92,6 +109,10 @@
 
   &__item + &__item {
     margin-left: 69px;
+
+    @include xl-desktop {
+      margin-left: 30px;
+    }
   }
 }
 
@@ -188,4 +209,14 @@
 .basket.basket--active {
   background-color: #EBEBEB;
   transition: all .3s;
+}
+
+
+.burger {
+  display: none;
+
+  @include xl-tablet {
+    display: block;
+    @include burger
+  }
 }
