@@ -1,31 +1,75 @@
 .collections {
   padding-bottom: 150px;
+
+  @include small-tablet {
+    padding-bottom: 120px;
+  }
+
+  @include mobile {
+    padding-bottom: 70px;
+  }
+
   &__title {
     padding-left: 140px;
+    margin-bottom: 80px;
+
+    @include tablet {
+      padding-left: 0;
+      text-align: center;
+    }
+
+    @include small-tablet {
+      margin-bottom: 52px;
+    }
+
   }
 
   &__list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
     row-gap: 80px;
-    margin-top: 80px;
+
+    @include mobile {
+      row-gap: 40px;
+    }
   }
 
   &__item {
-    display: flex;
-    width: 100%;
+    // display: flex;
+    // width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+
+    @include tablet {
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 15px;
+    }
   }
 
   &__image {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    // width: 658px;
+    // // width: 658px;
     height: 420px;
     background-color: #F8F2EC;
 
+
     img {
       display: block;
+    }
+
+    @include small-tablet {
+      picture {
+        display: flex;
+        height: 100%;
+
+        img {
+          object-fit: contain;
+        }
+      }
     }
   }
 }
@@ -36,6 +80,10 @@
   align-items: flex-start;
   justify-content: center;
 
+  @include tablet {
+    align-items: center;
+  }
+
   &__title {
     margin: 0;
     margin-bottom: 40px;
@@ -44,6 +92,27 @@
     line-height: 50px;
     letter-spacing: -0.03em;
     opacity: 0.8;
+
+    @include tablet {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 30px;
+      text-align: center;
+    }
+
+    @include small-tablet {
+      margin-bottom: 32px;
+    }
+
+    @include mobile {
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    @include mini-mobile {
+      font-size: 16px;
+      line-height: 22px;
+    }
   }
 
   &__descr {
@@ -51,81 +120,242 @@
     margin-bottom: 40px;
     line-height: 26px;
     opacity: 0.6;
+
+    @include tablet {
+      font-size: 14px;
+      line-height: 24px;
+      text-align: center;
+    }
+
+    @include small-tablet {
+      display: none;
+    }
   }
 
   &__link {
     padding: 11px 33px;
+
+    @include mobile {
+      padding: 6px 20px;
+      font-size: 12px;
+      line-height: 22px;
+    }
   }
 }
 
 .minimalistic {
-  .collections-text {
-    margin-left: 183px;
-    width: 45%;
-  }
+  // .collections-text {
+  //   margin-left: 183px;
+  //   width: 45%;
+  // }
 
-  .collections-text__descr {
-    max-width: 334px;
+  // .collections-text__descr {
+  //   max-width: 334px;
+  // }
+
+  // .collections__image {
+  //   width: 39.9%;
+  // }
+
+  .collections-text {
+    grid-column: 7 / 3 span;
+
+    @include tablet {
+      grid-column:  6 / 3 span;
+    }
   }
 
   .collections__image {
-    width: 39.9%;
+    grid-column: 5 span;
+
+    @include small-tablet {
+      height: 275px;
+    }
+
+    @include mobile {
+      height: 220px;
+    }
+
+    @include mini-mobile {
+      height: 150px;
+    }
   }
 }
 
 .multiple {
-  justify-content: center;
+  // justify-content: center;
 
   .collections-text {
     align-items: flex-end;
-    margin-right: 153px;
-    max-width: 365px;
-    margin-left: 334px;
-    text-align: right;
+    // margin-right: 153px;
+    // max-width: 365px;
+    // margin-left: 334px;
+    // text-align: right;
+    grid-column: 4 / 3 span;
+
+    @include tablet {
+      order: 2;
+      align-items: center;
+      grid-column:  6 / 3 span;
+    }
+
+    &__title {
+      text-align: end;
+
+      @include tablet {
+        text-align: center;
+      }
+    }
+
+    &__descr {
+      text-align: end;
+
+      @include tablet {
+        text-align: center;
+      }
+    }
   }
 
   .collections__image {
     display: inline-flex;
     justify-content: center;
-    align-items: unset;
-    width: 31.3%;
+    align-items: initial;
+    // width: 31.3%;
+    grid-column: 8 / 4 span;
     height: 390px;
+
+    @include big-desktop {
+      grid-column: 8 / 5 span;
+    }
+
+    @include tablet {
+      grid-column: 5 span;
+    }
+
+    @include small-tablet {
+      height: 325px;
+
+      picture {
+        height: 90%;
+      }
+    }
+
+    @include mobile {
+      height: 250px;
+    }
+
+    @include mini-mobile {
+      height: 170px;
+    }
   }
 }
 
 .floor {
   .collections-text {
-    margin-left: 85px;
-    width: 48%;
+    // margin-left: 85px;
+    // width: 48%;
+    grid-column: 8 / 3 span;
 
-    &__descr {
-      width: 334px;
+    // &__descr {
+    //   width: 334px;
+    // }
+
+    @include tablet {
+      grid-column:  6 / 3 span;
     }
   }
 
   .collections__image {
-    margin-left: 207px;
-    width: 51.3%;
+    // margin-left: 207px;
+    // width: 51.3%;
+    grid-column: 2 / 5 span;
     height: 390px;
+
+    @include tablet {
+      grid-column: 5 span;
+    }
+
+    @include small-tablet {
+      height: 240px;
+    }
+
+    @include xl-mobile {
+      picture {
+        height: auto;
+      }
+    }
+
+    @include mobile {
+      height: 220px;
+    }
+
+    @include mini-mobile {
+      height: 150px;
+    }
   }
 }
 
 .squares {
-  justify-content: center;
+  // justify-content: center;
 
   .collections-text {
     align-items: flex-end;
-    margin-right: 155px;
-    max-width: 365px;
-    margin-left: 474px;
-    text-align: right;
+    // margin-right: 155px;
+    // max-width: 365px;
+    // margin-left: 474px;
+    // text-align: right;
+    grid-column: 4 / 3 span;
+
+    @include tablet {
+      order: 2;
+      align-items: center;
+      grid-column:  6 / 3 span;
+    }
+
+    &__title {
+      text-align: end;
+
+      @include tablet {
+        text-align: initial;
+      }
+    }
+
+    &__descr {
+      text-align: end;
+
+      @include tablet {
+        text-align: center;
+      }
+    }
   }
 
   .collections__image {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    // width: 50%;
+    grid-column: 8 / 5 span;
     height: 420px;
+
+    @include tablet {
+      grid-column: 5 span;
+    }
+
+
+    @include small-tablet {
+      height: 272px;
+
+      picture {
+        height: 70%;
+      }
+    }
+
+    @include mobile {
+      height: 220px;
+    }
+
+    @include mini-mobile {
+      height: 150px;
+    }
   }
 }

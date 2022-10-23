@@ -2,18 +2,49 @@
   padding-top: 70px;
   padding-bottom: 159px;
 
+  @include small-tablet {
+    padding-bottom: 120px;
+  }
+
+  @include mobile {
+    padding-bottom: 70px;
+  }
+
   &__title {
     text-align: center;
+    margin-bottom: 80px;
+
+    @include small-tablet {
+      margin-bottom: 50px;
+    }
   }
 
   &__list {
     display: flex;
     justify-content: space-between;
-    margin-top: 80px;
+
+    @include xxl-tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px;
+    }
+
+    @include small-tablet {
+      column-gap: 30px;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__item {
     width: 335px;
+
+    @include xxl-tablet {
+      width: auto;
+    }
+
   }
 
   &__image {
@@ -22,18 +53,56 @@
     border: 1px solid var(--black-color);
     margin-bottom: 43px;
     height: 335px;
-    transition: all .3s;
+    transition: transform .3s;
 
-    @include hover {
+    &:hover {
       transform: scale(1.1);
+      transition: transform .3s;
     }
+
+    @include small-tablet {
+      margin-bottom: 32px;
+      height: 272px;
+
+      picture {
+        display: flex;
+
+        img {
+          height: 90%;
+          object-fit: contain;
+        }
+      }
+    }
+
+    @include mini-mobile {
+      margin-bottom: 20px;
+      picture img {
+        height: 80%;
+
+      }
+    }
+  }
+
+  &__content {
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
   }
 
   &__text-wrap {
     display: inline-flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     margin-bottom: 24px;
+
+    @include small-tablet {
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
   }
 
   &__subject {
@@ -41,6 +110,11 @@
     font-weight: 500;
     font-size: 30px;
     line-height: 31px;
+
+    @include small-tablet {
+      font-size: 24px;
+      line-height: 27px;
+    }
   }
 
   &__price {
@@ -48,6 +122,10 @@
     font-size: 28px;
     color: var(--accent-color);
     opacity: 0.7;
+
+    @include small-tablet {
+      line-height: 24px;
+    }
   }
 
   &__descr {
@@ -55,9 +133,17 @@
     margin-bottom: 33px;
     line-height: 26px;
     opacity: 0.6;
+
+    @include small-tablet {
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 19px;
+      text-align: center;
+    }
   }
 
   &__link {
+    display: inline-block;
     padding: 11px 33px;
   }
 }

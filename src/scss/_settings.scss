@@ -69,18 +69,35 @@ a {
   line-height: 68px;
   letter-spacing: -0.03em;
   opacity: 0.9;
+
+  @include small-tablet {
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 55px;
+  }
+
+  @include mobile {
+    font-size: 34px;
+    line-height: 46px;
+  }
 }
 
 .main-link {
-  border: 0.766391px solid var(--black-color);
+  border: 1px solid var(--black-color);
   font-weight: 500;
   line-height: 24px;
   opacity: 0.9;
-  transition: all .3s;
+  transition: background-color .3s, color .3s;
 
-  @include hover {
+  &:hover {
     background-color: var(--black-color);
     color: #fff;
+    transition: background-color .3s, color .3s;
+  }
+
+  @include small-tablet {
+    font-size: 14px;
+    line-height: 16px;
   }
 }
 
@@ -121,6 +138,10 @@ a {
 
   @include big-desktop {
     padding: 0 30px;
+  }
+
+  @include mobile {
+    padding: 0 15px;
   }
 }
 
