@@ -3,32 +3,76 @@
     <div class="filters__left">
       <h3 class="filters__title">Categories</h3>
       <div class="filters__choice">
-        <div class="filters__categories choice-categories">
+        <!-- <div class="filters__categories choice-categories">
           <button class="choice-categories__item btn-reset">
             <span class="choice-categories__text">Chandeliers</span>
-            <span class="choice-categories__icon btn-reset"></span>
+            <span class="choice-categories__icon"></span>
           </button>
           <button class="choice-categories__item btn-reset">
             <span class="choice-categories__text">Fixtures</span>
-            <span class="choice-categories__icon btn-reset"></span>
+            <span class="choice-categories__icon"></span>
           </button>
           <button class="choice-categories__item btn-reset">
             <span class="choice-categories__text">Track systems</span>
-            <span class="choice-categories__icon btn-reset"></span>
+            <span class="choice-categories__icon"></span>
           </button>
           <button class="choice-categories__item btn-reset">
             <span class="choice-categories__text">Table lamps</span>
-            <span class="choice-categories__icon btn-reset"></span>
+            <span class="choice-categories__icon"></span>
           </button>
           <button class="choice-categories__item btn-reset">
             <span class="choice-categories__text">Floor lamps</span>
-            <span class="choice-categories__icon btn-reset"></span>
+            <span class="choice-categories__icon"></span>
           </button>
           <button class="choice-categories__item btn-reset">
             <span class="choice-categories__text">Street lamps</span>
-            <span class="choice-categories__icon btn-reset"></span>
+            <span class="choice-categories__icon"></span>
           </button>
-        </div>
+        </div> -->
+        <ul class="choice-categories list-reset">
+          <li class="choice-categories__item">
+            <label class="check">
+              <input class="check__input visually-hidden" type="checkbox" checked>
+              <span class="check__box"></span>
+              Chandeliers
+            </label>
+          </li>
+          <li class="choice-categories__item">
+            <label class="check">
+              <input class="check__input visually-hidden" type="checkbox">
+              <span class="check__box"></span>
+              Fixtures
+            </label>
+          </li>
+          <li class="choice-categories__item">
+            <label class="check">
+              <input class="check__input visually-hidden" type="checkbox">
+              <span class="check__box"></span>
+              Track systems
+            </label>
+          </li>
+          <li class="choice-categories__item">
+            <label class="check">
+              <input class="check__input visually-hidden" type="checkbox">
+              <span class="check__box"></span>
+              Table lamps
+            </label>
+          </li>
+          <li class="choice-categories__item">
+            <label class="check">
+              <input class="check__input visually-hidden" type="checkbox">
+              <span class="check__box"></span>
+              Floor lamps
+            </label>
+          </li>
+          <li class="choice-categories__item">
+            <label class="check">
+              <input class="check__input visually-hidden" type="checkbox">
+              <span class="check__box"></span>
+              Street lamps
+            </label>
+          </li>
+        </ul>
         <div class="filters__price choice-price">
           <h3 class="filters__title choice-price__title">Price</h3>
           <div class="choice-price__slider" id="range-slider"></div>
@@ -102,19 +146,40 @@
     <div class="filters__right catalog-product">
       <div class="catalog-product__props">
         <span class="catalog-product__text">See by</span>
-        <button class="catalog-product__column catalog-product__column--active btn-reset focus-offset-4px">
-          <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect y="0.714844" width="10" height="10" fill="#272727" />
-            <rect x="13" y="0.714844" width="10" height="10" fill="#272727" />
-            <rect x="13" y="13.7148" width="10" height="10" fill="#272727" />
-            <rect y="13.7148" width="10" height="10" fill="#272727" />
-          </svg>
+        <div class="catalog-product__mobile-left">
+          <button class="catalog-product__column catalog-product__column--active btn-reset focus-offset-4px">
+            <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect y="0.714844" width="10" height="10" fill="#272727" />
+              <rect x="13" y="0.714844" width="10" height="10" fill="#272727" />
+              <rect x="13" y="13.7148" width="10" height="10" fill="#272727" />
+              <rect y="13.7148" width="10" height="10" fill="#272727" />
+            </svg>
+          </button>
+          <button class="catalog-product__row btn-reset focus-offset-4px">
+            <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line y1="1.71484" x2="23" y2="1.71484" stroke="#272727" stroke-width="2" />
+              <line y1="12.7148" x2="23" y2="12.7148" stroke="#272727" stroke-width="2" />
+              <line y1="22.7148" x2="23" y2="22.7148" stroke="#272727" stroke-width="2" />
+            </svg>
+          </button>
+        </div>
+        <button class="custom-select btn-reset md-tablet" aria-label="Select the product sorting">
+          <div class="custom-select__top">By popularity</div>
+          <div class="custom-select__dropdown">
+            <ul class="custom-select__list list-reset" role="alert">
+              <li class="custom-select__item" tabindex="0">By popularity</li>
+              <li class="custom-select__item" tabindex="0">By price</li>
+              <li class="custom-select__item" tabindex="0">By rating</li>
+            </ul>
+          </div>
         </button>
-        <button class="catalog-product__row btn-reset focus-offset-4px">
-          <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line y1="1.71484" x2="23" y2="1.71484" stroke="#272727" stroke-width="2" />
-            <line y1="12.7148" x2="23" y2="12.7148" stroke="#272727" stroke-width="2" />
-            <line y1="22.7148" x2="23" y2="22.7148" stroke="#272727" stroke-width="2" />
+        <button class="catalog-product__filters md-tablet btn-reset">
+          <svg width="37" height="21" viewBox="0 0 37 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="35.9297" y1="4.14282" x2="0.501118" y2="4.14282" stroke="#8F5C44" stroke-linecap="round" />
+            <circle r="3.75" transform="matrix(-1 0 0 1 11.5371 4.25)" fill="#FCF8F5" stroke="#8F5C44" />
+            <line x1="0.5" y1="-0.5" x2="35.9286" y2="-0.5" transform="matrix(1 0 0 -1 0 16.1428)" stroke="#8F5C44"
+              stroke-linecap="round" />
+            <circle cx="24.8926" cy="16.75" r="3.75" fill="#FCF8F5" stroke="#8F5C44" />
           </svg>
         </button>
       </div>
@@ -137,7 +202,7 @@
                 <div class="product-custom__top">
                   <span class="catalog-product__size">Size: 25*45</span>
                 </div>
-                <!-- <div class="product-custom__bottom">
+                <div class="product-custom__bottom">
                   <button class="product-custom__cart btn-reset">
                     <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -152,7 +217,7 @@
                         fill="#272727" />
                     </svg>
                   </button>
-                </div> -->
+                </div>
               </div>
             </div>
           </a>
@@ -176,7 +241,7 @@
                 <div class="product-custom__top">
                   <span class="catalog-product__size">Size: 25*45</span>
                 </div>
-                <!-- <div class="product-custom__bottom">
+                <div class="product-custom__bottom">
                   <button class="product-custom__cart btn-reset">
                     <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -191,7 +256,7 @@
                         fill="#272727" />
                     </svg>
                   </button>
-                </div> -->
+                </div>
               </div>
             </div>
           </a>
@@ -214,7 +279,7 @@
                 <div class="product-custom__top">
                   <span class="catalog-product__size">Size: 25*45</span>
                 </div>
-                <!-- <div class="product-custom__bottom">
+                <div class="product-custom__bottom">
                   <button class="product-custom__cart btn-reset">
                     <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -229,7 +294,7 @@
                         fill="#272727" />
                     </svg>
                   </button>
-                </div> -->
+                </div>
               </div>
             </div>
           </a>
@@ -252,7 +317,7 @@
                 <div class="product-custom__top">
                   <span class="catalog-product__size">Size: 25*45</span>
                 </div>
-                <!-- <div class="product-custom__bottom">
+                <div class="product-custom__bottom">
                   <button class="product-custom__cart btn-reset">
                     <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -267,7 +332,7 @@
                         fill="#272727" />
                     </svg>
                   </button>
-                </div> -->
+                </div>
               </div>
             </div>
           </a>
@@ -290,7 +355,7 @@
                 <div class="product-custom__top">
                   <span class="catalog-product__size">Size: 25*45</span>
                 </div>
-                <!-- <div class="product-custom__bottom">
+                <div class="product-custom__bottom">
                   <button class="product-custom__cart btn-reset">
                     <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -305,7 +370,7 @@
                         fill="#272727" />
                     </svg>
                   </button>
-                </div> -->
+                </div>
               </div>
             </div>
           </a>
@@ -329,7 +394,7 @@
                 <div class="product-custom__top">
                   <span class="catalog-product__size">Size: 25*45</span>
                 </div>
-                <!-- <div class="product-custom__bottom">
+                <div class="product-custom__bottom">
                   <button class="product-custom__cart btn-reset">
                     <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -344,7 +409,7 @@
                         fill="#272727" />
                     </svg>
                   </button>
-                </div> -->
+                </div>
               </div>
             </div>
           </a>
@@ -367,7 +432,7 @@
                 <div class="product-custom__top">
                   <span class="catalog-product__size">Size: 25*45</span>
                 </div>
-                <!-- <div class="product-custom__bottom">
+                <div class="product-custom__bottom">
                   <button class="product-custom__cart btn-reset">
                     <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -382,7 +447,7 @@
                         fill="#272727" />
                     </svg>
                   </button>
-                </div> -->
+                </div>
               </div>
             </div>
           </a>
@@ -405,7 +470,7 @@
                 <div class="product-custom__top">
                   <span class="catalog-product__size">Size: 25*45</span>
                 </div>
-                <!-- <div class="product-custom__bottom">
+                <div class="product-custom__bottom">
                   <button class="product-custom__cart btn-reset">
                     <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -420,7 +485,7 @@
                         fill="#272727" />
                     </svg>
                   </button>
-                </div> -->
+                </div>
               </div>
             </div>
           </a>
@@ -443,7 +508,7 @@
                 <div class="product-custom__top">
                   <span class="catalog-product__size">Size: 25*45</span>
                 </div>
-                <!-- <div class="product-custom__bottom">
+                <div class="product-custom__bottom">
                   <button class="product-custom__cart btn-reset">
                     <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -458,7 +523,7 @@
                         fill="#272727" />
                     </svg>
                   </button>
-                </div> -->
+                </div>
               </div>
             </div>
           </a>
@@ -481,7 +546,7 @@
                 <div class="product-custom__top">
                   <span class="catalog-product__size">Size: 25*45</span>
                 </div>
-                <!-- <div class="product-custom__bottom">
+                <div class="product-custom__bottom">
                   <button class="product-custom__cart btn-reset">
                     <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -496,7 +561,7 @@
                         fill="#272727" />
                     </svg>
                   </button>
-                </div> -->
+                </div>
               </div>
             </div>
           </a>
@@ -519,7 +584,7 @@
                 <div class="product-custom__top">
                   <span class="catalog-product__size">Size: 25*45</span>
                 </div>
-                <!-- <div class="product-custom__bottom">
+                <div class="product-custom__bottom">
                   <button class="product-custom__cart btn-reset">
                     <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -534,7 +599,7 @@
                         fill="#272727" />
                     </svg>
                   </button>
-                </div> -->
+                </div>
               </div>
             </div>
           </a>
@@ -557,7 +622,7 @@
                 <div class="product-custom__top">
                   <span class="catalog-product__size">Size: 25*45</span>
                 </div>
-                <!-- <div class="product-custom__bottom">
+                <div class="product-custom__bottom">
                   <button class="product-custom__cart btn-reset">
                     <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -572,7 +637,7 @@
                         fill="#272727" />
                     </svg>
                   </button>
-                </div> -->
+                </div>
               </div>
             </div>
           </a>

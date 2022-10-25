@@ -2,9 +2,12 @@
   <div class="container hero-catalog__container">
     <div class="hero-catalog__bg">
       <picture>
+        <source srcset="img/hero-catalog-mob.avif" type="image/avif" media="(max-width: 768px)">
+        <source srcset="img/hero-catalog-mob.webp" type="image/webp" media="(max-width: 768px)">
+        <source srcset="img/hero-catalog-mob.png" media="(max-width: 768px)">
         <source srcset="img/hero-catalog.avif" type="image/avif">
         <source srcset="img/hero-catalog.webp" type="image/webp">
-        <img loading="lazy" src="img/hero-catalog.png" class="hero-catalog__img" width="1649" height="490" alt="">
+        <img loading="lazy" src="img/hero-catalog.png" class="hero-catalog__img" width="1649" height="490" alt="" aria-hidden="true">
       </picture>
       <div class="hero-catalog__content">
         <h2 class="hero-catalog__title">We all bask in&nbsp the glow</h2>

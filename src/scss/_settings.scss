@@ -242,3 +242,24 @@ input[type=number] {
     transition: opacity 0.3s, visibility 0.3s;
   }
 }
+
+.hide {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.3s, visibility 0.3s !important;
+}
+
+.site-bg--gray {
+
+  @include md-tablet {
+    background-color: #FCF8F5;
+  }
+}
+
+.md-tablet {
+  display: none;
+
+  @include md-tablet {
+    display: block;
+  }
+}

@@ -1,9 +1,9 @@
 .filters {
   padding-bottom: 150px;
 
+
   &__container {
     display: flex;
-    column-gap: 140px;
   }
 
   &__title {
@@ -17,6 +17,59 @@
 
   &__left {
     width: 280px;
+    margin-right: calc(100% - 74.6% - 280px);
+
+    @include big-desktop {
+      margin-right: 70px;
+    }
+
+    @include tablet {
+      margin-right: 40px;
+    }
+
+    @include md-tablet {
+      display: none;
+    }
+  }
+}
+
+.check {
+  position: relative;
+  padding-left: 44px;
+  font-size: 20px;
+  line-height: 26px;
+  color: rgba(#272727, 0.8);
+  transition: color .3s;
+  cursor: pointer;
+
+  &__box {
+    position: absolute;
+    top: 50%;
+    border: 1px solid var(--black-color);
+    border-radius: 2px;
+    margin-left: -44px;
+    width: 22px;
+    height: 22px;
+    transform: translateY(-50%);
+  }
+
+  &__input:checked + &__box::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 13px;
+    height: 10px;
+    background-image: url("../img/svg/check.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translate(-50%, -50%);
+  }
+
+  &__input:focus-visible + &__box {
+    outline: 1px solid var(--black-color);
+    outline-offset: 4px;
   }
 }
 
@@ -24,13 +77,12 @@
   padding-bottom: 80px;
 
   &__item {
+    position: relative;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(#8F5C44, 0.4);
-    padding-bottom: 3px;
+    padding-bottom: 5px;
     width: 100%;
-    cursor: pointer;
 
     &:focus {
       outline: 1px solid var(--black-color);
