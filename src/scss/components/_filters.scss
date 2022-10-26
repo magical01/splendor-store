@@ -13,6 +13,18 @@
     font-size: 28px;
     text-transform: capitalize;
     color: var(--black-color);
+
+    @include md-tablet {
+      font-weight: 500;
+    }
+  }
+
+  &__choice {
+    @include md-tablet {
+      display: flex;
+      flex-direction: column;
+      width: 280px;
+    }
   }
 
   &__left {
@@ -28,7 +40,52 @@
     }
 
     @include md-tablet {
-      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      display: block;
+      z-index: 200;
+      opacity: 0;
+      visibility: hidden;
+      overflow-y: auto;
+      padding: 21px 32px 80px 32px;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      transform: translateX(-100%);
+      transition: transform .3s, opacity .3s, visibility .3s;
+    }
+
+    &--open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+      transition: transform .3s, opacity .3s, visibility .3s;
+    }
+
+  }
+
+  &-mobile {
+    display: none;
+
+    @include md-tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 60px;
+
+      &__title {
+        margin: 0;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 38px;
+      }
+
+      svg {
+        width: 15px;
+        height: 16px;
+        fill: #272727;
+      }
     }
   }
 }
@@ -75,6 +132,10 @@
 
 .choice-categories {
   padding-bottom: 80px;
+
+  @include md-tablet {
+    padding-bottom: 60px;
+  }
 
   &__item {
     position: relative;
@@ -138,10 +199,19 @@
 }
 
 .choice-price {
+  order: -1;
   padding-bottom: 80px;
+
+  @include md-tablet {
+    padding-bottom: 60px;
+  }
 
   &__title {
     margin-bottom: 80px;
+
+    @include md-tablet {
+      margin-bottom: 40px;
+    }
   }
 
   &__inputs {
@@ -227,12 +297,20 @@
 .choice-view {
   padding-bottom: 80px;
 
+  @include md-tablet {
+    padding-bottom: 60px;
+  }
+
   &__title {
     display: flex;
     width: 100px;
     position: relative;
     margin-bottom: 80px;
     cursor: pointer;
+
+    @include md-tablet {
+      margin-bottom: 24px;
+    }
 
     &:before {
       content: "";
@@ -278,6 +356,10 @@
 .choice-size {
   padding-bottom: 80px;
 
+  @include md-tablet {
+    padding-bottom: 60px;
+  }
+
   &__item {
     display: flex;
     align-items: flex-end;
@@ -320,6 +402,10 @@
 
 .choice-style {
   padding-bottom: 80px;
+
+  @include md-tablet {
+    padding-bottom: 60px;
+  }
 
   &__list {
     display: flex;

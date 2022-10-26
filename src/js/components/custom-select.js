@@ -22,9 +22,9 @@ select.forEach(elem => {
   elem?.addEventListener('click', (e) => {
     e.currentTarget.classList.toggle('custom-select--open');
 
-    if (e.target.classList.contains("custom-select__item")) {
+    if (e.target.classList.contains("custom-select__item-text")) {
       let text = e.target.textContent;
-      e.currentTarget.querySelector(".custom-select__top").textContent = text;
+      e.currentTarget.querySelector(".custom-select__top span").textContent = text;
     }
   });
 });

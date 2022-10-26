@@ -1,7 +1,17 @@
 <section class="filters">
   <div class="container filters__container">
     <div class="filters__left">
-      <h3 class="filters__title">Categories</h3>
+      <div class="filters__top-mobile filters-mobile">
+        <h3 class="filters-mobile__title">Filter</h3>
+        <button class="filters-mobile__btn btn-reset focus-offset" aria-label="Close filters" aria-expanded="true">
+          <svg class="filtes-mobile__close" width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.7">
+              <path d="M1.00218 0.728165L18.4712 17.4984" stroke="#272727" />
+              <path d="M17.5859 0.501587L0.99854 17.4984" stroke="#272727" />
+            </g>
+          </svg>
+        </button>
+      </div>
       <div class="filters__choice">
         <!-- <div class="filters__categories choice-categories">
           <button class="choice-categories__item btn-reset">
@@ -29,50 +39,53 @@
             <span class="choice-categories__icon"></span>
           </button>
         </div> -->
-        <ul class="choice-categories list-reset">
-          <li class="choice-categories__item">
-            <label class="check">
-              <input class="check__input visually-hidden" type="checkbox" checked>
-              <span class="check__box"></span>
-              Chandeliers
-            </label>
-          </li>
-          <li class="choice-categories__item">
-            <label class="check">
-              <input class="check__input visually-hidden" type="checkbox">
-              <span class="check__box"></span>
-              Fixtures
-            </label>
-          </li>
-          <li class="choice-categories__item">
-            <label class="check">
-              <input class="check__input visually-hidden" type="checkbox">
-              <span class="check__box"></span>
-              Track systems
-            </label>
-          </li>
-          <li class="choice-categories__item">
-            <label class="check">
-              <input class="check__input visually-hidden" type="checkbox">
-              <span class="check__box"></span>
-              Table lamps
-            </label>
-          </li>
-          <li class="choice-categories__item">
-            <label class="check">
-              <input class="check__input visually-hidden" type="checkbox">
-              <span class="check__box"></span>
-              Floor lamps
-            </label>
-          </li>
-          <li class="choice-categories__item">
-            <label class="check">
-              <input class="check__input visually-hidden" type="checkbox">
-              <span class="check__box"></span>
-              Street lamps
-            </label>
-          </li>
-        </ul>
+        <div class="filters__categories">
+          <h3 class="filters__title">Categories</h3>
+          <ul class="choice-categories list-reset">
+            <li class="choice-categories__item">
+              <label class="check">
+                <input class="check__input visually-hidden" type="checkbox" checked>
+                <span class="check__box"></span>
+                Chandeliers
+              </label>
+            </li>
+            <li class="choice-categories__item">
+              <label class="check">
+                <input class="check__input visually-hidden" type="checkbox">
+                <span class="check__box"></span>
+                Fixtures
+              </label>
+            </li>
+            <li class="choice-categories__item">
+              <label class="check">
+                <input class="check__input visually-hidden" type="checkbox">
+                <span class="check__box"></span>
+                Track systems
+              </label>
+            </li>
+            <li class="choice-categories__item">
+              <label class="check">
+                <input class="check__input visually-hidden" type="checkbox">
+                <span class="check__box"></span>
+                Table lamps
+              </label>
+            </li>
+            <li class="choice-categories__item">
+              <label class="check">
+                <input class="check__input visually-hidden" type="checkbox">
+                <span class="check__box"></span>
+                Floor lamps
+              </label>
+            </li>
+            <li class="choice-categories__item">
+              <label class="check">
+                <input class="check__input visually-hidden" type="checkbox">
+                <span class="check__box"></span>
+                Street lamps
+              </label>
+            </li>
+          </ul>
+        </div>
         <div class="filters__price choice-price">
           <h3 class="filters__title choice-price__title">Price</h3>
           <div class="choice-price__slider" id="range-slider"></div>
@@ -147,7 +160,8 @@
       <div class="catalog-product__props">
         <span class="catalog-product__text">See by</span>
         <div class="catalog-product__mobile-left">
-          <button class="catalog-product__column catalog-product__column--active btn-reset focus-offset-4px">
+          <button class="catalog-product__column catalog-product__column--active btn-reset focus-offset-4px"
+            aria-label="The grid is 50%">
             <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect y="0.714844" width="10" height="10" fill="#272727" />
               <rect x="13" y="0.714844" width="10" height="10" fill="#272727" />
@@ -155,7 +169,7 @@
               <rect y="13.7148" width="10" height="10" fill="#272727" />
             </svg>
           </button>
-          <button class="catalog-product__row btn-reset focus-offset-4px">
+          <button class="catalog-product__row btn-reset focus-offset-4px" aria-label="The grid is 100%">
             <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <line y1="1.71484" x2="23" y2="1.71484" stroke="#272727" stroke-width="2" />
               <line y1="12.7148" x2="23" y2="12.7148" stroke="#272727" stroke-width="2" />
@@ -163,17 +177,30 @@
             </svg>
           </button>
         </div>
-        <button class="custom-select btn-reset md-tablet" aria-label="Select the product sorting">
-          <div class="custom-select__top">By popularity</div>
+        <button class="custom-select btn-reset md-tablet focus-offset" aria-label="Select the product sorting">
+          <div class="custom-select__top">
+            <span>By popularity</span>
+            <svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="0.316619" y1="0.613021" x2="7.81662" y2="6.74938" stroke="#272727" />
+              <line y1="-0.5" x2="9.69046" y2="-0.5" transform="matrix(-0.773957 0.633238 0.633238 0.773957 15 1)"
+                stroke="#272727" />
+            </svg>
+          </div>
           <div class="custom-select__dropdown">
             <ul class="custom-select__list list-reset" role="alert">
-              <li class="custom-select__item" tabindex="0">By popularity</li>
-              <li class="custom-select__item" tabindex="0">By price</li>
-              <li class="custom-select__item" tabindex="0">By rating</li>
+              <li class="custom-select__item focus-offset" tabindex="0">
+                <span class="custom-select__item-text">By popularity</span>
+              </li>
+              <li class="custom-select__item focus-offset" tabindex="0">
+                <span class="custom-select__item-text">By price</span>
+              </li>
+              <li class="custom-select__item focus-offset" tabindex="0">
+                <span class="custom-select__item-text">By rating</span>
+              </li>
             </ul>
           </div>
         </button>
-        <button class="catalog-product__filters md-tablet btn-reset">
+        <button class="catalog-product__filters md-tablet btn-reset focus-offset" aria-label="Open filters" aria-expanded="false">
           <svg width="37" height="21" viewBox="0 0 37 21" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line x1="35.9297" y1="4.14282" x2="0.501118" y2="4.14282" stroke="#8F5C44" stroke-linecap="round" />
             <circle r="3.75" transform="matrix(-1 0 0 1 11.5371 4.25)" fill="#FCF8F5" stroke="#8F5C44" />
@@ -649,6 +676,9 @@
         <button class="product-pagination__btn btn-reset">2</button>
         <button class="product-pagination__btn btn-reset">3</button>
         <button class="product-pagination__btn btn-reset next-btn product-pagination__btn--active">Next</button>
+      </div>
+      <div class="catalog-product__more md-tablet">
+        <button class="catalog-product__btn-more btn-reset">See more</button>
       </div>
     </div>
   </div>

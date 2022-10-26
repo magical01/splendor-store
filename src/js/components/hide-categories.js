@@ -1,8 +1,27 @@
+import { disableScroll } from '../functions/disable-scroll';
+import { enableScroll } from '../functions/enable-scroll';
+
+
 const filters = document?.querySelectorAll('.choice-categories__item');
 const view = document?.querySelector('.choice-view');
 const color = document?.querySelectorAll('.choice-color__item');
 const style = document?.querySelectorAll('.choice-style__item');
 const input = document?.querySelectorAll('.choice-size__input');
+const filtersIcon = document?.querySelector('.catalog-product__filters');
+const filtersClose = document?.querySelector('.filtes-mobile__close');
+const filtersLeft = document.querySelector('.filters__left');
+
+filtersIcon?.addEventListener('click', () => {
+  filtersLeft?.classList.add('filters__left--open');
+  disableScroll();
+});
+
+filtersClose?.addEventListener('click', () => {
+  filtersLeft?.classList.remove('filters__left--open');
+  enableScroll();
+});
+
+
 
 filters.forEach(elem => {
   elem?.addEventListener('click', (e) => {
