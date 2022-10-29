@@ -232,7 +232,7 @@ input[type=number] {
   overflow-x: hidden;
   opacity: 0;
   visibility: hidden;
-  z-index: 2;
+  z-index: 3;
   backdrop-filter: blur(4.5px);
   transition: opacity 0.3s, visibility 0.3s;
 

@@ -6,6 +6,10 @@
     padding-top: 36px;
   }
 
+  @include mobile {
+    padding-bottom: 40px;
+  }
+
   &__container {
     height: 490px;
 
@@ -54,7 +58,7 @@
   &__content {
     max-width: 725px;
     position: relative;
-    z-index: 2;
+    z-index: 0;
     padding-left: 148px;
     padding-top: 139px;
 

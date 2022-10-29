@@ -1,6 +1,14 @@
 .filters {
   padding-bottom: 150px;
 
+  @include small-tablet {
+    padding-bottom: 100px;
+  }
+
+  @include mobile {
+    padding-bottom: 70px;
+  }
+
 
   &__container {
     display: flex;
@@ -16,6 +24,17 @@
 
     @include md-tablet {
       font-weight: 500;
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    @include mobile {
+      margin-bottom: 30px;
+    }
+
+    @include mobile {
+      font-size: 20px;
+      line-height: 30px;
     }
   }
 
@@ -24,6 +43,10 @@
       display: flex;
       flex-direction: column;
       width: 280px;
+    }
+
+    @include mini-mobile {
+      width: 100%;
     }
   }
 
@@ -54,6 +77,12 @@
       background-color: #fff;
       transform: translateX(-100%);
       transition: transform .3s, opacity .3s, visibility .3s;
+
+    }
+
+    @include mobile {
+      width: 100%;
+      padding: 20px 20px 60px 20px;
     }
 
     &--open {
@@ -74,11 +103,20 @@
       align-items: center;
       margin-bottom: 60px;
 
+      @include mobile {
+        margin-bottom: 30px;
+      }
+
       &__title {
         margin: 0;
         font-weight: 500;
         font-size: 28px;
         line-height: 38px;
+
+        @include mobile {
+          font-size: 22px;
+          line-height: 30px;
+        }
       }
 
       svg {
@@ -99,15 +137,24 @@
   transition: color .3s;
   cursor: pointer;
 
+  @include mobile {
+    font-size: 16px;
+  }
+
   &__box {
     position: absolute;
     top: 50%;
     border: 1px solid var(--black-color);
     border-radius: 2px;
-    margin-left: -44px;
+    margin-left: -36px;
     width: 22px;
     height: 22px;
     transform: translateY(-50%);
+
+    @include mobile {
+      width: 16px;
+      height: 16px;
+    }
   }
 
   &__input:checked + &__box::before {
@@ -137,13 +184,21 @@
     padding-bottom: 60px;
   }
 
+  @include mobile {
+    padding-bottom: 30px;
+  }
+
   &__item {
     position: relative;
     display: flex;
     align-items: center;
     border-bottom: 1px solid rgba(#8F5C44, 0.4);
-    padding-bottom: 5px;
+    padding-bottom: 15px;
     width: 100%;
+
+    @include mobile {
+      padding-bottom: 5px;
+    }
 
     &:focus {
       outline: 1px solid var(--black-color);
@@ -206,11 +261,19 @@
     padding-bottom: 60px;
   }
 
+  @include mobile {
+    padding-bottom: 30px;
+  }
+
   &__title {
     margin-bottom: 80px;
 
     @include md-tablet {
       margin-bottom: 40px;
+    }
+
+    @include mobile {
+      margin-bottom: 30px;
     }
   }
 
@@ -301,6 +364,10 @@
     padding-bottom: 60px;
   }
 
+  @include mobile {
+    padding-bottom: 30px;
+  }
+
   &__title {
     display: flex;
     width: 100px;
@@ -340,15 +407,21 @@
     border: 1px solid var(--black-color);
     padding: 13px 94px;
     font-size: 20px;
-    transition: all .3s;
+    transition: background-color .3s, color .3s;
+
+    @include mobile {
+      padding: 10px 80px;
+      font-size: 16px;
+    }
 
     &--active {
       display: block;
     }
 
-    @include hover {
+    &:hover {
       color: #fff;
       background-color: rgba(#272727, 0.8);
+      transition: background-color .3s, color .3s;
     }
   }
 }
@@ -374,11 +447,19 @@
 
   &__item +  &__item {
     margin-top: 39px;
+
+    @include mobile {
+      margin-top: 25px;
+    }
   }
 
   &__text {
     max-width: 105px;
     font-size: 20px;
+
+    @include mobile {
+      font-size: 16px;
+    }
   }
 
   &__input {
@@ -407,35 +488,56 @@
     padding-bottom: 60px;
   }
 
+  @include mobile {
+    padding-bottom: 30px;
+  }
+
   &__list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    column-gap: 20px;
-    row-gap: 54px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 50px;
+
+    @include mobile {
+      row-gap: 30px;
+    }
+
   }
 
   &__item {
     position: relative;
     font-size: 20px;
+    line-height: 26px;
     color: rgba(#272727, 0.7);
     transition: all .3s;
     cursor: pointer;
 
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0%;
-      height: 1px;
-      background-color: #8F5C44;
-      transition: all .3s;
+    @include md-tablet {
+      font-size: 18px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
+
+    span {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0%;
+        height: 1px;
+        background-color: #8F5C44;
+        transition: all .3s;
+      }
     }
 
     @include hover {
-      &::before {
-        width: 100%;
+      span {
+        &::before {
+          width: 100%;
+        }
       }
     }
 
@@ -443,14 +545,16 @@
       position: relative;
       color: var(--black-color);
 
-      &:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 1px;
-        background-color: #8F5C44;
+      span {
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 1px;
+          background-color: #8F5C44;
+        }
       }
 
     }
@@ -461,10 +565,14 @@
   padding-bottom: 20px;
 
   &__list {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 14%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 5%;
     row-gap: 40px;
+
+    @include mobile {
+      row-gap: 20px;
+    }
   }
 
   &__item {
@@ -472,11 +580,16 @@
     height: 40px;
     cursor: pointer;
     border: 1px solid transparent;
-    transition: all .3s;
+    transition: border .3s;
+
+    @include mobile {
+      width: 35px;
+      height: 35px;
+    }
 
     &--active {
       border: 1px solid var(--black-color);
-      transition: all .3s;
+      transition: border .3s;
     }
 
     &--gray {

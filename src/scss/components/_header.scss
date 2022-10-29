@@ -75,7 +75,7 @@
     box-shadow: 0px 24px 77px rgba(50, 50, 50, 0.43);
     z-index: 100;
     padding-top: 44px;
-    padding-left: 40px;
+    padding-left: 35px;
     padding-right: 30px;
     width: 370px;
     height: 100vh;
@@ -87,6 +87,21 @@
   @include mini-mobile {
     border-radius: initial;
     width: 100%;
+  }
+
+  &__group-mobile {
+    display: none;
+
+    @include xl-tablet {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 60px;
+    }
+
+
+    @include small-tablet {
+      flex-direction: initial;
+    }
   }
 
   &__list {
@@ -131,6 +146,10 @@
       height: 1px;
       background-color: var(--black-color);
       transition: all .3s;
+
+      @include xl-tablet {
+        background-color: #fff;
+      }
     }
 
     &:hover {
@@ -162,10 +181,10 @@
 
   &-mobile__buttons {
     display: none;
+
     @include xl-tablet {
       display: flex;
       align-items: center;
-      margin-bottom: 30px;
     }
   }
 
@@ -191,18 +210,15 @@
 
   &-mobile__item.basket {
     display: inline-flex;
+    height: 21px;
+
     button {
       display: inline-flex;
-      height: 31px;
     }
 
     svg {
-      width: 31px;
-      height: 31px;
-    }
-
-    svg rect {
-      stroke: var(--white-color)
+      width: 12px;
+      height: 14px;
     }
 
     svg path {
@@ -321,8 +337,11 @@
   @include xl-tablet {
     display: block;
     z-index: 500;
-    @include burger
+
+    @include burger;
+
   }
+
 }
 
 .burger--active {
@@ -334,6 +353,7 @@
   opacity: 1;
   transform: translateX(0);
   transition: transform 0.3s, opacity 0.3s;
+
 }
 
 .mobile-logo {
@@ -341,7 +361,12 @@
 
   @include xl-tablet {
     display: inline-block;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    margin-right: 30px;
+  }
+
+  @include small-tablet {
+    margin-bottom: 0;
   }
 
   .header__logo-text {

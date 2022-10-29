@@ -127,6 +127,10 @@
     position: relative;
     z-index: 5;
     transition: all .3s;
+
+    @include md-tablet {
+      display: none;
+    }
   }
 
   &__cart {
@@ -156,6 +160,14 @@
         fill: #8F5C44;
       }
     }
+  }
+
+  @include md-tablet {
+    margin-bottom: 20px;
+  }
+
+  @include mobile {
+    margin-bottom: 10px;
   }
 }
 

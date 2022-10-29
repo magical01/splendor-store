@@ -1,0 +1,50 @@
+.menu-fixed {
+  display: none;
+
+  @include md-tablet {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: block;
+    border-top: 2px solid rgba(39, 39, 39, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    height: 90px;
+    width: 100%;
+    background-color: #FFFFFF;
+    transform: translateY(100%);
+    transition: opacity .3s, visibility .3s, transform .3s;
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      transition: opacity .3s, visibility .3s, transform .3s;
+    }
+
+    &__nav {
+      height: 100%;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 107px;
+      padding-right: 107px;
+      height: 100%;
+    }
+
+    &__link {
+
+      &-home {
+        svg {
+          width: 32px;
+          height: 36px;
+          fill: #BFC2C8;
+        }
+      }
+    }
+  }
+
+}

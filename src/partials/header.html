@@ -4,39 +4,38 @@
       <span class="header__logo-text">Splendor</span>
     </a>
     <nav class="nav" title="Main menu" data-menu>
-      <a class="mobile-logo" href="#">
-        <span class="header__logo-text">Splendor</span>
-      </a>
-      <ul class="nav-mobile__buttons list-reset">
-        <li class="nav-mobile__item search">
-          <button class="btn-reset focus-offset" aria-label="Find a product">
-            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path opacity="0.9"
-                d="M15 15.6175L11.6945 12.2262L15 15.6175ZM13.5263 7.6939C13.5263 9.39509 12.8664 11.0266 11.6919 12.2295C10.5173 13.4325 8.92425 14.1083 7.26316 14.1083C5.60207 14.1083 4.00901 13.4325 2.83444 12.2295C1.65987 11.0266 1 9.39509 1 7.6939C1 5.9927 1.65987 4.36119 2.83444 3.15826C4.00901 1.95534 5.60207 1.27954 7.26316 1.27954C8.92425 1.27954 10.5173 1.95534 11.6919 3.15826C12.8664 4.36119 13.5263 5.9927 13.5263 7.6939V7.6939Z"
-                stroke="#272727" stroke-width="1.67811" stroke-linecap="round" />
-            </svg>
-          </button>
-        </li>
-        <li class="nav-mobile__item favorites">
-          <a class="focus-offset" href="favorites.html" aria-label="Go to favorites">
-            <svg>
-              <use xlink:href="img/sprite.svg#favorites"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="nav-mobile__item basket">
-          <span class="basket__quantity">1</span>
-          <button class="btn-reset focus-offset">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="0.629291" y="0.629291" width="38.7414" height="38.7414" rx="0.629291" stroke="#272727"
-                stroke-width="1.25858" />
-              <path
-                d="M26.9918 28.0187L25.9625 18.3023C25.9344 18.037 25.6721 17.8337 25.3578 17.8337H23.2352V17.0223C23.2352 15.5099 21.7838 14.2795 19.9997 14.2795C18.2158 14.2795 16.7645 15.5099 16.7645 17.0223V17.8337H14.6404C14.3262 17.8337 14.0638 18.037 14.0358 18.3023L13.0024 28.0569C12.9872 28.2008 13.044 28.3435 13.1591 28.4501C13.2741 28.5568 13.4367 28.6175 13.6071 28.6175H26.3912C26.3917 28.6175 26.3923 28.6175 26.3929 28.6175C26.7282 28.6175 27 28.3871 27 28.1029C26.9999 28.0742 26.9972 28.0461 26.9918 28.0187ZM17.9787 17.0223C17.9787 16.0775 18.8854 15.3088 19.9998 15.3088C21.1144 15.3088 22.0211 16.0775 22.0211 17.0223V17.8337H17.9787V17.0223ZM14.2712 27.5883L15.1955 18.863H16.7645V19.7833C16.7645 20.0675 17.0362 20.2979 17.3716 20.2979C17.707 20.2979 17.9787 20.0675 17.9787 19.7833V18.863H22.0211V19.7833C22.0211 20.0675 22.2928 20.2979 22.6282 20.2979C22.9636 20.2979 23.2353 20.0675 23.2353 19.7833V18.863H24.8029L25.7271 27.5883H14.2712Z"
-                fill="#272727" />
-            </svg>
-          </button>
-        </li>
-      </ul>
+      <div class="nav__group-mobile">
+        <a class="mobile-logo" href="#">
+          <span class="header__logo-text">Splendor</span>
+        </a>
+        <ul class="nav-mobile__buttons list-reset">
+          <li class="nav-mobile__item search">
+            <button class="btn-reset focus-offset" aria-label="Find a product">
+              <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.9"
+                  d="M15 15.6175L11.6945 12.2262L15 15.6175ZM13.5263 7.6939C13.5263 9.39509 12.8664 11.0266 11.6919 12.2295C10.5173 13.4325 8.92425 14.1083 7.26316 14.1083C5.60207 14.1083 4.00901 13.4325 2.83444 12.2295C1.65987 11.0266 1 9.39509 1 7.6939C1 5.9927 1.65987 4.36119 2.83444 3.15826C4.00901 1.95534 5.60207 1.27954 7.26316 1.27954C8.92425 1.27954 10.5173 1.95534 11.6919 3.15826C12.8664 4.36119 13.5263 5.9927 13.5263 7.6939V7.6939Z"
+                  stroke="#272727" stroke-width="1.67811" stroke-linecap="round" />
+              </svg>
+            </button>
+          </li>
+          <li class="nav-mobile__item favorites">
+            <a class="focus-offset" href="favorites.html" aria-label="Go to favorites">
+              <svg>
+                <use xlink:href="img/sprite.svg#favorites"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="nav-mobile__item basket">
+            <span class="basket__quantity">1</span>
+            <button class="btn-reset focus-offset">
+              <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.9929 13.4153L11.1107 3.92796C11.0866 3.66887 10.8618 3.47042 10.5924 3.47042H8.77304V2.67807C8.77304 1.20138 7.52895 0 5.99976 0C4.47067 0 3.22671 1.20138 3.22671 2.67807V3.47042H1.4061C1.13674 3.47042 0.911867 3.66887 0.887786 3.92796L0.00208197 13.4526C-0.0109667 13.5931 0.0377423 13.7325 0.136342 13.8366C0.234937 13.9407 0.374336 14 0.520393 14H11.4782C11.4786 14 11.4791 14 11.4796 14C11.767 14 12 13.775 12 13.4975C11.9999 13.4695 11.9976 13.442 11.9929 13.4153ZM4.26749 2.67807C4.26749 1.75554 5.0446 1.00501 5.99986 1.00501C6.95517 1.00501 7.73233 1.75554 7.73233 2.67807V3.47042H4.26749V2.67807ZM1.08963 12.9951L1.88188 4.47542H3.22671V5.374C3.22671 5.65156 3.45964 5.87652 3.74708 5.87652C4.03457 5.87652 4.26749 5.65156 4.26749 5.374V4.47542H7.73233V5.374C7.73233 5.65156 7.96525 5.87652 8.25274 5.87652C8.54022 5.87652 8.77314 5.65156 8.77314 5.374V4.47542H10.1167L10.9089 12.9951H1.08963Z" fill="white"/>
+                </svg>
+
+            </button>
+          </li>
+        </ul>
+      </div>
       <ul class="nav__list list-reset">
         <li class="nav__item"><a class="nav__link nav__link--active" href="#" data-menu-item>Home</a></li>
         <li class="nav__item"><a class="nav__link" href="catalog.html" data-menu-item>Catalog</a></li>

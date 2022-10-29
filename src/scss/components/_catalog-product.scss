@@ -9,11 +9,17 @@
     display: grid;
     justify-content: end;
     grid-auto-flow: column;
+    align-items: center;
     column-gap: 40px;
     margin-bottom: 66px;
 
     @include md-tablet {
       justify-content: space-between;
+    }
+
+    @include mobile {
+      column-gap: 0;
+      margin-bottom: 40px;
     }
 
     .custom-select {
@@ -23,13 +29,25 @@
       min-width: 180px;
       text-align: start;
 
+      @include small-tablet {
+        width: 300px;
+      }
+
+      @include mobile {
+        padding-top: 5px;
+        padding-bottom: 0;
+        width: 250px;
+      }
+
+      @include mini-mobile {
+        width: 170px;
+        min-width: auto;
+      }
 
       &--open {
         background-color: #FFFFFF;
         box-shadow: 0px 0px 42px rgba(156, 156, 156, 0.32);
         border-radius: 8px 8px 0px 0;
-
-
       }
 
       &__top {
@@ -44,25 +62,21 @@
         line-height: 36px;
         text-transform: initial;
 
+        @include mobile {
+          font-size: 20px;
+          line-height: 30px;
+        }
+
         span {
           display: inline-block;
           margin-right: 8px;
           min-width: 150px;
+
+          @include mobile {
+            min-width: 120px;
+          }
         }
 
-        // &::after {
-        //   content: "";
-        //   position: absolute;
-        //   right: 0px;
-        //   width: 15px;
-        //   height: 10px;
-        //   background-image: url("../img/svg/arrow-down.svg");
-        //   background-position: center;
-        //   background-repeat: no-repeat;
-        //   background-size: contain;
-        //   transform: rotate(0);
-        //   transition: transform .3s;
-        // }
       }
 
       &__dropdown {
@@ -91,6 +105,10 @@
         background-color: #fff;
         transition: background-color .3s;
 
+        @include mobile {
+          font-size: 16px;
+        }
+
         &-text {
           min-width: 150px;
         }
@@ -101,6 +119,33 @@
         }
       }
 
+    }
+  }
+
+  &__column {
+    @include mobile {
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  &__row {
+    @include mobile {
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  &__filters {
+    @include mobile {
+      svg {
+        width: 30px;
+        height: 30px;
+      }
     }
   }
 
@@ -222,6 +267,14 @@
       row-gap: 60px;
       margin-bottom: 80px;
     }
+
+    @include mobile {
+      column-gap: 20px;
+    }
+
+    @include mini-mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__item {
@@ -240,6 +293,18 @@
       .product-custom__bottom {
         transform: translateY(-100%);
         transition: transform .3s;
+      }
+
+      @include md-tablet {
+        .product-custom__top {
+          transform: translateY(0);
+          transition: transform .3s;
+        }
+
+        .product-custom__bottom {
+          transform: translateY(0);
+          transition: transform .3s;
+        }
       }
     }
 
@@ -260,7 +325,7 @@
   &__new {
     position: absolute;
     right: 1px;
-    top: 1.5px;
+    top: 1px;
     font-size: 24px;
     text-transform: capitalize;
     color: #fff;
@@ -272,15 +337,50 @@
     display: flex;
     justify-content: center;
     border: 1px solid var(--black-color);
+    margin-bottom: 15px;
     height: 390px;
     transition: border .3s;
+
+    @include md-tablet {
+      margin-bottom: 24px;
+    }
+
+    @include small-tablet {
+      height: 350px;
+    }
+
+    @include mobile {
+      height: 320px;
+    }
+
+
+
+    @include md-tablet {
+      picture {
+        display: flex;
+
+        img {
+          height: 90%;
+        }
+      }
+    }
+
+    @include small-tablet {
+      picture {
+        justify-content: center;
+
+        img {
+          width: 100%;
+          height: 80%;
+        }
+      }
+    }
   }
 
   &__group {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 10px;
     margin-bottom: 5px;
   }
 
@@ -289,16 +389,34 @@
     font-weight: 400;
     font-size: 28px;
     text-transform: capitalize;
+
+    @include mobile {
+      font-size: 22px;
+    }
   }
 
   &__price {
     font-size: 28px;
+
+
+    @include md-tablet {
+      font-weight: 500;
+      line-height: 34px;
+    }
+
+    @include mobile {
+      font-size: 22px;
+    }
   }
 
   &__size {
     display: block;
     font-size: 18px;
     text-transform: capitalize;
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
 
   &__item--center {
@@ -313,6 +431,10 @@
 
       picture {
         transform: translateY(4px);
+
+        @include md-tablet {
+          transform: translate(0);
+        }
       }
     }
   }
@@ -324,6 +446,18 @@
     width: 78px;
     height: 91px;
     background-color: #fff;
+
+    @include md-tablet {
+      background-color: #FCF8F5;
+    }
+
+    @include small-tablet {
+      left: 14px;
+    }
+
+    @include mobile {
+      left: 2px;
+    }
   }
 }
 
@@ -338,7 +472,10 @@
 
   .catalog-product__group {
     justify-content: flex-start;
-    column-gap: 15px;
+  }
+
+  .catalog-product__title {
+    margin-right: 15px;
   }
 
   .product-custom {
@@ -346,8 +483,13 @@
     align-items: center;
     flex-direction: row-reverse;
     column-gap: 15px;
+    margin-bottom: 0;
     height: 32px;
     overflow: visible;
+  }
+
+  .catalog-product__mobile-content {
+    display: none;
   }
 
   .catalog-product__item {
@@ -394,6 +536,7 @@
       width: 20px;
       height: 20px;
     }
+
   }
 }
 
@@ -441,4 +584,61 @@
   font-size: 24px;
   line-height: 36px;
   opacity: 0.8;
+}
+
+
+.mobile-content {
+  display: none;
+
+  @include md-tablet {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__descr {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    opacity: 0.7;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__basket {
+    border: 1px solid var(--black-color);
+    padding: 10px 40px;
+    font-size: 14px;
+    line-height: 21px;
+    color: #fff;
+    background-color: var(--black-color);
+    transition: color .3s, background-color .3s;
+
+    &:hover {
+      color: var(--black-color);
+      background-color: transparent;
+      transition: color .3s, background-color .3s;
+    }
+
+    @include mobile {
+      padding: 8px 30px;
+    }
+  }
+
+  &__favorites {
+    svg {
+      width: 40px;
+      height: 40px;
+      fill: #272727;
+      opacity: 0.8;
+
+      @include mobile {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
 }

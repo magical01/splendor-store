@@ -12,6 +12,8 @@ import "./components/cart-content-slider";
 import "./components/cart";
 import "./components/order";
 // import "./components/cart-render";
+import "./components/products";
+import "./components/menu-fixed";
 import "./components/simple-bar";
 import "./components/aos";
 import "./components/map";
