@@ -289,11 +289,15 @@
   transform: translateX(-23px);
 
 
+
+
   &__input {
     width: 75px;
     height: 52px;
     font-weight: 400;
     text-align: center;
+
+
 
     &:focus {
       outline: none;
@@ -311,6 +315,31 @@
     &:focus {
       outline: 1px solid var(--black-color);
       transition: none;
+    }
+  }
+}
+
+.cart-product__stepper.stepper {
+  @include mobile {
+    width: 140px;
+  }
+
+  @include mini-mobile {
+    width: 80px;
+  }
+
+  .stepper__input {
+    @include mini-mobile {
+      width: 40px;
+      height: 30px;
+      font-size: 22px;
+    }
+  }
+
+  .stepper__btn {
+    @include mini-mobile {
+
+      font-size: 20px;
     }
   }
 }

@@ -19,11 +19,11 @@
     @include md-tablet {
       display: grid;
       height: auto;
-      padding: 60px 30px 80px 120px;
+      padding: 60px 30px 90px 120px;
     }
 
     @include mobile {
-      padding: 30px 15px 40px 15px;
+      padding: 30px 15px 80px 15px;
     }
 
   }
@@ -186,12 +186,12 @@
     @include md-tablet {
       position: absolute;
       right: 30px;
-      bottom: 80px;
+      bottom: 100px;
     }
 
     @include mobile {
       right: 15px;
-      bottom: 40px;
+      bottom: 90px;
     }
 
     .footer__basket {
@@ -369,7 +369,7 @@
 
 .form {
 
-  @include md-tablet {
+  @include xxl-tablet {
     display: none;
   }
 

@@ -4,7 +4,11 @@ Swiper.use([Navigation, Scrollbar]);
 
 
 const mySlider = new Swiper('.slider-block', {
+  loop: true,
   slidesPerView: 1,
+  navigation: {
+    nextEl: '.slider-block__navigation'
+  }
 });
 
 const sliderItems = document.querySelectorAll('.card-slider__thumb');

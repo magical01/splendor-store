@@ -85,6 +85,10 @@
   }
 
   @include mini-mobile {
+    padding-left: 20px;
+  }
+
+  @include mini-mobile {
     border-radius: initial;
     width: 100%;
   }
@@ -316,11 +320,23 @@
     font-size: 13px;
     color: #FF0000;
     transition: all .3s;
+
+    @include xl-tablet {
+      right: -19px;
+      top: -11px;
+      border-radius: 50%;
+      padding: 2px 0px;
+      width: 18px;
+      height: 18px;
+      text-align: center;
+      color: #fff;
+      background-color: #272727;
+    }
   }
 
   &--active {
     .basket__quantity {
-      display: block;
+      display: inline-block;
     }
   }
 }
@@ -367,6 +383,10 @@
 
   @include small-tablet {
     margin-bottom: 0;
+  }
+
+  @include mini-mobile {
+    margin-right: 20px;
   }
 
   .header__logo-text {

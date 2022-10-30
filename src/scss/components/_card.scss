@@ -1,26 +1,78 @@
 .card {
   padding-bottom: 158px;
 
+  @include small-tablet {
+    padding-bottom: 100px;
+  }
+
+  @include mobile {
+    padding-bottom: 60px;
+  }
+
   &__container {
-    display: flex;
+    // display: flex;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__left {
-    margin-right: 8.5%;
+    grid-column: 7 span;
+
+    @include xxl-tablet {
+      grid-column: 6 span;
+    }
+
+    @include tablet {
+      margin-bottom: 32px;
+    }
+
+  }
+
+  &__right {
+    margin-left: 8.5%;
+    grid-column: 8 / 5 span;
+
+    @include xl-desktop {
+      margin-left: 0;
+    }
+
+    @include xxl-tablet {
+      grid-column: 7 / 7 span;
+    }
   }
 
   &-slider {
-    display: flex;
-    width: 950px;
+    // display: flex;
+    // width: 950px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(7, 1fr);
+    column-gap: 30px;
+
+
 
     &__thumbs {
-      width: 250px;
+      // width: 250px;
+      display: grid;
+      grid-column: 2 span;
+      row-gap: 30px;
+
+      @include xxl-tablet {
+        display: none;
+      }
     }
 
     &__thumb {
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 0 15px;
       width: 100%;
       height: 250px;
       background-color: #F8F2EC;
@@ -33,19 +85,36 @@
       }
     }
 
-    &__thumb + &__thumb {
-      margin-top: 30px;
-    }
+    // &__thumb + &__thumb {
+    //   margin-top: 30px;
+    // }
 
     &__main {
+      grid-column: 3 / 5 span;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-left: 30px;
-      width: 670px;
+      // margin-left: 30px;
+      // width: 670px;
       height: 530px;
       background-color: #F8F2EC;
       overflow: hidden;
+
+      @include xxl-tablet {
+        grid-column: 7 span;
+      }
+
+      @include tablet {
+        position: relative;
+      }
+
+      @include small-tablet {
+        height: 400px;
+      }
+
+      @include mobile {
+        height: 350px;
+      }
 
       .swiper-slide {
         display: flex;
@@ -53,22 +122,44 @@
         align-items: center;
         overflow: hidden;
         cursor: pointer;
+
+        picture {
+          @include big-desktop {
+            padding: 0 20px;
+          }
+
+          @include small-tablet {
+            padding: 0 120px;
+          }
+
+          @include mobile {
+            padding: 0 60px;
+          }
+
+          @include mini-mobile {
+            padding: 0 20px;
+          }
+        }
       }
     }
   }
-
-
 }
 
 .card-info {
   position: relative;
   display: flex;
   flex-direction: column;
+
   &__top {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    margin-bottom: 30px;
     width: 380px;
+
+    @include mobile {
+      width: auto;
+    }
   }
 
   &__title {
@@ -77,14 +168,35 @@
     font-family: 'KronaOne';
     font-weight: 400;
     font-size: 40px;
+    line-height: 48px;
     letter-spacing: -0.03em;
     text-transform: capitalize;
+
+    @include tablet {
+      margin-bottom: 20px;
+      font-size: 34px;
+      line-height: 42px;
+    }
+
+    @include mobile {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  }
+
+  &__prices {
+    margin-bottom: 32px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
   }
 
   &__price {
     position: relative;
     display: inline-block;
     margin-left: 10px;
+    margin-right: 54px;
     font-weight: 500;
     font-size: 30px;
 
@@ -95,27 +207,62 @@
       top: 5px;
       font-size: 18px;
     }
+
+    @include mobile {
+      margin-right: 30px;
+      font-size: 24px;
+    }
   }
 
   &__save {
     display: inline-block;
-    margin-left: 54px;
     font-size: 20px;
     color: rgba(#272727, 0.7);
+
+    @include mobile {
+      font-size: 16px;
+    }
   }
 
   &__descr {
     margin: 0;
-    margin-top: 32px;
     font-size: 20px;
     color: rgba(#272727, 0.7);
+
+    &-title {
+      display: none;
+      margin: 0;
+      margin-bottom: 15px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 30px;
+
+      @include tablet {
+        display: block;
+      }
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  &__radiobuttons {
+    margin-bottom: 40px;
+
+    &-title {
+      margin: 0;
+      margin-bottom: 15px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 30px;
+    }
   }
 
   &__radiobutton {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin-top: 113px;
   }
 
   &__radiobutton + &__radiobutton {
@@ -123,53 +270,138 @@
   }
 
   &__btns {
-    display: inline-flex;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
     column-gap: 30px;
-    margin-top: 46px;
+
+    @include xl-desktop {
+      justify-content: initial;
+    }
+
+    @include big-desktop {
+      column-gap: 20px;
+    }
+
+    @include tablet {
+      justify-content: center;
+    }
+
+    @include mobile {
+      column-gap: 15px;
+      justify-content: stretch;
+    }
+  }
+
+  &__continue {
+    display: none;
+    padding: 15px 25px;
+
+    @include tablet {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include small-tablet {
+      font-size: 18px;
+    }
+
+    @include mobile {
+      padding: 13px 8px;
+      font-size: 16px;
+    }
+
+    @include mini-mobile {
+      padding: 10px 6px;
+      font-size: 14px;
+    }
+
   }
 
   &__cart {
     position: relative;
-    display: inline-flex;
+    display: grid;
+    grid-auto-flow: column;
     align-items: center;
+    justify-content: center;
     column-gap: 20px;
     border: 1px solid #2B2828;
     padding: 16px 55px;
     font-size: 20px;
     color: #fff;
     background-color: #2B2828;
-    transition: all .3s;
+    transition: color .3s, background-color .3s;
 
-    @include hover {
+    @include xxl-desktop {
+      padding: 16px 40px ;
+    }
+
+    @include big-desktop {
+      padding: 16px 30px;
+      width: 100%;
+    }
+
+    @include mobile {
+      column-gap: 10px;
+      padding: 12px 6px;
+      font-size: 16px;
+    }
+
+    @include mini-mobile {
+      font-size: 14px;
+      padding: 10px 6px;
+    }
+
+    &:hover {
       color: #000;
       background-color: transparent;
+      transition: color .3s, background-color .3s;
+
 
       svg path {
         fill: #2B2828;
+        transition: fill .3s;
       }
     }
 
     svg path {
-      transition: all .3s;
+      transition: fill .3s;
     }
   }
 
   &__favorites {
     position: relative;
-    display: inline-flex;
+    display: grid;
+    grid-auto-flow: column;
     align-items: center;
     column-gap: 20px;
     border: 1px solid #221E1E;
     padding: 16px 35px;
     font-size: 20px;
     color: #000;
-    transition: all .3s;
+    transition: color .3s, background-color .3s;
 
-    @include hover {
+    @include xxl-desktop {
+      padding: 16px 25px ;
+    }
+
+    @include big-desktop {
+      padding: 16px 20px;
+      width: 100%;
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+    &:hover {
       color: #fff;
       background-color: #2B2828;
+      transition: color .3s, background-color .3s;
       svg path {
         fill: #fff;
+        transition: fill .3s;
       }
     }
 
@@ -177,35 +409,41 @@
       opacity: 0.8;
 
       path {
-        transition: all .3s;
+        transition: fill .3s;
       }
     }
   }
 
   &__colors {
-    position: absolute;
-    right: -29px;
-    top: 44%;
-    transform: translateY(-50%);
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    column-gap: 40px;
+    margin-bottom: 30px;
+
+    &-title {
+      margin: 0;
+      margin-bottom: 15px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 30px;
+    }
 
   }
 
   &__color {
     display: block;
     border-radius: 50%;
-    width: 10px;
-    height: 10px;
+    width: 35px;
+    height: 35px;
     border: 1px solid transparent;
-    transition: all .2s;
+    transition: border .2s;
     cursor: pointer;
 
     &--active {
       border: 1px solid rgba(#272727, 0.8);
+      transition: border .2s;
     }
-  }
-
-  &__color + &__color {
-    margin-top: 39px;
   }
 
   &--black {
@@ -242,25 +480,69 @@
 .card-size {
   position: absolute;
   z-index: 1000;
-  top: 21%;
+  top: 50%;
   left: 49%;
+  margin: 50px auto;
+  vertical-align: middle;
   width: 564px;
   height: 365px;
   background-color: #F8F2EC;
   box-shadow: 0px 40px 144px rgba(134, 134, 134, 0.19);
   visibility: hidden;
-  transform: translate(-50%, -150%);
-  transition: all .3s;
+  opacity: 0;
+  cursor: default;
+  transform: translate(-50%, -200%);
+  transition: opacity .3s, visibility .3s, transform .3s;
 
+  @include small-tablet {
+    width: 90%;
+  }
 
   &--active {
     visibility: visible;
-    transform: translate(-50%, 0%);
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    transition: opacity .3s, visibility .3s, transform .3s;
+  }
+
+  &__overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background-color: rgba(0,0,0,.7);
+    cursor: pointer;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s, visibility .3s;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+    }
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity .3s, visibility .3s;
+    }
   }
 
   &__content {
     padding: 30px 30px 68px 30px;
     height: 100%;
+
+    @include mobile {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
   }
 
   &__top {
@@ -286,6 +568,10 @@
 
   &__text {
     font-size: 28px;
+
+    @include mobile {
+      font-size: 22px;
+    }
   }
 
   &__smile {
@@ -302,25 +588,68 @@
 .card-color {
   position: absolute;
   z-index: 1000;
-  top: 21%;
+  top: 50%;
   left: 49%;
   width: 564px;
   height: 365px;
   background-color: #F8F2EC;
   box-shadow: 0px 40px 144px rgba(134, 134, 134, 0.19);
   visibility: hidden;
-  transform: translate(-50%, -150%);
-  transition: all .3s;
+  opacity: 0;
+  cursor: default;
+  transform: translate(-50%, -200%);
+  transition: opacity .3s, visibility .3s, transform .3s;
+
+  @include small-tablet {
+    width: 90%;
+  }
 
 
   &--active {
+    opacity: 1;
     visibility: visible;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, -50%);
+    transition: opacity .3s, visibility .3s, transform .3s;;
+  }
+
+  &__overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background-color: rgba(0,0,0,.7);
+    cursor: pointer;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s, visibility .3s;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+    }
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity .3s, visibility .3s;
+    }
   }
 
   &__content {
     padding: 30px 30px 68px 30px;
     height: 100%;
+
+    @include mobile {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
   }
 
   &__top {
@@ -346,6 +675,10 @@
 
   &__text {
     font-size: 28px;
+
+    @include mobile {
+      font-size: 22px;
+    }
   }
 
   &__smile {
@@ -393,6 +726,14 @@
       background-color: var(--black-color);
       opacity: 0;
       transition: all .2s;
+
+      @include small-tablet {
+        top: 5px;
+      }
+
+      @include mini-mobile {
+        top: 4px;
+      }
     }
   }
 
@@ -413,6 +754,65 @@
 
   &__input:checked + &__text::before {
     border: 1px solid rgba(#272727, 0.8);
+  }
+}
+
+.slider-block__navigation {
+  display: none;
+  position: absolute;
+  left: 22px;
+  top: 22px;
+  z-index: 2;
+
+  svg {
+    transition: opacity .3s;
+
+    @include small-tablet {
+      width: 40px;
+      height: 30px;
+    }
+  }
+
+  @include tablet {
+    display: block;
+  }
+
+  &:hover {
+    svg {
+      opacity: 0.7;
+      transition: opacity .3s;
+    }
+  }
+}
+
+.slider-block__btn-favorites {
+  display: none;
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  z-index: 2;
+
+  svg {
+    width: 51px;
+    height: 51px;
+    opacity: 0.8;
+    transition: opacity .3s;
+
+    @include small-tablet {
+      width: 40px;
+      height: 30px;
+    }
+  }
+
+  &:hover {
+    svg {
+      opacity: 0.5;
+      transition: opacity .3s;
+    }
+  }
+
+  @include tablet {
+    display: block;
   }
 }
 

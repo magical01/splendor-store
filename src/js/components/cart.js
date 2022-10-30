@@ -1,5 +1,8 @@
 import * as newCartModule from "./../functions/new-cart.js";
 
+import { disableScroll } from '../functions/disable-scroll';
+import { enableScroll } from '../functions/enable-scroll';
+
 const cartClose = document?.querySelectorAll(".cart-content__close");
 const basket = document?.querySelectorAll(".basket");
 const cartOverlay = document?.querySelector(".cart-overlay");
@@ -198,11 +201,23 @@ addCart?.addEventListener("click", (e) => {
 
   let selectorColor = parent?.querySelector(".card-info__color--active");
   if (selectorColor == null) {
+    document?.querySelector(".card-color__overlay").classList.add("card-color__overlay--active");
     document?.querySelector(".card-color").classList.add("card-color--active");
+    disableScroll()
 
     document?.querySelector(".card-color__close")?.addEventListener("click", (e) => {
         if (e.target.closest(".card-color__close")) {
+          document?.querySelector(".card-color__overlay").classList.remove("card-color__overlay--active");
           document?.querySelector(".card-color").classList.remove("card-color--active");
+          enableScroll();
+        }
+      });
+
+      document?.querySelector(".card-color__overlay")?.addEventListener("click", (e) => {
+        if (e.target.closest(".card-color__content") == null) {
+          document?.querySelector(".card-color__overlay").classList.remove("card-color__overlay--active");
+          document?.querySelector(".card-color").classList.remove("card-color--active");
+          enableScroll();
         }
       });
     return;
@@ -223,11 +238,23 @@ addCart?.addEventListener("click", (e) => {
     size = selectSize[indexRadio]?.textContent;
   });
   if (size == undefined) {
+    document?.querySelector(".card-size__overlay").classList.add("card-size__overlay--active");
     document?.querySelector(".card-size").classList.add("card-size--active");
+    disableScroll();
 
     document?.querySelector(".card-size__close")?.addEventListener("click", (e) => {
         if (e.target.closest(".card-size__close")) {
+          document?.querySelector(".card-size__overlay").classList.remove("card-size__overlay--active");
           document?.querySelector(".card-size").classList.remove("card-size--active");
+          enableScroll();
+        }
+      });
+
+      document?.querySelector(".card-size__overlay")?.addEventListener("click", (e) => {
+        if (e.target.closest(".card-size__content") == null) {
+          document?.querySelector(".card-size__overlay").classList.remove("card-size__overlay--active");
+          document?.querySelector(".card-size").classList.remove("card-size--active");
+          enableScroll();
         }
       });
     return;

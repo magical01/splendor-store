@@ -7,31 +7,44 @@
             <picture>
               <source srcset="img/card-1.avif" type="image/avif">
               <source srcset="img/card-1.webp" type="image/webp">
-              <img loading="lazy" src="img/card-1.png" class="image" width="204" height="98" alt="">
+              <img loading="lazy" src="img/card-1.png" class="image" width="204" height="98" alt="Retro Black">
             </picture>
           </div>
           <div class="card-slider__thumb" tabindex="0">
             <picture>
               <source srcset="img/card-2.avif" type="image/avif">
               <source srcset="img/card-2.webp" type="image/webp">
-              <img loading="lazy" src="img/card-2.png" class="image" width="204" height="157" alt="">
+              <img loading="lazy" src="img/card-2.png" class="image" width="204" height="157" alt="Retro Black">
             </picture>
           </div>
         </div>
         <div class="card-slider__main slider-block">
+          <button class="slider-block__navigation btn-reset focus-offset" aria-label="Switch image">
+            <svg width="46" height="42" viewBox="0 0 46 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.7352 3L3 21.2419L20.7352 39.4839" stroke="#242424" stroke-width="4.05376"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M3 21.2419H43.5376" stroke="#242424" stroke-width="4.05376" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+          <button class="slider-block__btn-favorites btn-reset focus-offset" aria-label="Add to favorites">
+            <svg>
+              <use xlink:href="img/sprite.svg#favorites"></use>
+            </svg>
+          </button>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/card-1-2x.avif" type="image/avif">
                 <source srcset="img/card-1-2x.webp" type="image/webp">
-                <img loading="lazy" src="img/card-1-2x.png" class="image" width="467" height="235" alt="">
+                <img loading="lazy" src="img/card-1-2x.png" class="image" width="467" height="235" alt="Retro Black">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture>
                 <source srcset="img/card-2.avif" type="image/avif">
                 <source srcset="img/card-2.webp" type="image/webp">
-                <img loading="lazy" src="img/card-2.png" class="image" width="467" height="235" alt="">
+                <img loading="lazy" src="img/card-2.png" class="image" width="467" height="235" alt="Retro Black">
               </picture>
             </div>
           </div>
@@ -46,12 +59,23 @@
             <span class="card-info__price">300</span>
             <span class="card-info__save">You saved 25$</span>
           </div>
+          <h4 class="card-info__descr-title">Description</h4>
           <p class="card-info__descr">
             Id congue tellus neque fermentum mi leo lorem. Id lobortis est viverra sagittis tincidunt egestas quis odio
             lorem.
           </p>
         </div>
+        <h4 class="card-info__colors-title">Choose a color</h4>
+        <div class="card-info__colors">
+          <button class="card-info__color card-info--black btn-reset focus-offset-4px" data-color="#272727"
+            data-name="Black" aria-label="Choose black color"></button>
+          <button class="card-info__color card-info--gold btn-reset focus-offset-4px" data-color="#BE9364"
+            data-name="Gold" aria-label="Choose gold color"></button>
+          <button class="card-info__color card-info--grey btn-reset focus-offset-4px" data-color="#D2E2D7"
+            data-name="Grey" aria-label="Choose grey color"></button>
+        </div>
         <div class="card-info__radiobuttons">
+          <h4 class="card-info__radiobuttons-title">Select size</h4>
           <div class="card-info__radiobutton">
             <label class="custom-radiobtn">
               <input class="custom-radiobtn__input visually-hidden" type="radio" name="one">
@@ -66,6 +90,7 @@
           </div>
         </div>
         <div class="card-info__btns">
+          <a class="card-info__continue main-link" href="catalog.html">Continue shopping</a>
           <button class="card-info__cart btn-reset focus-offset-4px">Add to cart
             <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -80,11 +105,6 @@
                 fill="#272727" />
             </svg>
           </button>
-        </div>
-        <div class="card-info__colors">
-          <button class="card-info__color card-info--black btn-reset focus-offset-4px" data-color="#272727" data-name="Black" aria-label="Choose black color"></button>
-          <button class="card-info__color card-info--gold btn-reset focus-offset-4px" data-color="#BE9364" data-name="Gold" aria-label="Choose gold color"></button>
-          <button class="card-info__color card-info--grey btn-reset focus-offset-4px" data-color="#D2E2D7" data-name="Grey" aria-label="Choose grey color"></button>
         </div>
       </div>
     </div>

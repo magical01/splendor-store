@@ -13,6 +13,10 @@
   transition: all 0.3s ease-in-out;
   z-index: 50;
 
+  @include md-tablet {
+    justify-content: center;
+  }
+
   &--visible {
     opacity: 1;
     visibility: visible;
@@ -32,6 +36,24 @@
   border-radius: 10px 0px 0px 10px;
   background-color: #fff;
 
+  @include md-tablet {
+    width: 95%;
+  }
+
+  @include xl-mobile {
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: initial;
+    width: 100%;
+  }
+
+  @include mobile {
+    padding-top: 30px;
+    padding-right: 15px;
+    padding-bottom: 0px;
+    padding-left: 15px;
+  }
+
   &__empty {
     display: flex;
     justify-content: center;
@@ -40,9 +62,18 @@
   }
 
   &__top {
-    display: flex;
+    // display: flex;
+    // justify-content: space-between;
+    display: grid;
     justify-content: space-between;
+    align-items: center;
+    grid-auto-flow: column;
     margin-bottom: 40px;
+
+    @include mobile {
+      column-gap: 10px;
+      margin-bottom: 20px;
+    }
   }
 
   &__title {
@@ -50,6 +81,14 @@
     font-family: 'KronaOne';
     font-weight: 400;
     font-size: 24px;
+
+    @include mobile {
+      font-size: 20px;
+    }
+
+    @include mini-mobile {
+      font-size: 18px;
+    }
   }
 
   &__close {
@@ -108,13 +147,19 @@
     column-gap: 24px;
     transition: all .3s;
 
+    @include mobile {
+      margin-top: 20px;
+      padding-bottom: 20px;
+      font-size: 20px;
+    }
+
     svg path {
       stroke: #000;
       opacity: 0.6;
       transition: all .3s;
     }
 
-    @include hover {
+    &:hover {
       & {
         color: rgba(#000, 1);
       }
@@ -154,6 +199,10 @@
     align-items: center;
     margin-top: 32px;
     margin-bottom: 36px;
+
+    @include mini-mobile {
+      justify-content: center;
+    }
   }
 
   &__descr {
@@ -162,6 +211,10 @@
     margin: 0;
     font-size: 14px;
     color: rgba(#000, 0.5);
+
+    @include mini-mobile {
+      display: none;
+    }
   }
 
   &__box {
@@ -179,7 +232,7 @@
     display: block;
     margin-top: 12px;
     font-weight: 500;
-    font-size: 41.1513px;
+    font-size: 42px;
   }
 
   &__order {
@@ -194,7 +247,13 @@
     background-color: #2B2828;
     transition: all .3s;
 
-    @include hover {
+    @include mobile {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 20px;
+    }
+
+    &:hover {
       color: #2B2828;
       background-color: transparent;
     }
@@ -208,8 +267,6 @@
       color: #2B2828;
       background-color: transparent;
     }
-
-
   }
 
   .card-product {
@@ -221,7 +278,6 @@
     font-size: 24px;
     text-align: start;
   }
-
 
   .card-product__top {
     display: flex;
@@ -360,14 +416,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 20px;
     width: 194px;
     height: 194px;
     background-color: #F8F2EC;
+
+    @include mobile {
+      margin-right: 10px;
+      width: 150px;
+      height: 160px;
+    }
+
+    @include mini-mobile {
+      margin-right: 8px;
+      width: 120px;
+      height: 145px;
+    }
   }
 
   &__text {
-    margin-left: 20px;
     width: calc(100% - 190px - 20px);
+
+    @include mobile {
+      width: calc(100% - 150px - 10px);
+    }
+
+    @include mini-mobile {
+      width: calc(100% - 120px - 8px);
+    }
   }
 
   &__top {
@@ -375,9 +451,23 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+
+    @include xl-mobile {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__select {
+
+    @include xl-mobile {
+      width: 100%;
+      order: 2;
+    }
   }
 
   &__color {
+
+
 
     &--black {
       color: var(--black-color);
@@ -440,17 +530,33 @@
     font-weight: 400;
     font-size: 28px;
     text-transform: capitalize;
+
+
+    @include mobile {
+      font-size: 20px;
+    }
+
+    @include mini-mobile {
+      font-size: 16px;
+    }
   }
 
   &__size {
+    display: inline-block;
+    margin-bottom: 46px;
     font-size: 14px;
     opacity: 0.7;
+
+    @include xl-mobile {
+      margin-bottom: 30px;
+    }
   }
 
   &__bottom {
     display: flex;
     justify-content: space-between;
-    margin-top: 46px;
+    align-items: center;
+
   }
 
   &__stepper {
@@ -582,9 +688,23 @@
     text-transform: capitalize;
     cursor: pointer;
 
+
+    @include mobile {
+      font-size: 20px;
+    }
+
+    @include mini-mobile {
+      font-size: 16px;
+    }
+
     span {
       min-width: 70px;
       transition: all .2s;
+
+      @include mobile {
+        min-width: 50px;
+      }
+
     }
 
     svg {
@@ -602,6 +722,8 @@
   }
 
   &__item {
+    padding-top: 5px;
+    padding-bottom: 5px;
     text-transform: capitalize;
     cursor: pointer;
 
@@ -628,6 +750,7 @@
 
     .custom-select__dropdown {
       display: block;
+      background-color: #fff;
     }
   }
 }
@@ -640,6 +763,26 @@
   display: block;
   &--hide {
     display: none;
+  }
+}
+
+.cart-product__price.card-info__price {
+  margin-right: 0;
+
+  @include mobile {
+    font-size: 24px;
+  }
+}
+
+.cart-product__price.card-info__price::before {
+  @include mobile {
+    top: 3px;
+  }
+}
+
+.cart-content__fullprice.card-info__price {
+  @include mini-mobile {
+    margin-right: 0;
   }
 }
 
