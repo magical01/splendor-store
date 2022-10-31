@@ -1,6 +1,16 @@
 .confirm {
   padding-top: 40px;
   padding-bottom: 150px;
+
+  @include small-tablet {
+    padding-bottom: 100px;
+  }
+
+  @include mini-mobile {
+    padding-top: 0px;
+    padding-bottom: 60px;
+  }
+
   &__container {
     display: flex;
     justify-content: center;
@@ -12,10 +22,40 @@
     width: 810px;
     height: 918px;
     background-color: #F8F2EC;
+
+    @include xl-tablet {
+      padding: 60px 120px;
+    }
+
+    @include md-tablet {
+      padding: 60px;
+      width: 95%;
+    }
+
+    @include small-tablet {
+      height: auto;
+    }
+
+    @include xl-mobile {
+      padding: 40px;
+    }
+
+    @include mobile {
+      padding: 40px 20px;
+    }
+
+    @include mini-mobile {
+      padding: 40px 15px;
+      width: 100%;
+    }
   }
 
   &__form {
     margin-bottom: 43px;
+
+    @include mini-mobile {
+      margin-bottom: 30px;
+    }
   }
 
   &__title {
@@ -25,6 +65,25 @@
     font-weight: 400;
     font-size: 54px;
     letter-spacing: -0.03em;
+
+    @include xl-tablet {
+      font-size: 44px;
+      margin-bottom: 100px;
+    }
+
+    @include small-tablet {
+      font-size: 40px;
+      margin-bottom: 70px;
+    }
+
+    @include mobile {
+      font-size: 34px;
+      margin-bottom: 40px;
+    }
+
+    @include mini-mobile {
+      font-size: 30px;
+    }
   }
 
   &__group {
@@ -33,6 +92,14 @@
 
   &__group + &__group {
     margin-top: 105px;
+
+    @include small-tablet {
+      margin-top: 60px;
+    }
+
+    @include mini-mobile {
+      margin-top: 40px;
+    }
   }
 
   &__input {
@@ -48,6 +115,10 @@
     transition: all 0.3s;
     cursor: pointer;
 
+    @include small-tablet {
+      font-size: 16px;
+    }
+
     &:focus {
       border-bottom: 1px solid rgba(#272727, 1);
       transition: all .3s;
@@ -56,6 +127,16 @@
         top: -60px;
         font-size: 20px;
         transition: all .3s;
+
+        @include small-tablet {
+          top: -30px;
+          font-size: 16px;
+        }
+
+        @include mini-mobile {
+          top: -20px;
+          font-size: 14px;
+        }
       }
     }
 
@@ -67,6 +148,16 @@
         top: -60px;
         font-size: 20px;
         transition: all .3s;
+
+        @include small-tablet {
+          top: -30px;
+          font-size: 16px;
+        }
+
+        @include mini-mobile {
+          top: -20px;
+          font-size: 14px;
+        }
       }
     }
   }
@@ -78,24 +169,76 @@
     font-size: 28px;
     color: #272727;
     transition: all .3s;
+
+    @include small-tablet {
+      top: -20px;
+      font-size: 20px;
+
+    }
+
+    @include mini-mobile {
+      top: -15px;
+      font-size: 16px;
+    }
   }
 
   &__bottom {
     display: flex;
     justify-content: space-between;
     margin-bottom: 85px;
+
+    @include small-tablet {
+      margin-bottom: 50px;
+    }
+
+    @include mini-mobile {
+      margin-bottom: 30px;
+    }
   }
 
   &__total {
+
     strong {
       font-weight: 400;
       font-size: 28px;
+
+      @include small-tablet {
+        font-size: 24px;
+      }
+
+      @include mobile {
+        font-size: 20px;
+      }
+
+      @include mini-mobile {
+        font-size: 16px;
+      }
     }
 
     .card-info__price {
       margin-left: 21px;
       font-size: 28px;
       font-weight: 400;
+
+      &::before {
+        @include mobile {
+          font-size: 14px;
+          top: 0px;
+        }
+      }
+
+      @include small-tablet {
+        font-size: 24px;
+      }
+
+      @include mobile {
+        font-size: 20px;
+      }
+
+      @include mini-mobile {
+        margin-right: 0;
+        font-size: 16px;
+      }
     }
   }
 
@@ -103,6 +246,18 @@
     strong {
       font-weight: 400;
       font-size: 28px;
+
+      @include small-tablet {
+        font-size: 24px;
+      }
+
+      @include mobile {
+        font-size: 20px;
+      }
+
+      @include mini-mobile {
+        font-size: 16px;
+      }
     }
 
     span {
@@ -111,34 +266,103 @@
       font-weight: 400;
       font-size: 28px;
       text-transform: capitalize;
+
+      @include small-tablet {
+        font-size: 24px;
+      }
+
+      @include mobile {
+        font-size: 20px;
+      }
+
+      @include mini-mobile {
+        margin-left: 10px;
+        font-size: 16px;
+      }
     }
   }
 
   &__links {
     display: flex;
     justify-content: space-between;
+
+    @include small-tablet {
+      justify-content: initial;
+    }
+
+    @include mini-mobile {
+      flex-direction: column;
+    }
   }
 
   &__track {
+    display: flex;
+    justify-content: center;
     border: 1px solid #2B2828;
     padding: 16px 63px;
     font-weight: 400;
     font-size: 20px;
     color: #fff;
     background-color: #2B2828;
-    transition: all .3s;
+    transition: color .3s, background-color .3s;
 
-    @include hover {
+    @include small-tablet {
+      margin-right: 20px;
+      padding: 16px 30px;
+      width: 50%;
+    }
+
+    @include xl-mobile {
+      padding: 14px 10px;
+    }
+
+    @include mobile {
+      padding: 12px 10px;
+      font-size: 16px;
+    }
+
+    @include mini-mobile {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 15px;
+      padding: 10px 5px;
+      font-size: 14px;
+    }
+
+    &:hover {
       color: var(--black-color);
       background-color: transparent;
+      transition: color .3s, background-color .3s;
     }
   }
 
   &__continue {
+    display: flex;
+    justify-content: center;
     border: 1px solid #221E1E;;
     padding: 16px 37px;
     font-weight: 400;
     font-size: 20px;
     background-color: transparent;
+
+    @include small-tablet {
+      padding: 16px 20px;
+      width: 50%;
+    }
+
+    @include xl-mobile {
+      padding: 14px 10px;
+    }
+
+    @include mobile {
+      padding: 12px 10px;
+      font-size: 16px;
+    }
+
+    @include mini-mobile {
+      width: 100%;
+      padding: 10px 5px;
+      font-size: 14px;
+    }
   }
 }

@@ -201,7 +201,9 @@
     margin-bottom: 36px;
 
     @include mini-mobile {
-      justify-content: center;
+      justify-content: end;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
   }
 
@@ -239,23 +241,26 @@
     display: flex;
     justify-content: center;
     border: 1px solid #2B2828;
+    margin-bottom: 60px;
     padding-top: 17px;
     padding-bottom: 17px;
     font-weight: 500;
     font-size: 24px;
     color: #fff;
     background-color: #2B2828;
-    transition: all .3s;
+    transition: background-color .3s, color .3s;
 
     @include mobile {
-      padding-top: 10px;
-      padding-bottom: 10px;
+      margin-bottom: 30px;
+      padding-top: 12px;
+      padding-bottom: 12px;
       font-size: 20px;
     }
 
     &:hover {
       color: #2B2828;
       background-color: transparent;
+      transition: background-color .3s, color .3s;
     }
 
     &:focus {
@@ -271,20 +276,34 @@
 
   .card-product {
     position: relative;
-    margin-top: 59px;
   }
 
   .card-product__title {
     font-size: 24px;
     text-align: start;
+
+    @include mini-mobile {
+      font-size: 23px;
+    }
   }
 
   .card-product__top {
     display: flex;
     justify-content: space-between;
+
+
+    @include mobile {
+      position: relative;
+    }
   }
   .card-product__buttons {
     position: relative;
+
+    @include mobile {
+      position: absolute;
+      top: 42px;
+      right: 0;
+    }
   }
 
   .card-product__inner {
@@ -574,6 +593,8 @@
 .cart-btn-prev {
   position: absolute;
   right: 55px;
+
+
   svg {
     opacity: 0.7;
     transition: all .3s;
@@ -761,6 +782,7 @@
 
 .cart-content__main {
   display: block;
+
   &--hide {
     display: none;
   }
