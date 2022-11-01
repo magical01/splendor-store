@@ -10,6 +10,7 @@ import { enableScroll } from '../functions/enable-scroll';
   const heroCatalogTitle = document?.querySelector('.hero-catalog__title');
   const crumbsList = document?.querySelector('.hero-catalog__breadcrumbs-list');
   const blur = document?.querySelector('.overlay');
+  const confirmGroup = document?.querySelectorAll('.confirm__group');
 
   burger?.addEventListener('click', (e) => {
     burger?.classList.toggle('burger--active');
@@ -18,6 +19,9 @@ import { enableScroll } from '../functions/enable-scroll';
     logo?.classList.toggle('hide');
     heroCatalogTitle?.classList.toggle('hide');
     crumbsList?.classList.toggle('hide');
+    confirmGroup?.forEach(elem => {
+      elem?.classList.toggle('hide');
+    });
 
     if (menu?.classList.contains('menu--active')) {
       burger?.setAttribute('aria-expanded', 'true');
@@ -39,6 +43,9 @@ import { enableScroll } from '../functions/enable-scroll';
     logo?.classList.remove('hide')
     heroCatalogTitle?.classList.remove('hide');
     crumbsList?.classList.remove('hide');
+    confirmGroup?.forEach(elem => {
+      elem?.classList.remove('hide');
+    });
     enableScroll();
   });
 
@@ -52,6 +59,9 @@ import { enableScroll } from '../functions/enable-scroll';
       logo?.classList.remove('hide');
       heroCatalogTitle?.classList.remove('hide');
       crumbsList?.classList.remove('hide');
+      confirmGroup?.forEach(elem => {
+        elem?.classList.remove('hide');
+      });
       enableScroll();
     });
   });

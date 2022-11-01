@@ -21,7 +21,6 @@
     @include small-tablet {
       margin-bottom: 52px;
     }
-
   }
 
   &__list {
@@ -35,9 +34,6 @@
   }
 
   &__item {
-    // display: flex;
-    // width: 100%;
-
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     column-gap: 30px;
@@ -52,10 +48,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    // // width: 658px;
     height: 420px;
     background-color: #F8F2EC;
-
 
     img {
       display: block;
@@ -144,19 +138,6 @@
 }
 
 .minimalistic {
-  // .collections-text {
-  //   margin-left: 183px;
-  //   width: 45%;
-  // }
-
-  // .collections-text__descr {
-  //   max-width: 334px;
-  // }
-
-  // .collections__image {
-  //   width: 39.9%;
-  // }
-
   .collections-text {
     grid-column: 7 / 3 span;
 
@@ -183,14 +164,8 @@
 }
 
 .multiple {
-  // justify-content: center;
-
   .collections-text {
     align-items: flex-end;
-    // margin-right: 153px;
-    // max-width: 365px;
-    // margin-left: 334px;
-    // text-align: right;
     grid-column: 4 / 3 span;
 
     @include tablet {
@@ -220,7 +195,6 @@
     display: inline-flex;
     justify-content: center;
     align-items: initial;
-    // width: 31.3%;
     grid-column: 8 / 4 span;
     height: 390px;
 
@@ -252,13 +226,7 @@
 
 .floor {
   .collections-text {
-    // margin-left: 85px;
-    // width: 48%;
     grid-column: 8 / 3 span;
-
-    // &__descr {
-    //   width: 334px;
-    // }
 
     @include tablet {
       grid-column:  6 / 3 span;
@@ -266,8 +234,6 @@
   }
 
   .collections__image {
-    // margin-left: 207px;
-    // width: 51.3%;
     grid-column: 2 / 5 span;
     height: 390px;
 
@@ -296,14 +262,8 @@
 }
 
 .squares {
-  // justify-content: center;
-
   .collections-text {
     align-items: flex-end;
-    // margin-right: 155px;
-    // max-width: 365px;
-    // margin-left: 474px;
-    // text-align: right;
     grid-column: 4 / 3 span;
 
     @include tablet {
@@ -333,7 +293,6 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    // width: 50%;
     grid-column: 8 / 5 span;
     height: 420px;
 

@@ -563,10 +563,15 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    row-gap: 40px;
+
+    svg {
+      margin-bottom: 40px;
+    }
   }
 
   &__text {
+    display: inline-block;
+    margin-bottom: 40px;
     font-size: 28px;
 
     @include mobile {
@@ -670,10 +675,15 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    row-gap: 40px;
+
+    svg {
+      margin-bottom: 40px;
+    }
   }
 
   &__text {
+    display: inline-block;
+    margin-bottom: 40px;
     font-size: 28px;
 
     @include mobile {
@@ -693,6 +703,8 @@
 }
 
 .custom-radiobtn {
+  cursor: pointer;
+
   &__text {
     position: relative;
     padding-left: 52px;

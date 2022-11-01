@@ -1,5 +1,4 @@
 .favorites {
-
   &__container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -10,6 +9,7 @@
       flex-direction: column;
     }
   }
+
   &-page {
     padding-bottom: 150px;
 
@@ -38,11 +38,12 @@
     font-size: 20px;
     color: #fff;
     background-color: var(--black-color);
-    transition: all .3s;
+    transition: background-color .3s, color .3s;
 
     &:hover {
       color: var(--black-color);
       background-color: transparent;
+      transition: background-color .3s, color .3s;
     }
   }
 
@@ -52,11 +53,12 @@
     border: 1px solid var(--black-color);
     padding: 12px 37px;
     font-size: 20px;
-    transition: all .3s;
+    transition: background-color .3s, color .3s;
 
     &:hover {
       color: #fff;
       background-color: var(--black-color);
+      transition: background-color .3s, color .3s;
     }
 
     @include xl-mobile {
@@ -72,10 +74,6 @@
 }
 
 .order {
-  // display: grid;
-  // grid-template-columns: repeat(12, 1fr);
-  // column-gap: 30px;
-  // grid-auto-flow: column;
   grid-column: 1 / 12 span;
   padding-top: 46px;
 
@@ -87,10 +85,6 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     column-gap: 30px;
-    // display: flex;
-    // justify-content: space-between;
-    // padding-left: 260px;
-    // padding-right: 442px;
 
     @include xxl-tablet {
       display: none;
@@ -116,7 +110,6 @@
     }
 
     &-color {
-      // margin-left: 299px;
       grid-column: 7 / 1 span;
     }
 
@@ -141,7 +134,6 @@
     height: 180px;
     background-color: #F8F2EC;
     border: 1px solid rgba(#272727, 0.7);
-    // transform: translateX(19px);
 
     picture {
       display: flex;
@@ -172,15 +164,11 @@
   }
 
   &__item {
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     column-gap: 30px;
     border-bottom: 1px solid rgba(#8F5C44, 0.7);
     padding-top: 44px;
-    // padding-left: 42px;
     padding-bottom: 80px;
 
     &:not(:last-child) {
@@ -237,6 +225,17 @@
     justify-self: center;
     align-self: center;
 
+    svg g {
+      transition: opacity .3s;
+    }
+
+    &:hover {
+      svg g {
+        opacity: 1;
+        transition: opacity .3s;
+      }
+    }
+
     &:focus {
       outline: 1px solid var(--black-color);
       outline-offset: 2px;
@@ -250,7 +249,6 @@
 
       @include xxl-tablet {
         display: block;
-        // grid-column: 7/1 span;
         grid-column: initial;
         justify-self: end;
         order: -1;
@@ -282,8 +280,6 @@
 
     @include xxl-tablet {
       display: none;
-      // order: 2;
-      // grid-column: 12 / 1 span;
     }
   }
 
@@ -294,7 +290,6 @@
     display: flex;
     flex-direction: column;
     max-width: 160px;
-    // transform: translateX(-64px);
 
     @include xxl-tablet {
       max-width: none;
@@ -341,7 +336,6 @@
     align-self: center;
     width: 30px;
     height: 30px;
-    // transform: translateX(-45px);
     pointer-events: none;
   }
 
@@ -349,7 +343,6 @@
     grid-column: 9 / 1 span;
     justify-self: center;
     align-self: center;
-    // transform: translateX(-21px);
 
     &.card-info__price {
       margin-left: 0;
@@ -368,11 +361,12 @@
     font-size: 20px;
     color: #fff;
     background-color: var(--black-color);
-    transition: all .3s;
+    transition: background-color .3s, color .3s;
 
     &:hover {
       color: var(--black-color);
       background-color: transparent;
+      transition: background-color .3s, color .3s;
     }
 
     @include xl-desktop {
@@ -393,7 +387,6 @@
   }
 
   &__titles {
-    // padding-left: 193px;
     padding-right: 0px;
   }
 
@@ -436,7 +429,6 @@
 
   &__title-color {
     grid-column: 6/1 span;
-    // margin-left: 272px;
 
     @include big-desktop {
       grid-column: 8/1 span;
@@ -445,7 +437,6 @@
 
   &__title-price {
     grid-column: 8/1 span;
-    // margin-left: 272px;
 
     @include big-desktop {
       grid-column: 9/1 span;
@@ -491,27 +482,16 @@
     }
   }
 
-  // .order__item {
-
-  // }
-
   .order__image {
     grid-column: 2/2 span;
     transform: translateX(0);
 
-    @include big-desktop {
-      // grid-column: 2/3 span;
-    }
-
     @include xxl-tablet {
-      // grid-column: span 3;
       grid-column: initial;
     }
   }
 
   .order-text {
-    // grid-column: 4/2 span;
-    // transform: translateX(-90px);
     grid-column: span 2;
 
     @include big-desktop {
@@ -519,25 +499,19 @@
     }
 
     @include xxl-tablet {
-      // grid-column: span 2;
       grid-column: span 2;
       justify-self: start;
-      // grid-column: initial;
     }
   }
 
   .order__color {
-    // grid-column: 6/1 span;
-    // transform: translateX(-70px);
     grid-column: 3/1 span;
 
     @include big-desktop {
-      // grid-column: 8/1 span;
       grid-column: 5/1 span;
     }
 
     @include xxl-tablet {
-      // grid-column: initial;
       position: relative;
       margin-left: 70px;
       grid-column: span 1;
@@ -568,15 +542,11 @@
   }
 
   .order__price {
-    // grid-column: 8/1 span;
-    // transform: translateX(-29px);
     grid-column: 5/1 span;
 
 
     @include big-desktop {
-      // grid-column: 9/1 span;
       grid-column: 6/1 span;
-
     }
 
     @include xxl-tablet {
@@ -599,20 +569,15 @@
   }
 
   .stepper {
-    // grid-column: 9/2 span;
     grid-column: 6/2 span;
     align-self: center;
     justify-self: center;
-    // width: auto;
 
     @include big-desktop {
-      // grid-column: 10/2 span;
       grid-column: 7/2 span;
     }
 
     @include xxl-tablet {
-      // grid-column: 8/2 span;
-      // grid-column: initial;
       grid-column: span 1;
       justify-self: end;
     }
@@ -636,7 +601,6 @@
   }
 
   .cart-page__total.card-info__price {
-    // grid-column: 12/1 span;
     grid-column: 9/1 span;
     align-self: center;
     margin-left: 0;
@@ -658,13 +622,11 @@
   &__total {
     display: flex;
     justify-content: center;
-    // min-width: 110px;
     min-width: 90px;
 
     @include big-desktop {
       min-width: auto;
     }
-    // transform: translateX(20px);
 
     .card-info__price::before {
       left: 10px;
@@ -772,7 +734,6 @@
   font-size: 30px;
   font-weight: 300;
   text-align: center;
-  // transform: translateX(-23px);
 
   &__input {
     width: 75px;
@@ -883,10 +844,11 @@
   }
 
   .order__picture {
-    max-width: 100%;
-    max-height: none;
-    width: auto;
-    height: 210px;
+    @include xxl-tablet {
+      max-height: none;
+      width: auto;
+      height: 210px;
+    }
 
     @include mini-mobile {
       padding-left: 0;
@@ -910,6 +872,12 @@
     @include mini-mobile {
       order: -1;
       grid-column: 1 span;
+    }
+
+    &__title {
+      @include mini-mobile {
+        margin-bottom: 0;
+      }
     }
   }
 

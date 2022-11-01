@@ -88,6 +88,8 @@
 
   &__group {
     position: relative;
+    opacity: 1;
+    visibility: visible;
   }
 
   &__group + &__group {

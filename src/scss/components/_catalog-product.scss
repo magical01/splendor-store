@@ -138,6 +138,10 @@
         height: 18px;
       }
     }
+
+    @include mini-mobile {
+      display: none;
+    }
   }
 
   &__filters {

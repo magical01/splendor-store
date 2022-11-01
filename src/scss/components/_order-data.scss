@@ -306,20 +306,6 @@
         transition: opacity .3s;
       }
 
-      // & ~ .main-form__label, .main-form__input:not(:placeholder-shown) ~ .main-form__label {
-      //   top: -16px;
-      //   font-size: 16px;
-      //   transition: all .3s;
-
-      //   @include tablet {
-      //     top: -7px;
-      //     font-size: 14px;
-      //   }
-
-      //   @include mini-mobile {
-      //     font-size: 13px;
-      //   }
-      // }
     }
 
     &:active {
@@ -330,21 +316,6 @@
         opacity: 0;
         transition: opacity .3s;
       }
-
-      // & ~ .main-form__label, .main-form__input:not(:placeholder-shown) ~ .main-form__label {
-      //   top: -16px;
-      //   font-size: 16px;
-      //   transition: all .3s;
-
-      //   @include tablet {
-      //     top: -7px;
-      //     font-size: 14px;
-      //   }
-
-      //   @include mini-mobile {
-      //     font-size: 13px;
-      //   }
-      // }
     }
   }
 

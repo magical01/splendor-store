@@ -10,7 +10,7 @@
   width: 100%;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease-in-out;
+  transition: opacity .3s, visibility .3s;
   z-index: 50;
 
   @include md-tablet {
@@ -20,7 +20,7 @@
   &--visible {
     opacity: 1;
     visibility: visible;
-    transition: all 0.3s ease-in-out;
+    transition: opacity .3s, visibility .3s;
   }
 }
 .cart-content {
@@ -62,8 +62,6 @@
   }
 
   &__top {
-    // display: flex;
-    // justify-content: space-between;
     display: grid;
     justify-content: space-between;
     align-items: center;
@@ -93,12 +91,13 @@
 
   &__close {
     svg g {
-      transition: all .3s;
+      transition: opacity .3s;
     }
 
-    @include hover {
+    &:hover {
       svg g {
         opacity: 1;
+        transition: opacity .3s;
       }
     }
 
@@ -116,8 +115,6 @@
   }
 
   &__list {
-    // display: flex;
-    // flex-direction: column;
     position: relative;
     max-height: 412px;
     overflow-y: hidden;
@@ -144,8 +141,11 @@
     font-weight: 500;
     font-size: 24px;
     color: rgba(#000, 0.5);
-    column-gap: 24px;
-    transition: all .3s;
+    transition: color .3s;
+
+    svg {
+      margin-left: 24px;
+    }
 
     @include mobile {
       margin-top: 20px;
@@ -156,35 +156,34 @@
     svg path {
       stroke: #000;
       opacity: 0.6;
-      transition: all .3s;
+      transition: opacity .3s;
     }
 
     &:hover {
       & {
         color: rgba(#000, 1);
+        transition: color .3s;
       }
 
       svg path {
         opacity: 1;
-        transition: all .3s;
+        transition: opacity .3s;
       }
     }
 
     &:focus {
-      color: rgba(#000, 1);
-
-      svg path {
-        opacity: 1;
-        transition: all .3s;
-      }
+      outline: 1px solid var(--black-color);
+      outline-offset: 4px;
+      transition: none;
     }
 
     &:active {
       color: rgba(#000, 1);
+      transition: color .3s;
 
       svg path {
         opacity: 1;
-        transition: all .3s;
+        transition: opacity .3s;
       }
     }
   }
@@ -201,7 +200,7 @@
     margin-bottom: 36px;
 
     @include mini-mobile {
-      justify-content: end;
+      justify-content: flex-start;
       margin-top: 20px;
       margin-bottom: 20px;
     }
@@ -371,23 +370,26 @@
     font-size: 12px;
     color: #fff;
     background-color: var(--black-color);
-    transition: all .3s;
+    transition: background-color .3s, color .3s;
     cursor: pointer;
 
 
-    @include hover {
+    &:hover {
       color: var(--black-color);
       background-color: transparent;
+      transition: background-color .3s, color .3s;
     }
 
     &:focus {
-      color: var(--black-color);
-      background-color: transparent;
+      outline: 1px solid var(--black-color);
+      outline-offset: 4px;
+      transition: none;
     }
 
     &:active {
       color: var(--black-color);
       background-color: transparent;
+      transition: background-color .3s, color .3s;
     }
   }
 }
@@ -504,35 +506,34 @@
   &__delete {
     display: inline-flex;
     align-items: center;
-    column-gap: 10px;
     font-weight: 300;
     font-size: 13px;
     color: rgba(#272727, 0.5);
-    transition: all .3s;
+    transition: color .3s;
 
     svg {
+      margin-left: 10px;
       width: 12px;
       height: 12px;
 
       g {
-        transition: all .3s;
+        transition: opacity .3s;
       }
     }
 
-    @include hover {
+    &:hover {
       color: rgba(#272727, 1);
+      transition: color .3s;
 
       svg g {
         opacity: 1;
+        transition: opacity .3s;
       }
     }
 
     &:focus {
-      color: rgba(#272727, 1);
-
-      svg g {
-        opacity: 1;
-      }
+      outline: 1px solid var(--black-color);
+      transition: none;
     }
 
     &:active {
@@ -597,46 +598,39 @@
 
   svg {
     opacity: 0.7;
-    transition: all .3s;
+    transition: opacity .3s, width .3s, height .3s;
   }
   path {
-    transition: all .3s;
+    transition: opacity .3s;
   }
 
   circle {
-    transition: all .3s;
+    transition: opacity .3s;
   }
 
-  @include hover {
+  &:hover {
     svg {
       width: 49px;
       height: 49px;
       opacity: 1;
+      transition: opacity .3s, width .3s, height .3s;
 
       path {
         opacity: 1;
+        transition: opacity .3s;
       }
 
       circle {
         opacity: 1;
+        transition: opacity .3s;
       }
     }
   }
 
   &:focus {
-    svg {
-      width: 49px;
-      height: 49px;
-      opacity: 1;
-
-      path {
-        opacity: 1;
-      }
-
-      circle {
-        opacity: 1;
-      }
-    }
+    outline: 1px solid var(--black-color);
+    outline-offset: 4px;
+    transition: none;
   }
 
   &:active {
@@ -644,13 +638,16 @@
       width: 49px;
       height: 49px;
       opacity: 1;
+      transition: opacity .3s, width .3s, height .3s;
 
       path {
         opacity: 1;
+        transition: opacity .3s
       }
 
       circle {
         opacity: 1;
+        transition: opacity .3s
       }
     }
   }
@@ -659,27 +656,27 @@
 .cart-btn-next {
   position: absolute;
   right: 0;
+
   svg {
     width: 42px;
     height: 42px;
     opacity: 0.4;
-    transition: all .3s;
+    transition: opacity .3s, width .3s, height .3s;
   }
 
-  @include hover {
+  &:hover {
     svg {
       width: 49px;
       height: 49px;
       opacity: 1;
+      transition: opacity .3s, width .3s, height .3s;
     }
   }
 
   &:focus {
-    svg {
-      width: 49px;
-      height: 49px;
-      opacity: 1;
-    }
+    outline: 1px solid var(--black-color);
+    outline-offset: 4px;
+    transition: none;
   }
 
   &:active {
@@ -687,6 +684,7 @@
       width: 49px;
       height: 49px;
       opacity: 1;
+      transition: opacity .3s, width .3s, height .3s;
     }
   }
 }
@@ -702,13 +700,15 @@
   &__top {
     display: inline-flex;
     align-items: center;
-    column-gap: 10px;
     margin-right: 20px;
     font-size: 28px;
     font-weight: 400;
     text-transform: capitalize;
     cursor: pointer;
 
+    span {
+      margin-right: 10px;
+    }
 
     @include mobile {
       font-size: 20px;

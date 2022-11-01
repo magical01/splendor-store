@@ -260,7 +260,6 @@
 
 
 .favorites {
-
   a {
     &:focus {
       outline: 1px solid var(--black-color);
@@ -281,6 +280,15 @@
 }
 
 .basket {
+
+  &--open {
+    svg {
+      path {
+        fill: #BE9364;
+        stroke: #BE9364;;
+      }
+    }
+  }
 
   button {
     &:focus {
@@ -394,4 +402,15 @@
   }
 }
 
+
+.menu-fixed__link-favorites {
+  &--open {
+    svg {
+      path {
+        fill: #BE9364;
+        stroke: #BE9364;
+      }
+    }
+  }
+}
 
