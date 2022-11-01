@@ -73,12 +73,12 @@ const generateOrderProduct = ( img, title, price, id, nameColor, size, dataColor
 
     <li class="order__item">
       <button class="order__delete cart-page__delete btn-reset" onclick="removeCartItemOrder('${id}');" aria-label="Delete product">
-        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g opacity="0.7">
-            <path d="M1.00218 0.728165L18.4712 17.4984" stroke="#272727" />
-            <path d="M17.5859 0.501587L0.99854 17.4984" stroke="#272727" />
-          </g>
-        </svg>
+      <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g opacity="0.7">
+          <path d="M1.00218 0.728165L18.4712 17.4984" stroke="#272727" />
+          <path d="M17.5859 0.501587L0.99854 17.4984" stroke="#272727" />
+        </g>
+      </svg>
       </button>
       <div class="order__image cart-page__image">
         <picture>
@@ -87,18 +87,32 @@ const generateOrderProduct = ( img, title, price, id, nameColor, size, dataColor
           <img loading="lazy" src="${img}.png" class="order__picture" width="" height="" alt="">
         </picture>
       </div>
-      <div class="order__description order-text cart-page__description cart-text">
+      <div class="order__wrapper cart-page__wrapper">
+        <div class="order__description order-text cart-page__description cart-text">
         <h5 class="order-text__title cart-text__title">${title}</h5>
         <p class="order-text__descr cart-text__title">${description}</p>
+        </div>
+        <span class="order__color choice-color__item choice-color__item--${colorChoice} cart-page__color"></span>
+        <span class="order__price card-info__price cart-page__price">${price}</span>
+        <div class="order__delete-wrapper--mobile">
+          <button class="order__delete cart-page__delete btn-reset" onclick="removeCartItemOrder('${id}');" aria-label="Delete product">
+          Delete
+          <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.7">
+              <path d="M1.00218 0.728165L18.4712 17.4984" stroke="#272727" />
+              <path d="M17.5859 0.501587L0.99854 17.4984" stroke="#272727" />
+            </g>
+          </svg>
+          </button>
+        </div>
+        <div class="cart-page__stepper stepper">
+          <button class="stepper__btn stepper__btn--minus btn-reset" aria-label="minus" onclick="plusCartItemOrder('${id}', false);">-</button>
+          <input class="stepper__input input-reset" type="text" min="1" max="999" maxlength="3" value="${count}">
+          <button class="stepper__btn stepper__btn--plus btn-reset" aria-label="plus" onclick="plusCartItemOrder('${id}', true);">+</button>
+        </div>
+        <span class="cart-page__total card-info__price">${priceTotal}</span>
+
       </div>
-      <span class="order__color choice-color__item choice-color__item--${colorChoice} cart-page__color"></span>
-      <span class="order__price card-info__price cart-page__price">${price}</span>
-      <div class="cart-page__stepper stepper">
-        <button class="stepper__btn stepper__btn--minus btn-reset" aria-label="minus" onclick="plusCartItemOrder('${id}', false);">-</button>
-        <input class="stepper__input input-reset" type="text" min="1" max="999" maxlength="3" value="${count}">
-        <button class="stepper__btn stepper__btn--plus btn-reset" aria-label="plus" onclick="plusCartItemOrder('${id}', true);">+</button>
-      </div>
-      <span class="cart-page__total card-info__price">${priceTotal}</span>
     </li>
 
   `;
