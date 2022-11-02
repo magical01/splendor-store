@@ -129,7 +129,7 @@ const generateCartProduct = (img, title, price, id, nameColor, size, dataColor, 
           <picture>
             <source srcset="${img}.avif" type="image/avif">
             <source srcset="${img}.webp" type="image/webp">
-            <img loading="lazy" src="${img}.png" class="cart-product__picture" width="84" height="160" alt="">
+            <img loading="lazy" src="${img}.png" class="cart-product__picture" width="84" height="160" alt="${title}">
           </picture>
         </div>
         <div class="cart-product__text">

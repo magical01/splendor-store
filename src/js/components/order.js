@@ -40,8 +40,8 @@ window.plusCartItemOrder = (id, plusOne) => {
 
 // cart component (order.js)
 const renderOrder = () => {
-  if (document.location.pathname != '/cart.html' && document.location.pathname != '/order.html') return;
-  // if (document.location.pathname != '/splendor-store/cart.html' && document.location.pathname != '/splendor-store/order.html') return;
+  // if (document.location.pathname != '/cart.html' && document.location.pathname != '/order.html') return;
+  if (document.location.pathname != '/splendor-store/cart.html' && document.location.pathname != '/splendor-store/order.html') return;
 
 
   let orderContainer = document.querySelector("#orderList");
@@ -84,7 +84,7 @@ const generateOrderProduct = ( img, title, price, id, nameColor, size, dataColor
         <picture>
           <source srcset="${img}.avif" type="image/avif">
           <source srcset="${img}.webp" type="image/webp">
-          <img loading="lazy" src="${img}.png" class="order__picture" width="" height="" alt="">
+          <img loading="lazy" src="${img}.png" class="order__picture" width="" height="" alt="${title}">
         </picture>
       </div>
       <div class="order__wrapper cart-page__wrapper">

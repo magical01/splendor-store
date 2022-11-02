@@ -220,7 +220,7 @@ input[type=number] {
   opacity: 0;
   visibility: hidden;
   z-index: 3;
-  backdrop-filter: blur(4.5px);
+  background-color: rgba(39, 39, 39, 0.5);
   transition: opacity 0.3s, visibility 0.3s;
 
   &--active {

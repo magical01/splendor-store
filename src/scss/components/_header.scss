@@ -384,7 +384,8 @@
   display: none;
 
   @include xl-tablet {
-    display: inline-block;
+    display: inline-flex;
+    width: fit-content;
     margin-bottom: 20px;
     margin-right: 30px;
   }
