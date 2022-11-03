@@ -14,6 +14,7 @@ import "./components/order";
 // import "./components/cart-render";
 import "./components/products";
 import "./components/menu-fixed";
+import "./components/header-fixed";
 import "./components/simple-bar";
 import "./components/aos";
 import "./components/map";

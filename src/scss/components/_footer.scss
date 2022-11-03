@@ -180,8 +180,7 @@
   &__icons {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
+    justify-content: flex-end;
 
     @include md-tablet {
       position: absolute;

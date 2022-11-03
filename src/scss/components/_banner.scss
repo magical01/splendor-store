@@ -35,6 +35,7 @@
 
   &__text {
     display: inline-block;
+    margin-right: 40px;
     font-weight: 500;
     font-size: 48px;
     line-height: 72px;
@@ -70,9 +71,9 @@
 
   &__link {
     display: inline-block;
-    padding: 18px 68px;
+    padding: 10px 70px;
     font-weight: 500;
-    font-size: 30px;
+    font-size: 20px;
     line-height: 40px;
     color: #fff;
     opacity: 0.9;
@@ -85,14 +86,14 @@
     }
 
     @include tablet {
-      padding: 13px 50px;
-      font-size: 24px;
+      padding: 10px 50px;
+      font-size: 18px;
       line-height: 32px;
     }
 
     @include small-tablet {
       padding: 9px 42px;
-      font-size: 20px;
+      font-size: 18px;
       line-height: 27px;
     }
 
@@ -103,7 +104,7 @@
     }
 
     @include mini-mobile {
-      padding: 6px 30px;
+      padding: 6px 40px;
 
     }
   }

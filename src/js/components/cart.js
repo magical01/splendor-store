@@ -8,6 +8,7 @@ const basket = document?.querySelectorAll(".basket");
 const cartOverlay = document?.querySelector(".cart-overlay");
 const body = document?.querySelector(".page__body");
 const headerMain = document?.querySelector(".header-main");
+const header = document?.querySelector(".header");
 const hero = document?.querySelector(".hero");
 const cartProdictList = document?.querySelector(".cart-content__list");
 const addCart = document?.querySelector(".card-info__cart");
@@ -336,20 +337,22 @@ const calcScroll = () => {
 };
 
 const scroll = calcScroll();
+const headerOffset = header.offsetHeight;
 
 basket.forEach((elem) => {
   elem?.addEventListener("click", (e) => {
     e.preventDefault();
     cartOverlay.classList.add("cart-overlay--visible");
-    body.classList.add("stop-scroll");
-    body.style.marginRight = `${scroll}px`;
+    disableScroll();
+    // body.classList.add("stop-scroll");
+    // body.style.marginRight = `${scroll}px`;
 
     if (headerMain) {
       headerMain.style.position = "relative";
     }
 
     if (hero) {
-      hero.style.top = "-80px";
+      hero.style.top = `-${headerOffset}px`;
     }
   });
 });
@@ -357,14 +360,15 @@ basket.forEach((elem) => {
 cartClose.forEach((elem) => {
   elem?.addEventListener("click", (e) => {
     cartOverlay.classList.remove("cart-overlay--visible");
-    body.classList.remove("stop-scroll");
-    body.style.marginRight = `0px`;
+    // body.classList.remove("stop-scroll");
+    // body.style.marginRight = null;
+    enableScroll();
     if (headerMain) {
       headerMain.style.position = "absolute";
     }
 
     if (hero) {
-      hero.style.top = "0px";
+      hero.style.top = null;
     }
   });
 });
@@ -372,14 +376,15 @@ cartClose.forEach((elem) => {
 cartOverlay?.addEventListener("click", (e) => {
   if (e.target === document.querySelector(".cart-overlay--visible")) {
     cartOverlay.classList.remove("cart-overlay--visible");
-    body.classList.remove("stop-scroll");
-    body.style.marginRight = `0px`;
+    // body.classList.remove("stop-scroll");
+    // body.style.marginRight = null;
+    enableScroll();
     if (headerMain) {
       headerMain.style.position = "absolute";
     }
 
     if (hero) {
-      hero.style.top = "0px";
+      hero.style.top = null;
     }
   }
 });

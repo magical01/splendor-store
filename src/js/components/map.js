@@ -1,6 +1,3 @@
-
-
-
 if (document.location.pathname == '/splendor-store/contacts.html') {
   function init() {
     let map = new ymaps.Map('map', {

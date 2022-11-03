@@ -3,6 +3,7 @@
   left: 0;
   top: 0;
   padding-top: 40px;
+  padding-bottom: 40px;
   width: 100%;
   z-index: 5;
 
@@ -413,5 +414,26 @@
       }
     }
   }
+}
+
+
+.header--fixed {
+  position: fixed !important;
+  left: 0;
+  top: 0;
+  border-bottom: 1px solid #F8F2EC;
+  // padding-bottom: 40px;
+  background-color: #fff;
+  transition: opacity .3s, visibility .3s, transform .3s;
+
+  @include xl-tablet {
+    display: none;
+  }
+
+  // &--active {
+
+  //   // transform: translateY(0);
+  //   transition: opacity .3s, visibility .3s, transform .3s;
+  // }
 }
 
