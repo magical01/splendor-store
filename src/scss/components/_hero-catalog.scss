@@ -1,27 +1,76 @@
 .hero-catalog {
-  padding-top: 50px;
   padding-bottom: 80px;
+
+  // @include small-tablet {
+  //   padding-top: 36px;
+  // }
+
+  @include mobile {
+    padding-bottom: 40px;
+  }
 
   &__container {
     height: 490px;
+
+    @include xxl-desktop {
+      height: 430px;
+    }
   }
 
   &__bg {
     position: relative;
     display: flex;
     justify-content: flex-start;
+    height: 100%;
 
     picture {
       position: absolute;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(39, 39, 39, 0.2);
+      }
+
+      img {
+        min-height: 430px;
+
+        @include xxl-desktop {
+          height: 430px;
+        }
+
+        @include mobile {
+          min-height: 380px;
+        }
+      }
+    }
+
+    @include tablet {
+      justify-content: center;
     }
   }
 
   &__content {
     max-width: 725px;
     position: relative;
-    z-index: 5;
+    z-index: 0;
     padding-left: 148px;
     padding-top: 139px;
+
+    @include tablet {
+      padding-left: 0;
+    }
+
+    @include small-tablet {
+      padding-top: 114px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
   }
 
   &__img {
@@ -31,6 +80,8 @@
   &__title {
     margin: 0;
     margin-bottom: 51px;
+    opacity: 1;
+    visibility: visible;
     max-width: 486px;
     font-family: "KronaOne";
     font-size: 54px;
@@ -38,6 +89,23 @@
     text-align: center;
     letter-spacing: -0.03em;
     color: #fff;
+    transition: opacity .3s, visibility .3s;
+
+
+    @include xl-mobile {
+      font-size: 42px;
+      line-height: 56px;
+    }
+
+    @include mobile {
+      font-size: 36px;
+      line-height: 50px;
+    }
+
+    @include mini-mobile {
+      font-size: 32px;
+      line-height: 46px;
+    }
   }
 }
 
@@ -45,11 +113,15 @@
   &__list {
     display: flex;
     justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .3s, visibility .3s;
   }
 
   &__item {
     position: relative;
     font-size: 20px;
+    line-height: 30px;
     color: #fff;
     opacity: 0.8;
 
@@ -62,6 +134,11 @@
         position: absolute;
         right: 0px;
       }
+    }
+
+    @include xl-mobile {
+      font-size: 18px;
+      line-height: 28px;
     }
   }
 
@@ -79,7 +156,13 @@
       transition: all .3s;
     }
 
-    @include hover {
+    &:focus {
+      outline: 1px solid var(--white-color);
+      outline-offset: 2px;
+      transition: none;
+    }
+
+    &:hover {
       &::after {
         content: "";
         position: absolute;
@@ -92,7 +175,7 @@
     }
 
     &--active {
-      @include hover {
+      &:hover {
         &::after {
           width: 0%;
         }

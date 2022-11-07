@@ -6,17 +6,69 @@
   }
 
   &__card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 30px;
+    grid-column: 3 / 8 span;
     border: 1px solid #000000;
     margin-top: 40px;
-    padding: 60px 100px;
-    padding-left: 312px;
-    width: 1089px;
+    padding: 60px 0px;
     height: 460px;
     background-color: #F8F2EC;
+
+    @include tablet {
+      padding-top: 60px;
+      padding-right: 15px;
+      padding-bottom: 60px;
+      padding-left: 30px;
+      height: auto;
+    }
+
+    @include small-tablet {
+      grid-column: 2 / 10 span;
+      margin-top: 0;
+      padding-top: 40px;
+    }
+
+    @include mobile {
+      grid-column: 1 / 12 span;
+      padding-right: 15px;
+      padding-left: 15px;
+      padding-bottom: 30px;
+    }
+
+    @include mini-mobile {
+      border: initial;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      background-color: transparent;
+
+    }
+
+    &-wrapper {
+      margin-bottom: 80px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+
+      @include mobile {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__content {
+    grid-column: 3 / 4 span;
+
+    @include xxl-tablet {
+      grid-column:  2 / 6 span;
+    }
+
+    @include tablet {
+      grid-column: 1 / 8 span;
+    }
   }
 
   &__title {
@@ -25,47 +77,164 @@
     font-family: 'KronaOne';
     font-weight: 400;
     font-size: 48px;
+
+    @include md-tablet {
+      font-size: 38px;
+    }
+
+    @include small-tablet {
+      margin-bottom: 20px;
+      font-size: 34px;
+    }
+
+    @include mobile {
+      font-size: 34px;
+    }
   }
 
   &__link {
+    display: inline-block;
+    margin-bottom: 20px;
     font-size: 28px;
+
+    @include md-tablet {
+      font-size: 24px;
+    }
+
+    @include small-tablet {
+      font-size: 20px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
   }
 
   &__address {
-    margin-top: 20px;
     margin-bottom: 20px;
     font-style: normal;
     font-size: 28px;
     text-transform: capitalize;
+
+    @include md-tablet {
+      font-size: 24px;
+    }
+
+    @include small-tablet {
+      font-size: 20px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
   }
 
   &__company {
+    display: inline-block;
     margin-bottom: 20px;
     font-size: 28px;
     line-height: 150%;
     text-transform: capitalize;
+
+    @include md-tablet {
+      font-size: 24px;
+    }
+
+    @include small-tablet {
+      font-size: 20px;
+    }
+
+    @include mobile {
+      display: block;
+      font-size: 16px;
+    }
   }
 
   &__links {
+    display: flex;
     margin-bottom: 150px;
+
+    @include small-tablet {
+      margin-bottom: 100px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      margin-bottom: 60px;
+    }
   }
 
   &__track {
     display: inline-block;
+    margin-right: 20px;
+
+    @include small-tablet {
+      display: flex;
+      width: auto;
+    }
+
+    @include mobile {
+      margin-right: 0;
+      margin-bottom: 20px;
+      padding: 10px 30px;
+      width: 100%;
+    }
   }
 
   &__continue {
     display: inline-block;
+
+    @include small-tablet {
+      display: flex;
+      width: auto;
+    }
+
+    @include mobile {
+      width: 100%;
+      padding: 10px 30px;
+    }
   }
 }
 
 .map {
-  margin-top: 80px;
+  grid-column: 2 / 10 span;
   margin-bottom: 150px;
   border: 1px solid rgba(#272727, 0.7);
-  width: 1370px;
   height: 700px;
   background-color: #F8F2EC;
+
+  @include tablet {
+    height: 500px;
+  }
+
+  @include small-tablet {
+    margin-bottom: 100px;
+    height: 450px;
+  }
+
+  @include mobile {
+    grid-column: 1 / 12 span;
+    margin-bottom: 70px;
+    height: 400px;
+  }
+
+  @include mini-mobile {
+    width: 100%;
+    margin-bottom: 50px;
+    height: 350px;
+  }
+
+}
+
+.contacts__map-wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 30px;
+  width: 100%;
+
+  @include mini-mobile {
+    display: flex;
+  }
 }
 
 [class*="copyrights-pane"] {

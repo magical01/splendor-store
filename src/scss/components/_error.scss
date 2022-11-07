@@ -5,12 +5,48 @@
     align-items: center;
     padding-top: 160px;
     padding-bottom: 150px;
+
+    @include xl-tablet {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    @include mobile {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    picture {
+      @include xl-tablet {
+        width: 600px;
+      }
+
+      @include small-tablet {
+        width: 500px;
+      }
+
+      @include mobile {
+        width: 400px;
+      }
+
+      @include mini-mobile {
+        width: 285px;
+      }
+    }
   }
 
   &__text {
     display: inline-block;
     font-weight: 400;
     font-size: 28px;
+
+    @include small-tablet {
+      font-size: 24px;
+    }
+
+    @include mini-mobile {
+      font-size: 22px;
+    }
 
     &:nth-child(1) {
       margin-bottom: 40px;

@@ -10,13 +10,17 @@
   width: 100%;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease-in-out;
+  transition: opacity .3s, visibility .3s;
   z-index: 50;
+
+  @include md-tablet {
+    justify-content: center;
+  }
 
   &--visible {
     opacity: 1;
     visibility: visible;
-    transition: all 0.3s ease-in-out;
+    transition: opacity .3s, visibility .3s;
   }
 }
 .cart-content {
@@ -32,6 +36,24 @@
   border-radius: 10px 0px 0px 10px;
   background-color: #fff;
 
+  @include md-tablet {
+    width: 95%;
+  }
+
+  @include xl-mobile {
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: initial;
+    width: 100%;
+  }
+
+  @include mobile {
+    padding-top: 30px;
+    padding-right: 15px;
+    padding-bottom: 0px;
+    padding-left: 15px;
+  }
+
   &__empty {
     display: flex;
     justify-content: center;
@@ -40,9 +62,16 @@
   }
 
   &__top {
-    display: flex;
+    display: grid;
     justify-content: space-between;
+    align-items: center;
+    grid-auto-flow: column;
     margin-bottom: 40px;
+
+    @include mobile {
+      column-gap: 10px;
+      margin-bottom: 20px;
+    }
   }
 
   &__title {
@@ -50,16 +79,25 @@
     font-family: 'KronaOne';
     font-weight: 400;
     font-size: 24px;
+
+    @include mobile {
+      font-size: 20px;
+    }
+
+    @include mini-mobile {
+      font-size: 18px;
+    }
   }
 
   &__close {
     svg g {
-      transition: all .3s;
+      transition: opacity .3s;
     }
 
-    @include hover {
+    &:hover {
       svg g {
         opacity: 1;
+        transition: opacity .3s;
       }
     }
 
@@ -77,8 +115,6 @@
   }
 
   &__list {
-    // display: flex;
-    // flex-direction: column;
     position: relative;
     max-height: 412px;
     overflow-y: hidden;
@@ -105,41 +141,49 @@
     font-weight: 500;
     font-size: 24px;
     color: rgba(#000, 0.5);
-    column-gap: 24px;
-    transition: all .3s;
+    transition: color .3s;
+
+    svg {
+      margin-left: 24px;
+    }
+
+    @include mobile {
+      margin-top: 20px;
+      padding-bottom: 20px;
+      font-size: 20px;
+    }
 
     svg path {
       stroke: #000;
       opacity: 0.6;
-      transition: all .3s;
+      transition: opacity .3s;
     }
 
-    @include hover {
+    &:hover {
       & {
         color: rgba(#000, 1);
+        transition: color .3s;
       }
 
       svg path {
         opacity: 1;
-        transition: all .3s;
+        transition: opacity .3s;
       }
     }
 
     &:focus {
-      color: rgba(#000, 1);
-
-      svg path {
-        opacity: 1;
-        transition: all .3s;
-      }
+      outline: 1px solid var(--black-color);
+      outline-offset: 4px;
+      transition: none;
     }
 
     &:active {
       color: rgba(#000, 1);
+      transition: color .3s;
 
       svg path {
         opacity: 1;
-        transition: all .3s;
+        transition: opacity .3s;
       }
     }
   }
@@ -154,6 +198,12 @@
     align-items: center;
     margin-top: 32px;
     margin-bottom: 36px;
+
+    @include mini-mobile {
+      justify-content: flex-start;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
   }
 
   &__descr {
@@ -162,6 +212,10 @@
     margin: 0;
     font-size: 14px;
     color: rgba(#000, 0.5);
+
+    @include mini-mobile {
+      display: none;
+    }
   }
 
   &__box {
@@ -179,24 +233,33 @@
     display: block;
     margin-top: 12px;
     font-weight: 500;
-    font-size: 41.1513px;
+    font-size: 42px;
   }
 
   &__order {
     display: flex;
     justify-content: center;
     border: 1px solid #2B2828;
+    margin-bottom: 60px;
     padding-top: 17px;
     padding-bottom: 17px;
     font-weight: 500;
     font-size: 24px;
     color: #fff;
     background-color: #2B2828;
-    transition: all .3s;
+    transition: background-color .3s, color .3s;
 
-    @include hover {
+    @include mobile {
+      margin-bottom: 30px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      font-size: 20px;
+    }
+
+    &:hover {
       color: #2B2828;
       background-color: transparent;
+      transition: background-color .3s, color .3s;
     }
 
     &:focus {
@@ -208,27 +271,38 @@
       color: #2B2828;
       background-color: transparent;
     }
-
-
   }
 
   .card-product {
     position: relative;
-    margin-top: 59px;
   }
 
   .card-product__title {
     font-size: 24px;
     text-align: start;
-  }
 
+    @include mini-mobile {
+      font-size: 23px;
+    }
+  }
 
   .card-product__top {
     display: flex;
     justify-content: space-between;
+
+
+    @include mobile {
+      position: relative;
+    }
   }
   .card-product__buttons {
     position: relative;
+
+    @include mobile {
+      position: absolute;
+      top: 42px;
+      right: 0;
+    }
   }
 
   .card-product__inner {
@@ -296,23 +370,26 @@
     font-size: 12px;
     color: #fff;
     background-color: var(--black-color);
-    transition: all .3s;
+    transition: background-color .3s, color .3s;
     cursor: pointer;
 
 
-    @include hover {
+    &:hover {
       color: var(--black-color);
       background-color: transparent;
+      transition: background-color .3s, color .3s;
     }
 
     &:focus {
-      color: var(--black-color);
-      background-color: transparent;
+      outline: 1px solid var(--black-color);
+      outline-offset: 4px;
+      transition: none;
     }
 
     &:active {
       color: var(--black-color);
       background-color: transparent;
+      transition: background-color .3s, color .3s;
     }
   }
 }
@@ -360,14 +437,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 20px;
     width: 194px;
     height: 194px;
     background-color: #F8F2EC;
+
+    @include mobile {
+      margin-right: 10px;
+      width: 150px;
+      height: 160px;
+    }
+
+    @include mini-mobile {
+      margin-right: 8px;
+      width: 120px;
+      height: 145px;
+    }
   }
 
   &__text {
-    margin-left: 20px;
     width: calc(100% - 190px - 20px);
+
+    @include mobile {
+      width: calc(100% - 150px - 10px);
+    }
+
+    @include mini-mobile {
+      width: calc(100% - 120px - 8px);
+    }
   }
 
   &__top {
@@ -375,9 +472,23 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+
+    @include xl-mobile {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__select {
+
+    @include xl-mobile {
+      width: 100%;
+      order: 2;
+    }
   }
 
   &__color {
+
+
 
     &--black {
       color: var(--black-color);
@@ -395,35 +506,34 @@
   &__delete {
     display: inline-flex;
     align-items: center;
-    column-gap: 10px;
     font-weight: 300;
     font-size: 13px;
     color: rgba(#272727, 0.5);
-    transition: all .3s;
+    transition: color .3s;
 
     svg {
+      margin-left: 10px;
       width: 12px;
       height: 12px;
 
       g {
-        transition: all .3s;
+        transition: opacity .3s;
       }
     }
 
-    @include hover {
+    &:hover {
       color: rgba(#272727, 1);
+      transition: color .3s;
 
       svg g {
         opacity: 1;
+        transition: opacity .3s;
       }
     }
 
     &:focus {
-      color: rgba(#272727, 1);
-
-      svg g {
-        opacity: 1;
-      }
+      outline: 1px solid var(--black-color);
+      transition: none;
     }
 
     &:active {
@@ -440,17 +550,33 @@
     font-weight: 400;
     font-size: 28px;
     text-transform: capitalize;
+
+
+    @include mobile {
+      font-size: 20px;
+    }
+
+    @include mini-mobile {
+      font-size: 16px;
+    }
   }
 
   &__size {
+    display: inline-block;
+    margin-bottom: 46px;
     font-size: 14px;
     opacity: 0.7;
+
+    @include xl-mobile {
+      margin-bottom: 30px;
+    }
   }
 
   &__bottom {
     display: flex;
     justify-content: space-between;
-    margin-top: 46px;
+    align-items: center;
+
   }
 
   &__stepper {
@@ -468,48 +594,43 @@
 .cart-btn-prev {
   position: absolute;
   right: 55px;
+
+
   svg {
     opacity: 0.7;
-    transition: all .3s;
+    transition: opacity .3s, width .3s, height .3s;
   }
   path {
-    transition: all .3s;
+    transition: opacity .3s;
   }
 
   circle {
-    transition: all .3s;
+    transition: opacity .3s;
   }
 
-  @include hover {
+  &:hover {
     svg {
       width: 49px;
       height: 49px;
       opacity: 1;
+      transition: opacity .3s, width .3s, height .3s;
 
       path {
         opacity: 1;
+        transition: opacity .3s;
       }
 
       circle {
         opacity: 1;
+        transition: opacity .3s;
       }
     }
   }
 
   &:focus {
-    svg {
-      width: 49px;
-      height: 49px;
-      opacity: 1;
-
-      path {
-        opacity: 1;
-      }
-
-      circle {
-        opacity: 1;
-      }
-    }
+    outline: 1px solid var(--black-color);
+    outline-offset: 4px;
+    transition: none;
   }
 
   &:active {
@@ -517,13 +638,16 @@
       width: 49px;
       height: 49px;
       opacity: 1;
+      transition: opacity .3s, width .3s, height .3s;
 
       path {
         opacity: 1;
+        transition: opacity .3s
       }
 
       circle {
         opacity: 1;
+        transition: opacity .3s
       }
     }
   }
@@ -532,27 +656,27 @@
 .cart-btn-next {
   position: absolute;
   right: 0;
+
   svg {
     width: 42px;
     height: 42px;
     opacity: 0.4;
-    transition: all .3s;
+    transition: opacity .3s, width .3s, height .3s;
   }
 
-  @include hover {
+  &:hover {
     svg {
       width: 49px;
       height: 49px;
       opacity: 1;
+      transition: opacity .3s, width .3s, height .3s;
     }
   }
 
   &:focus {
-    svg {
-      width: 49px;
-      height: 49px;
-      opacity: 1;
-    }
+    outline: 1px solid var(--black-color);
+    outline-offset: 4px;
+    transition: none;
   }
 
   &:active {
@@ -560,6 +684,7 @@
       width: 49px;
       height: 49px;
       opacity: 1;
+      transition: opacity .3s, width .3s, height .3s;
     }
   }
 }
@@ -575,7 +700,6 @@
   &__top {
     display: inline-flex;
     align-items: center;
-    column-gap: 10px;
     margin-right: 20px;
     font-size: 28px;
     font-weight: 400;
@@ -583,8 +707,25 @@
     cursor: pointer;
 
     span {
+      margin-right: 10px;
+    }
+
+    @include mobile {
+      font-size: 20px;
+    }
+
+    @include mini-mobile {
+      font-size: 16px;
+    }
+
+    span {
       min-width: 70px;
       transition: all .2s;
+
+      @include mobile {
+        min-width: 50px;
+      }
+
     }
 
     svg {
@@ -602,6 +743,8 @@
   }
 
   &__item {
+    padding-top: 5px;
+    padding-bottom: 5px;
     text-transform: capitalize;
     cursor: pointer;
 
@@ -628,6 +771,7 @@
 
     .custom-select__dropdown {
       display: block;
+      background-color: #fff;
     }
   }
 }
@@ -638,8 +782,29 @@
 
 .cart-content__main {
   display: block;
+
   &--hide {
     display: none;
+  }
+}
+
+.cart-product__price.card-info__price {
+  margin-right: 0;
+
+  @include mobile {
+    font-size: 24px;
+  }
+}
+
+.cart-product__price.card-info__price::before {
+  @include mobile {
+    top: 3px;
+  }
+}
+
+.cart-content__fullprice.card-info__price {
+  @include mini-mobile {
+    margin-right: 0;
   }
 }
 

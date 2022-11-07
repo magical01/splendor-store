@@ -1,0 +1,91 @@
+[
+  {
+    "title": "Retro Grey",
+    "size": "Size: 25*45",
+    "image": "product-1",
+    "descr": "Id congue tellus neque fermentum mi leo loremId congue tellus neque fermentum mi leo lorem",
+    "price": "500$"
+  },
+  {
+    "title": "Retro Grey",
+    "size": "Size: 25*45",
+    "image": "product-2",
+    "descr": "Id congue tellus neque fermentum mi leo loremId congue tellus neque fermentum mi leo lorem",
+    "price": "500$"
+  },
+  {
+    "title": "Retro Grey",
+    "size": "Size: 25*45",
+    "image": "product-3",
+    "descr": "Id congue tellus neque fermentum mi leo loremId congue tellus neque fermentum mi leo lorem",
+    "price": "500$",
+    "selector": "catalog-product__item--center"
+  },
+  {
+    "title": "Retro Grey",
+    "size": "Size: 25*45",
+    "image": "product-4",
+    "descr": "Id congue tellus neque fermentum mi leo loremId congue tellus neque fermentum mi leo lorem",
+    "price": "500$",
+    "selector": "catalog-product__item--center"
+  },
+  {
+    "title": "Retro Grey",
+    "size": "Size: 25*45",
+    "image": "product-5",
+    "descr": "Id congue tellus neque fermentum mi leo loremId congue tellus neque fermentum mi leo lorem",
+    "price": "500$"
+  },
+  {
+    "title": "Retro Grey",
+    "size": "Size: 25*45",
+    "image": "product-6",
+    "descr": "Id congue tellus neque fermentum mi leo loremId congue tellus neque fermentum mi leo lorem",
+    "price": "500$"
+  },
+  {
+    "title": "Retro Grey",
+    "size": "Size: 25*45",
+    "image": "product-7",
+    "descr": "Id congue tellus neque fermentum mi leo loremId congue tellus neque fermentum mi leo lorem",
+    "price": "500$",
+    "selector": "catalog-product__item--center"
+  },
+  {
+    "title": "Retro Grey",
+    "size": "Size: 25*45",
+    "image": "product-8",
+    "descr": "Id congue tellus neque fermentum mi leo loremId congue tellus neque fermentum mi leo lorem",
+    "price": "500$"
+  },
+  {
+    "title": "Retro Grey",
+    "size": "Size: 25*45",
+    "image": "product-9",
+    "descr": "Id congue tellus neque fermentum mi leo loremId congue tellus neque fermentum mi leo lorem",
+    "price": "500$",
+    "selector": "catalog-product__item--end"
+  },
+  {
+    "title": "Retro Grey",
+    "size": "Size: 25*45",
+    "image": "product-10",
+    "descr": "Id congue tellus neque fermentum mi leo loremId congue tellus neque fermentum mi leo lorem",
+    "price": "500$"
+  },
+  {
+    "title": "Retro Grey",
+    "size": "Size: 25*45",
+    "image": "product-11",
+    "descr": "Id congue tellus neque fermentum mi leo loremId congue tellus neque fermentum mi leo lorem",
+    "price": "500$"
+  },
+  {
+    "title": "Retro Grey",
+    "size": "Size: 25*45",
+    "image": "product-12",
+    "descr": "Id congue tellus neque fermentum mi leo loremId congue tellus neque fermentum mi leo lorem",
+    "price": "500$"
+  }
+
+]

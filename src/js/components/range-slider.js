@@ -1,11 +1,13 @@
+import noUiSlider from 'nouislider'
+
+
+if (document.location.pathname == '/splendor-store/catalog.html') {
 
 const rangeSlider = document?.getElementById('range-slider');
 const input0 = document?.getElementById('input-0');
 const input1 = document?.getElementById('input-1');
 
 const inputs = [input0, input1];
-
-import noUiSlider from 'nouislider'
 
 noUiSlider.create(rangeSlider, {
   start: [3000, 7000],
@@ -33,4 +35,5 @@ inputs.forEach((elem, index) => {
     setRangeSlider(index, e.currentTarget.value);
   });
 });
+}
 

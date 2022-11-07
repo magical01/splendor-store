@@ -19,7 +19,7 @@
     <div class="cart-content__main cart-content__main--hide">
       <div class="cart-content__top">
         <h4 class="cart-content__title">Item added to cart</h4>
-        <button class="cart-content__close btn-reset">
+        <button class="cart-content__close btn-reset focus-offset" aria-label="Close cart">
           <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g opacity="0.8">
               <path d="M14.0352 14.521L26.5352 26.521" stroke="#272727" />
@@ -30,7 +30,7 @@
         </button>
       </div>
       <ul class="cart-content__list list-reset" data-simplebar data-bar>
-        <span class="cart-content__count"></span>
+        <li><span class="cart-content__count"></span></li>
       </ul>
       <a class="cart-content__link" href="cart.html">
         All products
@@ -79,7 +79,7 @@
                   <picture>
                     <source srcset="img/product-3-2.avif" type="image/avif" />
                     <source srcset="img/product-3-2.webp" type="image/webp" />
-                    <img loading="lazy" src="img/product-3-2.png" class="image" width="117" height="146" alt="" />
+                    <img loading="lazy" src="img/product-3-2.png" class="image" width="117" height="146" alt="Modern black" />
                   </picture>
                 </div>
                 <div class="product-slider__specific">
@@ -100,7 +100,7 @@
                   <picture>
                     <source srcset="img/product-4.avif" type="image/avif" />
                     <source srcset="img/product-4.webp" type="image/webp" />
-                    <img loading="lazy" src="img/product-4.png" class="image" width="117" height="117" alt="" />
+                    <img loading="lazy" src="img/product-4.png" class="image" width="117" height="117" alt="Modern talking" />
                   </picture>
                 </div>
                 <div class="product-slider__specific">
@@ -121,7 +121,7 @@
                   <picture>
                     <source srcset="img/product-1.avif" type="image/avif" />
                     <source srcset="img/product-1.webp" type="image/webp" />
-                    <img loading="lazy" src="img/product-1.png" class="image" width="89" height="144" alt="" />
+                    <img loading="lazy" src="img/product-1.png" class="image" width="89" height="144" alt="Honk Honk" />
                   </picture>
                 </div>
                 <div class="product-slider__specific">
@@ -142,7 +142,7 @@
                   <picture>
                     <source srcset="img/product-2.avif" type="image/avif" />
                     <source srcset="img/product-2.webp" type="image/webp" />
-                    <img loading="lazy" src="img/product-2.png" class="image" width="75" height="140" alt="" />
+                    <img loading="lazy" src="img/product-2.png" class="image" width="75" height="140" alt="Donk Donk" />
                   </picture>
                 </div>
                 <div class="product-slider__specific">
@@ -163,7 +163,7 @@
                   <picture>
                     <source srcset="img/product-3-2.avif" type="image/avif" />
                     <source srcset="img/product-3-2.webp" type="image/webp" />
-                    <img loading="lazy" src="img/product-3-2.png" class="image" width="117" height="146" alt="" />
+                    <img loading="lazy" src="img/product-3-2.png" class="image" width="117" height="146" alt="Monkey black" />
                   </picture>
                 </div>
                 <div class="product-slider__specific">
@@ -184,7 +184,7 @@
                   <picture>
                     <source srcset="img/product-4.avif" type="image/avif" />
                     <source srcset="img/product-4.webp" type="image/webp" />
-                    <img loading="lazy" src="img/product-4.png" class="image" width="117" height="117" alt="" />
+                    <img loading="lazy" src="img/product-4.png" class="image" width="117" height="117" alt="Obama black" />
                   </picture>
                 </div>
                 <div class="product-slider__specific">
@@ -205,7 +205,7 @@
                   <picture>
                     <source srcset="img/product-1.avif" type="image/avif" />
                     <source srcset="img/product-1.webp" type="image/webp" />
-                    <img loading="lazy" src="img/product-1.png" class="image" width="89" height="144" alt="" />
+                    <img loading="lazy" src="img/product-1.png" class="image" width="89" height="144" alt="Retro white" />
                   </picture>
                 </div>
                 <div class="product-slider__specific">
@@ -226,7 +226,7 @@
                   <picture>
                     <source srcset="img/product-2.avif" type="image/avif" />
                     <source srcset="img/product-2.webp" type="image/webp" />
-                    <img loading="lazy" src="img/product-2.png" class="image" width="75" height="140" alt="" />
+                    <img loading="lazy" src="img/product-2.png" class="image" width="75" height="140" alt="Retro black" />
                   </picture>
                 </div>
                 <div class="product-slider__specific">
@@ -249,52 +249,3 @@
   </div>
 </div>
 
-<!-- <li class="cart-content__item">
-          <article class="cart-content__product cart-product">
-            <div class="cart-product__image">
-              <picture>
-                <source srcset="img/products-1.avif" type="image/avif">
-                <source srcset="img/products-1.webp" type="image/webp">
-                <img loading="lazy" src="img/products-1.png" class="cart-product__picture" width="84" height="160" alt="">
-              </picture>
-            </div>
-            <div class="cart-product__text">
-              <div class="cart-product__top">
-                <h4 class="cart-product__title">Retro Grey</h4>
-                <div class="cart-product__select custom-select">
-                  <div class="cart-product__color cart-product__color--gold custom-select__top">
-                    <span>Gold</span>
-                    <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M19.3371 1.16917L10.168 10.3383L0.998797 1.16917" stroke="#BE9364" stroke-linecap="round" />
-                    </svg>
-                  </div>
-                  <div class="custom-select__dropdown">
-                    <ul class="custom-select__list list-reset">
-                      <li class="custom-select__item custom-select__item--black" data-color="#272727">Black</li>
-                      <li class="custom-select__item custom-select__item--gold" data-color="#BE9364">Gold</li>
-                      <li class="custom-select__item custom-select__item--grey" data-color="#D2E2D7">Grey</li>
-                    </ul>
-                  </div>
-                </div>
-                <button class="cart-product__delete btn-reset" aria-label="Remove from cart">
-                  Delete
-                  <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g opacity="0.7">
-                      <path d="M1.00218 0.728165L18.4712 17.4984" stroke="#272727" />
-                      <path d="M17.5859 0.501587L0.99854 17.4984" stroke="#272727" />
-                    </g>
-                  </svg>
-                </button>
-              </div>
-              <span class="cart-product__size">10'' * 50''</span>
-              <div class="cart-product__bottom">
-                <div class="cart-product__stepper stepper">
-                  <button class="stepper__btn stepper__btn--minus btn-reset" aria-label="minus">-</button>
-                  <input class="stepper__input input-reset" type="text" min="1" max="999" value="1">
-                  <button class="stepper__btn stepper__btn--plus btn-reset" aria-label="plus">+</button>
-                </div>
-                <span class="cart-product__price card-info__price">2700</span>
-              </div>
-            </div>
-          </article>
-        </li> -->

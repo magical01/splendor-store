@@ -11,6 +11,10 @@
     font-size: 20px;
     color: rgba(#272727, 0.7);
 
+    @include mobile {
+      font-size: 16px;
+    }
+
     &:not(:last-child) {
       &:before {
         content: "|";
@@ -20,15 +24,33 @@
       }
 
       padding-right: 23px;
+
+      @include mini-mobile {
+        padding-right: 15px;
+      }
     }
   }
 
   &__item + &__item {
     margin-left: 33px;
+
+    @include mobile {
+      margin-left: 24px;
+    }
+
+    @include mini-mobile {
+      margin-left: 15px;
+    }
   }
 
   &__link {
     position: relative;
+
+    &:focus {
+      outline: 1px solid var(--black-color);
+      outline-offset: 2px;
+      transition: none;
+    }
 
     &::before {
       content: "";
@@ -38,18 +60,20 @@
       width: 0%;
       height: 1px;
       background-color: currentColor;
-      transition: all .3s;
+      transition: width .3s;
     }
 
-    @include hover {
+    &:hover {
       &::before {
         width: 100%;
+        transition: width .3s;
       }
     }
 
+
     &--active {
 
-      @include hover {
+      &:hover {
         &:before {
           width: 0%;
         }

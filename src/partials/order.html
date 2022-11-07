@@ -1,55 +1,51 @@
 <article class="order-data">
-  <div class="order-data__left">
-    <h3 class="order-data__title">Ordering data</h3>
-    <div class="order-data__text">
-      <span>Fill in the fields</span>
-      <p class="order-data__descr">Please fill in all the fields to confirm youe order</p>
+  <h3 class="order-data__title">Ordering data</h3>
+  <div class="order-data__content">
+    <div class="order-data__left">
+      <div class="order-data__text">
+        <span>Fill in the fields</span>
+        <p class="order-data__descr">Please fill in all the fields to confirm youe order</p>
+      </div>
+      <form class="main-form" action="#">
+        <div class="main-form__group">
+          <input class="main-form__input input-reset " type="text" name="Имя" placeholder="Full name">
+        </div>
+        <div class="main-form__group">
+          <input class="main-form__input input-reset " type="tel" name="tel" placeholder="+7 (---) --- -- --">
+        </div>
+        <div class="main-form__group">
+          <input class="main-form__input input-reset " type="email" name="email" placeholder="Email">
+        </div>
+        <div class="main-form__group">
+          <input class="main-form__input input-reset " type="text" name="Имя" placeholder="Adress (city, region, street name and house number)">
+        </div>
+        <div class="main-form__group">
+          <input class="main-form__input input-reset " type="text" name="Имя" placeholder="Your comments">
+        </div>
+      </form>
     </div>
-    <form class="main-form" action="#">
-      <div class="main-form__group">
-        <input class="main-form__input input-reset " type="text" name="Имя">
-        <label class="main-form__label">Full name</label>
-      </div>
-      <div class="main-form__group">
-        <input class="main-form__input input-reset " type="tel" name="tel">
-        <label class="main-form__label">+7 (---) --- -- --</label>
-      </div>
-      <div class="main-form__group">
-        <input class="main-form__input input-reset " type="email" name="email">
-        <label class="main-form__label">Email</label>
-      </div>
-      <div class="main-form__group">
-        <input class="main-form__input input-reset " type="text" name="Имя">
-        <label class="main-form__label">Adress (city, region, street name and house number)</label>
-      </div>
-      <div class="main-form__group">
-        <input class="main-form__input input-reset " type="text" name="Имя">
-        <label class="main-form__label">Your comments</label>
-      </div>
-    </form>
-  </div>
-  <!-- <button class="main-form__btn btn-reset">Отправить</button> -->
-  <div class="order-data__right">
-    <div class="order-data__radiobuttons">
-      <div class="order-data__radiobutton card-info__radiobutton">
-        <label class="order-data__label card-info__label">
-          <input class="order-data__radio card-info__radio" type="radio" name="one">
-          <span class="order-data__number card-info__text">Delivery</span>
-        </label>
-        <label class="order-data__label card-info__label">
-          <input class="order-data__radio card-info__radio" type="radio" name="one">
-          <span class="order-data__number card-info__text">Pick up</span>
-        </label>
-      </div>
-      <div class="order-data__radiobutton card-info__radiobutton">
-        <label class="order-data__label card-info__label">
-          <input class="order-data__radio card-info__radio" type="radio" name="two">
-          <span class="order-data__number card-info__text">Pay by card</span>
-        </label>
-        <label class="order-data__label card-info__label">
-          <input class="order-data__radio card-info__radio" type="radio" name="two">
-          <span class="order-data__number card-info__text">Pay cash</span>
-        </label>
+    <div class="order-data__right">
+      <div class="order-data__radiobuttons">
+        <div class="order-data__radiobutton card-info__radiobutton">
+          <label class="order-data__label custom-radiobtn">
+            <input class="order-data__radio custom-radiobtn__input visually-hidden" type="radio" name="one">
+            <span class="order-data__number custom-radiobtn__text">Delivery</span>
+          </label>
+          <label class="order-data__label custom-radiobtn">
+            <input class="order-data__radio custom-radiobtn__input visually-hidden" type="radio" name="one">
+            <span class="order-data__number custom-radiobtn__text">Pick up</span>
+          </label>
+        </div>
+        <div class="order-data__radiobutton card-info__radiobutton">
+          <label class="order-data__label custom-radiobtn">
+            <input class="order-data__radio custom-radiobtn__input visually-hidden" type="radio" name="two">
+            <span class="order-data__number custom-radiobtn__text">Pay by card</span>
+          </label>
+          <label class="order-data__label custom-radiobtn">
+            <input class="order-data__radio custom-radiobtn__input visually-hidden" type="radio" name="two">
+            <span class="order-data__number custom-radiobtn__text">Pay cash</span>
+          </label>
+        </div>
       </div>
     </div>
   </div>

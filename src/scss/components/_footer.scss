@@ -2,30 +2,101 @@
   background-color: #474747;
 
   &__container {
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: 80px 135px;
     height: 610px;
+
+    @include xxl-desktop {
+      padding: 80px 100px;
+    }
+
+    @include big-desktop {
+      padding: 80px 30px;
+    }
+
+    @include md-tablet {
+      display: grid;
+      height: auto;
+      padding: 60px 30px 90px 120px;
+    }
+
+    @include mobile {
+      padding: 30px 15px 80px 15px;
+    }
+
   }
 
-  &__title {
+  &__title-link {
+    display: inline-block;
     margin: 0;
+    height: fit-content;
     font-family: "KronaOne";
     font-weight: 400;
-    font-size: 27.6888px;
+    font-size: 28px;
     line-height: 35px;
     text-transform: uppercase;
     color: #fff;
+
+    &:focus {
+      outline: 1px solid var(--white-color);
+      outline-offset: 2px;
+      transition: none;
+    }
+
+    @include xxl-desktop {
+      margin-right: 50px;
+    }
+
+    @include md-tablet {
+      margin-right: 0;
+      margin-bottom: 82px;
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    @include mobile {
+      margin-bottom: 30px;
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 
   &__top {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 80px;
+
+    @include md-tablet {
+      display: grid;
+      margin-bottom: 60px;
+    }
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
   }
 
   &-nav {
     margin-right: 327px;
     width: 810px;
+
+    @include big-desktop {
+      margin-right: 200px;
+    }
+
+    @include xl-tablet {
+      margin-right: 100px;
+    }
+
+    @include tablet {
+      margin-right: 50px;
+    }
+
+    @include md-tablet {
+      margin-right: 0;
+    }
 
     &__list {
       display: flex;
@@ -35,6 +106,13 @@
     &__item {
       display: flex;
       flex-direction: column;
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        @include md-tablet {
+          display: none;
+        }
+      }
     }
 
 
@@ -43,6 +121,10 @@
       font-weight: 500;
       font-size: 24px;
       color: #fff;
+
+      @include md-tablet {
+        display: none;
+      }
     }
 
     &__link {
@@ -68,21 +150,63 @@
           width: 100%;
         }
       }
+
+      &:focus {
+        outline: 1px solid var(--white-color);
+        outline-offset: 2px;
+        transition: none;
+      }
+
+      @include md-tablet {
+        font-size: 24px;
+        line-height: 28px;
+      }
+
+      @include mobile {
+        font-size: 18px;
+        line-height: 26px;
+      }
     }
 
     &__link + &__link {
       margin-top: 30px;
+
+      @include mobile {
+        margin-top: 20px;
+      }
     }
   }
 
   &__icons {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
+
+    @include md-tablet {
+      position: absolute;
+      right: 30px;
+      bottom: 100px;
+    }
+
+    @include mobile {
+      right: 15px;
+      bottom: 90px;
+    }
 
     .footer__basket {
       display: flex;
       justify-content: flex-end;
+      width: fit-content;
+
+      @include md-tablet {
+        display: none;
+      }
+
+      &:focus {
+        outline: 1px solid var(--white-color);
+        outline-offset: 2px;
+        transition: none;
+      }
     }
 
     .footer__basket.basket--active {
@@ -98,7 +222,7 @@
         transition: all .3s;
       }
 
-      @include hover {
+      &:hover {
         svg rect {
           stroke: #fff;
         }
@@ -110,13 +234,27 @@
     }
 
     .footer__scroll-top {
-      margin-bottom: 10px;
+      display: inline-flex;
+
+      &:focus {
+        outline: 1px solid var(--white-color);
+        outline-offset: 2px;
+        transition: none;
+      }
 
       svg {
-        @include hover {
+        &:hover {
           path {
             stroke: var(--accent-color);
           }
+        }
+      }
+
+
+      @include mobile {
+        svg {
+          width: 40px;
+          height: 40px;
         }
       }
     }
@@ -132,7 +270,7 @@
         transition: all .3s;
       }
 
-      @include hover {
+      &:hover {
         rect {
           stroke: var(--accent-color);
         }
@@ -149,8 +287,13 @@
   &__bottom {
     display: flex;
     justify-content: space-between;
-    margin-top: 80px;
     padding-left: 334px;
+
+    @include xxl-tablet {
+      flex-direction: column;
+      justify-content: initial;
+      padding-left: 0;
+    }
   }
 
   &__basket--active {
@@ -165,9 +308,70 @@
     }
   }
 
+
+  &__mobile-links {
+    display: none;
+
+    @include md-tablet {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 60px;
+    }
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__mobile-link {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 27px;
+    color: rgba(255, 255, 255, 0.6);
+
+
+    @include mobile {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+
+  &__mobile-link + &__mobile-link {
+    @include md-tablet {
+      margin-top: 36px;
+    }
+
+    @include mobile {
+      margin-top: 20px;
+    }
+  }
+
+  &__mobile-title {
+    display: none;
+
+    @include md-tablet {
+      display: block;
+      margin-bottom: 36px;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 32px;
+      color: var(--white-color);
+
+      @include mobile {
+        margin-bottom: 20px;
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+  }
 }
 
 .form {
+
+  @include xxl-tablet {
+    display: none;
+  }
+
   &__text {
     display: block;
     margin-bottom: 40px;
@@ -238,8 +442,14 @@
     border: 1px solid #fff;
     transition: all .3s;
 
-    @include hover {
+    &:hover {
       transform: scale(1.03);
+    }
+
+    &:focus {
+      outline: 1px solid var(--white-color);
+      outline-offset: 4px;
+      transition: none;
     }
   }
 }
@@ -253,17 +463,25 @@
   }
 
   &__link {
+    display: inline-block;
+
+    &:focus {
+      outline: 1px solid var(--white-color);
+      outline-offset: 2px;
+      transition: none;
+    }
+
     svg {
       width: 30px;
       height: 30px;
       fill: #fff;
       transition: all .3s;
 
-      @include hover {
-        rect {
-          fill: var(--accent-color);
-        }
+      &:hover {
+        fill: var(--accent-color);
       }
+
+
     }
   }
 }

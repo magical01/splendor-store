@@ -1,10 +1,14 @@
 import * as newCartModule from "./../functions/new-cart.js";
 
+import { disableScroll } from '../functions/disable-scroll';
+import { enableScroll } from '../functions/enable-scroll';
+
 const cartClose = document?.querySelectorAll(".cart-content__close");
 const basket = document?.querySelectorAll(".basket");
 const cartOverlay = document?.querySelector(".cart-overlay");
 const body = document?.querySelector(".page__body");
 const headerMain = document?.querySelector(".header-main");
+const header = document?.querySelector(".header");
 const hero = document?.querySelector(".hero");
 const cartProdictList = document?.querySelector(".cart-content__list");
 const addCart = document?.querySelector(".card-info__cart");
@@ -126,7 +130,7 @@ const generateCartProduct = (img, title, price, id, nameColor, size, dataColor, 
           <picture>
             <source srcset="${img}.avif" type="image/avif">
             <source srcset="${img}.webp" type="image/webp">
-            <img loading="lazy" src="${img}.png" class="cart-product__picture" width="84" height="160" alt="">
+            <img loading="lazy" src="${img}.png" class="cart-product__picture" width="84" height="160" alt="${title}">
           </picture>
         </div>
         <div class="cart-product__text">
@@ -198,11 +202,23 @@ addCart?.addEventListener("click", (e) => {
 
   let selectorColor = parent?.querySelector(".card-info__color--active");
   if (selectorColor == null) {
+    document?.querySelector(".card-color__overlay").classList.add("card-color__overlay--active");
     document?.querySelector(".card-color").classList.add("card-color--active");
+    disableScroll()
 
     document?.querySelector(".card-color__close")?.addEventListener("click", (e) => {
         if (e.target.closest(".card-color__close")) {
+          document?.querySelector(".card-color__overlay").classList.remove("card-color__overlay--active");
           document?.querySelector(".card-color").classList.remove("card-color--active");
+          enableScroll();
+        }
+      });
+
+      document?.querySelector(".card-color__overlay")?.addEventListener("click", (e) => {
+        if (e.target.closest(".card-color__content") == null) {
+          document?.querySelector(".card-color__overlay").classList.remove("card-color__overlay--active");
+          document?.querySelector(".card-color").classList.remove("card-color--active");
+          enableScroll();
         }
       });
     return;
@@ -211,10 +227,10 @@ addCart?.addEventListener("click", (e) => {
   // size selected ?
   let size = null;
   let indexRadio = null;
-  let selectSize = parent?.querySelectorAll(".card-info__label");
+  let selectSize = parent?.querySelectorAll(".custom-radiobtn");
   let checkedSize = [];
   selectSize.forEach((elem, i) => {
-    checkedSize.push(elem.querySelector(".card-info__radio").checked);
+    checkedSize.push(elem.querySelector(".custom-radiobtn__input").checked);
     checkedSize.forEach((el, index) => {
       if (el == true) {
         indexRadio = index;
@@ -223,11 +239,23 @@ addCart?.addEventListener("click", (e) => {
     size = selectSize[indexRadio]?.textContent;
   });
   if (size == undefined) {
+    document?.querySelector(".card-size__overlay").classList.add("card-size__overlay--active");
     document?.querySelector(".card-size").classList.add("card-size--active");
+    disableScroll();
 
     document?.querySelector(".card-size__close")?.addEventListener("click", (e) => {
         if (e.target.closest(".card-size__close")) {
+          document?.querySelector(".card-size__overlay").classList.remove("card-size__overlay--active");
           document?.querySelector(".card-size").classList.remove("card-size--active");
+          enableScroll();
+        }
+      });
+
+      document?.querySelector(".card-size__overlay")?.addEventListener("click", (e) => {
+        if (e.target.closest(".card-size__content") == null) {
+          document?.querySelector(".card-size__overlay").classList.remove("card-size__overlay--active");
+          document?.querySelector(".card-size").classList.remove("card-size--active");
+          enableScroll();
         }
       });
     return;
@@ -309,20 +337,22 @@ const calcScroll = () => {
 };
 
 const scroll = calcScroll();
+const headerOffset = header.offsetHeight;
 
 basket.forEach((elem) => {
   elem?.addEventListener("click", (e) => {
     e.preventDefault();
     cartOverlay.classList.add("cart-overlay--visible");
-    body.classList.add("stop-scroll");
-    body.style.marginRight = `${scroll}px`;
+    disableScroll();
+    // body.classList.add("stop-scroll");
+    // body.style.marginRight = `${scroll}px`;
 
     if (headerMain) {
       headerMain.style.position = "relative";
     }
 
     if (hero) {
-      hero.style.top = "-80px";
+      hero.style.top = `-${headerOffset}px`;
     }
   });
 });
@@ -330,14 +360,15 @@ basket.forEach((elem) => {
 cartClose.forEach((elem) => {
   elem?.addEventListener("click", (e) => {
     cartOverlay.classList.remove("cart-overlay--visible");
-    body.classList.remove("stop-scroll");
-    body.style.marginRight = `0px`;
+    // body.classList.remove("stop-scroll");
+    // body.style.marginRight = null;
+    enableScroll();
     if (headerMain) {
       headerMain.style.position = "absolute";
     }
 
     if (hero) {
-      hero.style.top = "0px";
+      hero.style.top = null;
     }
   });
 });
@@ -345,14 +376,15 @@ cartClose.forEach((elem) => {
 cartOverlay?.addEventListener("click", (e) => {
   if (e.target === document.querySelector(".cart-overlay--visible")) {
     cartOverlay.classList.remove("cart-overlay--visible");
-    body.classList.remove("stop-scroll");
-    body.style.marginRight = `0px`;
+    // body.classList.remove("stop-scroll");
+    // body.style.marginRight = null;
+    enableScroll();
     if (headerMain) {
       headerMain.style.position = "absolute";
     }
 
     if (hero) {
-      hero.style.top = "0px";
+      hero.style.top = null;
     }
   }
 });

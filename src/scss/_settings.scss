@@ -69,18 +69,35 @@ a {
   line-height: 68px;
   letter-spacing: -0.03em;
   opacity: 0.9;
+
+  @include small-tablet {
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 55px;
+  }
+
+  @include mobile {
+    font-size: 34px;
+    line-height: 46px;
+  }
 }
 
 .main-link {
-  border: 0.766391px solid var(--black-color);
+  border: 1px solid var(--black-color);
   font-weight: 500;
   line-height: 24px;
   opacity: 0.9;
-  transition: all .3s;
+  transition: background-color .3s, color .3s;
 
-  @include hover {
+  &:hover {
     background-color: var(--black-color);
     color: #fff;
+    transition: background-color .3s, color .3s;
+  }
+
+  @include small-tablet {
+    font-size: 14px;
+    line-height: 16px;
   }
 }
 
@@ -114,6 +131,18 @@ a {
   margin: 0 auto;
   padding: 0 var(--container-offset);
   max-width: var(--container-width);
+
+  @include xxl-desktop {
+    padding: 0 50px;
+  }
+
+  @include big-desktop {
+    padding: 0 30px;
+  }
+
+  @include mobile {
+    padding: 0 15px;
+  }
 }
 
 .js-focus-visible :focus:not(.focus-visible) {
@@ -139,19 +168,6 @@ a {
 }
 
 
-// ::-webkit-scrollbar {
-//   width: 8px;
-// }
-// ::-webkit-scrollbar-track {
-//   border-radius: 10px;
-//   background: #fff;
-// }
-
-// ::-webkit-scrollbar-thumb {
-//   border-radius: 10px;
-//   background: var(--accent-color);
-// }
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -169,5 +185,68 @@ input[type=number] {
 
 .stop-scroll {
   overflow: hidden;
+}
 
+.focus-offset {
+  &:focus {
+    outline: 1px solid var(--black-color);
+    outline-offset: 2px;
+    transition: none;
+  }
+}
+
+.focus-offset-4px {
+  &:focus {
+    outline: 1px solid var(--black-color);
+    outline-offset: 4px;
+    transition: none;
+  }
+}
+
+.pointer-events {
+  pointer-events: none;
+}
+
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  overflow-y: auto;
+  overflow-x: hidden;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 3;
+  background-color: rgba(39, 39, 39, 0.5);
+  transition: opacity 0.3s, visibility 0.3s;
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+}
+
+.hide {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.3s, visibility 0.3s !important;
+}
+
+.site-bg--gray {
+
+  @include md-tablet {
+    background-color: #FCF8F5;
+  }
+}
+
+.md-tablet {
+  display: none;
+
+  @include md-tablet {
+    display: block;
+  }
 }
